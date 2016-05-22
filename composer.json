@@ -11,8 +11,8 @@
       "role": "Whatever is needed"
     }
   ],
-  "config": {
-  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "repositories": [
     {
       "type": "composer",
@@ -31,30 +31,48 @@
       }
     }
   ],
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "require": {
     "composer/installers": "*",
-    "php": "^5.5.0",
-    "drupal/drupal": "8.2.*",
-    "drupal/console": "0.8.*",
-    "drupal/big_pipe": "8.*",
+    "drupal-composer/drupal-scaffold": "^1.3.1",
+    "cweagans/composer-patches": "~1.0",
+    "drupal/core": "~8.2",
     "drupal/rules": "8.*",
-    "drush/drush": "8.*",
+    "drush/drush": "~8.1",
     "drush/config-extra": "1.0.*",
+    "drupal/console": "~0.10",
     "jquery/jquery.ui": "1.11.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8",
+    "symfony/css-selector": "2.7.*"
+  },
+  "conflict": {
+     "drupal/drupal": "*"
+  },
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ]
+  },
+  "scripts": {
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::buildScaffold",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::buildScaffold",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ]
   },
   "extra": {
     "installer-paths": {
-      "htdocs/modules/contrib/{$name}/": ["type:drupal-module"],
-      "htdocs/themes/contrib/{$name}/": ["type:drupal-theme"],
-      "htdocs/profiles/contrib/{$name}/": ["type:drupal-profile"],
-      "htdocs/libraries/{$name}/": ["type:drupal-library"],
-      "htdocs/drush/commands/{$name}/": ["type:drupal-drush"],
-      "htdocs/": ["drupal/drupal"]
+      "web/core": ["type:drupal-core"],
+      "web/libraries/{$name}/": ["type:drupal-library"],
+      "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "drush/contrib/{$name}": ["type:drupal-drush"]
     }
-  },
-  "scripts": {
-    "post-autoload-dump": "scripts/overlay.sh"
   }
 }
