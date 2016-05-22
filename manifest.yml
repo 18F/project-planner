@@ -8,4 +8,3 @@ applications:
   buildpack: https://github.com/cloudfoundry/php-buildpack.git
   env:
     APP_LOG_LEVEL: INFO
-  services:
