@@ -1,7 +1,7 @@
 {
   "name": "18f/project-planner",
   "type": "project",
-  "description": "Simple project planner for inventorying current and future projects, staying current about what is going on in the organization related to project planning.",
+  "description": "Simple project planner for inventorying current and future projects and staying current about what is going on in the organization related to project planning.",
   "keywords": ["project", "planning", "collaboration", "coordination", "notifications", "inventory", "discovery"],
   "license": "CC0-1.0",
   "authors": [
@@ -15,15 +15,37 @@
     {
       "type": "composer",
       "url": "https://packagist.drupal-composer.org"
+    },
+    {
+      "type": "pear",
+      "url": "https://pear2.php.net"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "jquery/jqueryui",
+        "version": "1.11.4",
+        "type": "drupal-library",
+        "dist": {
+          "url": "http://jqueryui.com/resources/download/jquery-ui-1.11.4.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "~1.0"
+        }
+      }
     }
   ],
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
     "composer/installers": "~1.0",
+    "slowprog/composer-copy-file": "0.1.*",
+    "php": "^5.6.0",
     "drupal/drupal": "8.2.*",
     "drush/drush": "8.*",
-    "drupal/console": "~0.8"
+    "drupal/console": "~0.8",
+    "jquery/jquery.ui": "1.11.4"
   },
   "extra": {
     "installer-paths": {
@@ -33,6 +55,9 @@
       "htdocs/profiles/contrib/{$name}/": ["type:drupal-profile"],
       "htdocs/libraries/{$name}/": ["type:drupal-library"],
       "htdocs/drush/commands/{$name}/": ["type:drupal-drush"]
+    },
+    "copy-file": {
+
     }
   },
   "scripts": {
