@@ -57,7 +57,10 @@
       "htdocs/drush/commands/{$name}/": ["type:drupal-drush"]
     },
     "copy-file": {
-
+      "modules": "htdocs/modules/custom",
+      "themes": "htdocs/themes/custom",
+      "profiles": "htdocs/profiles/custom",
+      "sites/cloud.gov": "htdocs/sites/cloud.gov"
     }
   },
   "scripts": {
