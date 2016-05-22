@@ -1,0 +1,21 @@
+{
+  "ADMIN_EMAIL": "adrian.webb@gsa.gov",
+  "LIBDIR": "lib",
+  "WEBDIR": "htdocs",
+  "WEB_SERVER": "httpd",
+  "HTTPD_VERSION": "2.4.20",
+  "HTTPD_PACKAGE": "httpd-{HTTPD_VERSION}.tar.gz",
+  "HTTPD_DOWNLOAD_URL": "/httpd/{HTTPD_VERSION}/{HTTPD_PACKAGE}",
+  "HTTPD_STRIP": true,
+  "HTTPD_MODULES_PATTERN": "/httpd/{HTTPD_VERSION}/httpd-{MODULE_NAME}-{HTTPD_VERSION}.tar.gz",
+  "HTTPD_MODULES_STRIP": true,
+  "PHP_VM": "php",
+  "PHP_PACKAGE": "php-{PHP_VERSION}.tar.gz",
+  "PHP_DOWNLOAD_URL": "/php/{PHP_VERSION}/{PHP_PACKAGE}",
+  "PHP_STRIP": true,
+  "PHP_MODULES_PATTERN": "/php/{PHP_VERSION}/php-{MODULE_NAME}-{PHP_VERSION}.tar.gz",
+  "PHP_MODULES_STRIP": true,
+  "PHP_MODULES": [],
+  "PHP_EXTENSIONS": ["bz2", "zlib", "curl", "mcrypt"],
+  "ZEND_EXTENSIONS": []
+}
