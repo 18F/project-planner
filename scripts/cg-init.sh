@@ -5,6 +5,9 @@ set -e
 #-------------------------------------------------------------------------------
 # Default properties
 
+SCRIPT_DIR="$(cd "$(dirname "$([ `readlink "$0"` ] && echo "`readlink "$0"`" || echo "$0")")"; pwd -P)"
+TOP_DIR="$SCRIPT_DIR/.."
+
 APP_DEFAULT_NAME="project-planner"
 APP_NAME="$APP_DEFAULT_NAME"
 
@@ -115,6 +118,14 @@ fi
 
 #-------------------------------------------------------------------------------
 # Begin
+
+# Prepare application (build a fresh copy)
+cd "$TOP_DIR"
+
+rm -f "composer.lock"
+rm -Rf "vendor"
+rm -Rf "htdocs"
+composer install # Rebuild the code base to ensure we have a clean remote copy
 
 # Push application to cloud.gov 
 # (but do not start it until we create and attach the services)
