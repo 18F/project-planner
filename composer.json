@@ -11,27 +11,22 @@
       "role": "Whatever is needed"
     }
   ],
+  "config": {
+  },
   "repositories": [
     {
       "type": "composer",
       "url": "https://packagist.drupal-composer.org"
     },
     {
-      "type": "pear",
-      "url": "https://pear2.php.net"
-    },
-    {
       "type": "package",
       "package": {
-        "name": "jquery/jqueryui",
+        "name": "jquery/jquery.ui",
         "version": "1.11.4",
         "type": "drupal-library",
         "dist": {
-          "url": "http://jqueryui.com/resources/download/jquery-ui-1.11.4.zip",
+          "url": "https://jqueryui.com/resources/download/jquery-ui-1.11.4.zip",
           "type": "zip"
-        },
-        "require": {
-          "composer/installers": "~1.0"
         }
       }
     }
@@ -39,31 +34,27 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "composer/installers": "~1.0",
-    "slowprog/composer-copy-file": "0.1.*",
-    "php": "^5.6.0",
+    "composer/installers": "*",
+    "php": "^5.5.0",
     "drupal/drupal": "8.2.*",
+    "drupal/console": "0.8.*",
+    "drupal/big_pipe": "8.*",
+    "drupal/rules": "8.*",
     "drush/drush": "8.*",
-    "drupal/console": "~0.8",
+    "drush/config-extra": "1.0.*",
     "jquery/jquery.ui": "1.11.4"
   },
   "extra": {
     "installer-paths": {
-      "htdocs/": ["drupal/drupal"],
       "htdocs/modules/contrib/{$name}/": ["type:drupal-module"],
       "htdocs/themes/contrib/{$name}/": ["type:drupal-theme"],
       "htdocs/profiles/contrib/{$name}/": ["type:drupal-profile"],
       "htdocs/libraries/{$name}/": ["type:drupal-library"],
-      "htdocs/drush/commands/{$name}/": ["type:drupal-drush"]
-    },
-    "copy-file": {
-      "modules": "htdocs/modules/custom",
-      "themes": "htdocs/themes/custom",
-      "profiles": "htdocs/profiles/custom",
-      "sites/cloud.gov": "htdocs/sites/cloud.gov"
+      "htdocs/drush/commands/{$name}/": ["type:drupal-drush"],
+      "htdocs/": ["drupal/drupal"]
     }
   },
   "scripts": {
-    "post-install-cmd": "scripts/bootstrap.sh"
+    "posty-install-cmd": "scripts/overlay.sh"
   }
 }
