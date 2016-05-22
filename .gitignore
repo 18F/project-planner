@@ -1,4 +1,5 @@
 # Drupal build files
+vendor
 htdocs
 
 # Eclipse project files
