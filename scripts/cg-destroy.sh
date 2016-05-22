@@ -63,19 +63,19 @@ if [[ $response =~ ^([yY][eE][sS])$ ]]; then
   # (but do not destroy it until we detach and remove the services)
   cf stop "$APP_NAME"
 
-  # Remove the RDS MySQL database service
+  # Remove the database service
   APP_DB_NAME="$APP_NAME-db"
 
   cf unbind-service "$APP_NAME" "$APP_DB_NAME"
   cf delete-service "$APP_DB_NAME" -f
 
-  # Remove the S3 files bucket
-  APP_S3_NAME="$APP_NAME-s3"
+  # Remove the file storage container
+  APP_FILES_NAME="$APP_NAME-files"
 
-  cf unbind-service "$APP_NAME" "$APP_S3_NAME"
-  cf delete-service "$APP_S3_NAME" -f
+  cf unbind-service "$APP_NAME" "$APP_FILES_NAME"
+  cf delete-service "$APP_FILES_NAME" -f
 
-  # Remove application
+  # Remove the application
   cf delete "$APP_NAME" -f -r
 
   echo "Successfully destroyed $APP_NAME application"
