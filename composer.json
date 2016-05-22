@@ -55,6 +55,6 @@
     }
   },
   "scripts": {
-    "post-install-cmd": "scripts/overlay.sh"
+    "post-autoload-dump": "scripts/overlay.sh"
   }
 }
