@@ -65,12 +65,8 @@ fi
 #-------------------------------------------------------------------------------
 # Begin
 
-# Prepare application (build a fresh copy)
+# Prepare application (include any custom updates)
 cd "$TOP_DIR"
-
-rm -f "composer.lock"
-rm -Rf "vendor"
-rm -Rf "htdocs"
 composer install # Rebuild the code base to ensure we have a clean remote copy
 
 # Push application to cloud.gov 
