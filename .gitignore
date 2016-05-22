@@ -1,3 +1,6 @@
+# Drupal build files
+htdocs
+
 # Eclipse project files
 .project
 .cache
