@@ -11,16 +11,31 @@
       "role": "Whatever is needed"
     }
   ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packagist.drupal-composer.org"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "composer/installers": "~1.0",
-    "drupal/core": "8.*"
+    "drupal/drupal": "8.2.*",
+    "drush/drush": "8.*",
+    "drupal/console": "~0.8",
   },
   "extra": {
     "installer-paths": {
-      "htdocs/": ["type:drupal-core"]
+      "htdocs/": ["drupal/drupal"],
+      "htdocs/modules/contrib/{$name}/": ["type:drupal-module"],
+      "htdocs/themes/contrib/{$name}/": ["type:drupal-theme"],
+      "htdocs/profiles/contrib/{$name}/": ["type:drupal-profile"],
+      "htdocs/libraries/{$name}/": ["type:drupal-library"],
+      "htdocs/drush/commands/{$name}/": ["type:drupal-drush"]
     }
   },
   "scripts": {
-    "post-package-install": "scripts/bootstrap.sh"
+    "post-install-cmd": "scripts/bootstrap.sh"
   }
 }
