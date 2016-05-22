@@ -113,7 +113,7 @@ cf create-service "$RDS_SERVICE_NAME" "$RDS_SERVICE_PLAN" "$APP_DB_NAME"
 cf bind-service "$APP_NAME" "$APP_DB_NAME"
 
 # Create an S3 files bucket
-APP_DB_NAME="$APP_NAME-db"
+APP_S3_NAME="$APP_NAME-s3"
 
 cf create-service "$S3_SERVICE_NAME" "$S3_SERVICE_PLAN" "$APP_S3_NAME"
 cf bind-service "$APP_NAME" "$APP_S3_NAME"
