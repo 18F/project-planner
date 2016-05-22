@@ -75,3 +75,8 @@ echo -n "Copying cloud.gov site configurations to $DRUPAL_BUILD_SITE_CLOUD_GOV_D
 rm -Rf "$DRUPAL_BUILD_SITE_CLOUD_GOV_DIR"
 cp -Rf "$DRUPAL_CUSTOM_SITE_CLOUD_GOV_DIR" "$DRUPAL_BUILD_SITE_CLOUD_GOV_DIR"
 echo "done"
+
+# Override Drupal autoload.php with one that points to correct vendor directory
+echo -n "Copying Drupal autoload path to $PUBLIC_DIR: "
+cp -Rf "$TOP_DIR/scripts/autoload.php" "$PUBLIC_DIR"
+echo "done"
