@@ -1,0 +1,26 @@
+{
+  "name": "18f/project-planner",
+  "type": "project",
+  "description": "Simple project planner for inventorying current and future projects, staying current about what is going on in the organization related to project planning."
+  "keywords": ["project", "planning", "collaboration", "coordination", "notifications", "inventory", "discovery"],
+  "license": "CC0-1.0",
+  "authors": [
+    {
+      "name": "Adrian Webb",
+      "email": "adrian.webb@gsa.gov",
+      "role": "Whatever is needed"
+    }
+  ],
+  "require": {
+    "composer/installers": "~1.0",
+    "drupal/core": "8.*"
+  },
+  "extra": {
+    "installer-paths": {
+      "htdocs/": ["type:drupal-core"]
+    }
+  },
+  "scripts": {
+    "post-package-install": "scripts/bootstrap.sh"
+  }
+}
