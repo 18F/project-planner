@@ -38,13 +38,17 @@ done
 # Clean application build files
 cd "$TOP_DIR"
 
-rm -f "composer.lock"  # Do I really delete this?
 rm -Rf drush/contrib
 rm -Rf vendor
+
 rm -Rf web/core
 rm -Rf web/modules/contrib
 rm -Rf web/themes/contrib
 rm -Rf web/profiles/contrib
+rm -Rf web/libraries
+
 rm -Rf web/sites/*/files
+rm -f web/sites/default/settings.php
+rm -f web/sites/default/services.yml
 
 echo "Successfully cleaned all Drupal application build files"
