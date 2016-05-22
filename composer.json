@@ -55,6 +55,6 @@
     }
   },
   "scripts": {
-    "posty-install-cmd": "scripts/overlay.sh"
+    "post-install-cmd": "scripts/overlay.sh"
   }
 }
