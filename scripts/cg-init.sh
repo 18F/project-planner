@@ -8,6 +8,9 @@ set -e
 APP_DEFAULT_NAME="project-planner"
 APP_NAME="$APP_DEFAULT_NAME"
 
+APP_DEFAULT_START="start"
+APP_START="$APP_DEFAULT_START"
+
 RDS_DEFAULT_SERVICE_NAME="aws-rds"
 RDS_SERVICE_NAME="$RDS_DEFAULT_SERVICE_NAME"
 RDS_DEFAULT_SERVICE_PLAN="shared-mysql"
@@ -28,6 +31,10 @@ do
   case $key in
     -n|--name)
       APP_NAME="$2"
+      shift
+    ;;
+    -o|--no-start)
+      APP_START="stop"
       shift
     ;;
     -r|--rds-name)
@@ -51,6 +58,7 @@ do
  Usage: ./cg-init.sh [ -h ]
  
    -h | --help      |  Display this help message
+   -o | --no-start  |  Create the application and related services but do not start (default: $APP_START)
    -n | --name      |  Specify the name of the drupal application (default: $APP_NAME)
    -r | --rds-name  |  Specify the name of the drupal application RDS database (default: $RDS_SERVICE_NAME)
    -p | --rds-plan  |  Specify a service plan for the drupal application RDS database (default: $RDS_SERVICE_PLAN)
@@ -73,6 +81,12 @@ if [ "$APP_NAME" != "$APP_DEFAULT_NAME" ]; then
   echo "Drupal application name: $APP_NAME"
 else
   echo "Drupal application name (override with -n|--name): $APP_NAME"
+fi
+
+if [ "$APP_START" != "$APP_DEFAULT_START" ]; then
+  echo "Drupal application state: $APP_START"
+else
+  echo "Drupal application state (override with -o|--no-start): $APP_START"
 fi
 
 if [ "$RDS_SERVICE_NAME" != "$RDS_DEFAULT_SERVICE_NAME" ]; then
@@ -118,7 +132,9 @@ APP_S3_NAME="$APP_NAME-s3"
 cf create-service "$S3_SERVICE_NAME" "$S3_SERVICE_PLAN" "$APP_S3_NAME"
 cf bind-service "$APP_NAME" "$APP_S3_NAME"
 
-# Start application
-cf start "$APP_NAME"
+if [ "$APP_START" == "start" ]; then
+  # Start application
+  cf start "$APP_NAME"
+fi
 
 echo "Successfully initialized $APP_NAME application"
