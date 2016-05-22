@@ -1,7 +1,7 @@
 {
   "name": "18f/project-planner",
   "type": "project",
-  "description": "Simple project planner for inventorying current and future projects, staying current about what is going on in the organization related to project planning."
+  "description": "Simple project planner for inventorying current and future projects, staying current about what is going on in the organization related to project planning.",
   "keywords": ["project", "planning", "collaboration", "coordination", "notifications", "inventory", "discovery"],
   "license": "CC0-1.0",
   "authors": [
