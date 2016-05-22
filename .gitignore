@@ -1,6 +1,14 @@
 # Drupal build files
+drush/contrib
 vendor
-htdocs
+web/core
+web/modules/contrib
+web/themes/contrib
+web/profiles/contrib
+web/libraries
+web/sites/*/files
+web/sites/default/settings.php
+web/sites/default/services.yml
 
 # Eclipse project files
 .project
