@@ -114,10 +114,11 @@ foreach($service_blob as $service_provider => $service_list) {
 // Configure Drupal, using the first database found
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => $mysql_services[0]['credentials']['name'],
+  'database' => $mysql_services[0]['credentials']['db_name'],
   'username' => $mysql_services[0]['credentials']['username'],
   'password' => $mysql_services[0]['credentials']['password'],
-  'host' => $mysql_services[0]['credentials']['hostname'],
+  'host' => $mysql_services[0]['credentials']['host'],
+  'port' => $mysql_services[0]['credentials']['port'],
   'prefix' => 'drupal_',
   'collation' => 'utf8_general_ci',
 );
