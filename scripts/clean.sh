@@ -39,7 +39,12 @@ done
 cd "$TOP_DIR"
 
 rm -f "composer.lock"  # Do I really delete this?
-rm -Rf "vendor"
-rm -Rf "htdocs"
+rm -Rf drush/contrib
+rm -Rf vendor
+rm -Rf web/core
+rm -Rf web/modules/contrib
+rm -Rf web/themes/contrib
+rm -Rf web/profiles/contrib
+rm -Rf web/sites/*/files
 
 echo "Successfully cleaned all Drupal application build files"
