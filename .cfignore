@@ -1,0 +1,12 @@
+# Version control
+.git
+
+# Documentation
+*.md
+
+# Eclipse project files
+.project
+.cache
+
+# Other files
+*.swp
