@@ -39,8 +39,8 @@ done
 cd "$TOP_DIR"
 
 rm -f "composer.lock"
-rm -Rf "vendor"
-rm -Rf "htdocs"
+./scripts/clean.sh
+
 composer install
 
 echo "Successfully rebuilt Drupal application"
