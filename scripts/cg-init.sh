@@ -11,15 +11,15 @@ APP_NAME="$APP_DEFAULT_NAME"
 APP_DEFAULT_START="start"
 APP_START="$APP_DEFAULT_START"
 
-RDS_DEFAULT_SERVICE_NAME="aws-rds"
-RDS_SERVICE_NAME="$RDS_DEFAULT_SERVICE_NAME"
-RDS_DEFAULT_SERVICE_PLAN="shared-mysql"
-RDS_SERVICE_PLAN="$RDS_DEFAULT_SERVICE_PLAN"
+DB_DEFAULT_SERVICE_NAME="aws-rds"
+DB_SERVICE_NAME="$DB_DEFAULT_SERVICE_NAME"
+DB_DEFAULT_SERVICE_PLAN="shared-mysql"
+DB_SERVICE_PLAN="$DB_DEFAULT_SERVICE_PLAN"
 
-S3_DEFAULT_SERVICE_NAME="s3"
-S3_SERVICE_NAME="$S3_DEFAULT_SERVICE_NAME"
-S3_DEFAULT_SERVICE_PLAN="basic"
-S3_SERVICE_PLAN="$S3_DEFAULT_SERVICE_PLAN"
+FILES_DEFAULT_SERVICE_NAME="s3" # Right now only S3 supported
+FILES_SERVICE_NAME="$FILES_DEFAULT_SERVICE_NAME"
+FILES_DEFAULT_SERVICE_PLAN="basic"
+FILES_SERVICE_PLAN="$FILES_DEFAULT_SERVICE_PLAN"
 
 #-------------------------------------------------------------------------------
 # Property initialization
@@ -37,33 +37,33 @@ do
       APP_START="stop"
       shift
     ;;
-    -r|--rds-name)
-      RDS_SERVICE_NAME="$2"
+    -d|--db-name)
+      DB_SERVICE_NAME="$2"
       shift
     ;;
-    -p|--rds-plan)
-      RDS_SERVICE_PLAN="$2"
+    -p|--db-plan)
+      DB_SERVICE_PLAN="$2"
       shift
     ;;
-    -s|--s3-name)
-      S3_SERVICE_NAME="$2"
+    -f|--files-name)
+      FILES_SERVICE_NAME="$2"
       shift
     ;;
-    -l|--s3-plan)
-      S3_SERVICE_PLAN="$2"
+    -l|--files-plan)
+      FILES_SERVICE_PLAN="$2"
       shift
     ;;
     -h|--help)
       message="
  Usage: ./cg-init.sh [ -h ]
  
-   -h | --help      |  Display this help message
-   -o | --no-start  |  Create the application and related services but do not start (default: $APP_START)
-   -n | --name      |  Specify the name of the drupal application (default: $APP_NAME)
-   -r | --rds-name  |  Specify the name of the drupal application RDS database (default: $RDS_SERVICE_NAME)
-   -p | --rds-plan  |  Specify a service plan for the drupal application RDS database (default: $RDS_SERVICE_PLAN)
-   -s | --s3-name   |  Specify the name of the drupal application S3 files bucket (default: $S3_SERVICE_NAME)
-   -l | --s3-plan   |  Specify a service plan for the drupal application S3 files bucket (default: $S3_SERVICE_PLAN)
+   -h | --help       |  Display this help message
+   -o | --no-start   |  Create the application and related services but do not start (default: $APP_START)
+   -n | --name       |  Specify the name of the drupal application (default: $APP_NAME)
+   -d | --db-name    |  Specify the name of the drupal application database service (default: $DB_SERVICE_NAME)
+   -p | --db-plan    |  Specify a service plan for the drupal application database service (default: $DB_SERVICE_PLAN)
+   -f | --files-name |  Specify the name of the drupal application file storage service (default: $FILES_SERVICE_NAME)
+   -l | --files-plan |  Specify a service plan for the drupal application file storage service (default: $FILES_SERVICE_PLAN)
 "
       echo "$message"
       exit 0
@@ -89,28 +89,28 @@ else
   echo "Drupal application state (override with -o|--no-start): $APP_START"
 fi
 
-if [ "$RDS_SERVICE_NAME" != "$RDS_DEFAULT_SERVICE_NAME" ]; then
-  echo "Drupal application RDS database service name: $RDS_SERVICE_NAME"
+if [ "$DB_SERVICE_NAME" != "$DB_DEFAULT_SERVICE_NAME" ]; then
+  echo "Drupal application database service name: $DB_SERVICE_NAME"
 else
-  echo "Drupal application RDS database service name (override with -r|--rds-name): $RDS_SERVICE_NAME"
+  echo "Drupal application database service name (override with -d|--db-name): $DB_SERVICE_NAME"
 fi
 
-if [ "$RDS_SERVICE_PLAN" != "$RDS_DEFAULT_SERVICE_PLAN" ]; then
-  echo "Drupal application RSA database service plan: $RDS_SERVICE_PLAN"
+if [ "$DB_SERVICE_PLAN" != "$DB_DEFAULT_SERVICE_PLAN" ]; then
+  echo "Drupal application database service plan: $DB_SERVICE_PLAN"
 else
-  echo "Drupal application RSA database service plan (override with -p|--rds-plan): $RDS_SERVICE_PLAN"
+  echo "Drupal application database service plan (override with -p|--db-plan): $DB_SERVICE_PLAN"
 fi
 
-if [ "$S3_SERVICE_NAME" != "$S3_DEFAULT_SERVICE_NAME" ]; then
-  echo "Drupal application S3 files storage name: $S3_SERVICE_NAME"
+if [ "$FILES_SERVICE_NAME" != "$FILES_DEFAULT_SERVICE_NAME" ]; then
+  echo "Drupal application file storage service name: $FILES_SERVICE_NAME"
 else
-  echo "Drupal application S3 files storage name (override with -s|--s3-name): $S3_SERVICE_NAME"
+  echo "Drupal application file storage service name (override with -f|--files-name): $FILES_SERVICE_NAME"
 fi
 
-if [ "$S3_SERVICE_PLAN" != "$S3_DEFAULT_SERVICE_PLAN" ]; then
-  echo "Drupal application S3 files storage service plan: $S3_SERVICE_PLAN"
+if [ "$FILES_SERVICE_PLAN" != "$FILES_DEFAULT_SERVICE_PLAN" ]; then
+  echo "Drupal application file storage service plan: $FILES_SERVICE_PLAN"
 else
-  echo "Drupal application S3 files storage service plan (override with -l|--s3-plan): $S3_SERVICE_PLAN"
+  echo "Drupal application file storage service plan (override with -l|--files-plan): $FILES_SERVICE_PLAN"
 fi
 
 #-------------------------------------------------------------------------------
@@ -120,17 +120,17 @@ fi
 # (but do not start it until we create and attach the services)
 cf push --no-start
 
-# Create an RDS MySQL database service
+# Create a database service and attach to application
 APP_DB_NAME="$APP_NAME-db"
 
-cf create-service "$RDS_SERVICE_NAME" "$RDS_SERVICE_PLAN" "$APP_DB_NAME"
+cf create-service "$DB_SERVICE_NAME" "$DB_SERVICE_PLAN" "$APP_DB_NAME"
 cf bind-service "$APP_NAME" "$APP_DB_NAME"
 
-# Create an S3 files bucket
-APP_S3_NAME="$APP_NAME-s3"
+# Create a file storage container and attach to application
+APP_FILES_NAME="$APP_NAME-files"
 
-cf create-service "$S3_SERVICE_NAME" "$S3_SERVICE_PLAN" "$APP_S3_NAME"
-cf bind-service "$APP_NAME" "$APP_S3_NAME"
+cf create-service "$FILES_SERVICE_NAME" "$FILES_SERVICE_PLAN" "$APP_FILES_NAME"
+cf bind-service "$APP_NAME" "$APP_FILES_NAME"
 
 if [ "$APP_START" == "start" ]; then
   # Start application
