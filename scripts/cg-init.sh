@@ -123,8 +123,8 @@ fi
 cd "$TOP_DIR"
 
 rm -f "composer.lock"
-rm -Rf "vendor"
-rm -Rf "htdocs"
+./scripts/clean.sh
+
 composer install # Rebuild the code base to ensure we have a clean remote copy
 
 # Push application to cloud.gov 
@@ -142,6 +142,9 @@ APP_FILES_NAME="$APP_NAME-files"
 
 cf create-service "$FILES_SERVICE_NAME" "$FILES_SERVICE_PLAN" "$APP_FILES_NAME"
 cf bind-service "$APP_NAME" "$APP_FILES_NAME"
+
+# Restage changes
+cf restage "$APP_NAME"
 
 if [ "$APP_START" == "start" ]; then
   # Start application
