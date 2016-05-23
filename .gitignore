@@ -7,8 +7,10 @@ web/themes/contrib
 web/profiles/contrib
 web/libraries
 web/sites/*/files
-web/sites/default/settings.php
-web/sites/default/services.yml
+web/sites/default/settings.local.php
+
+# Cloud Foundry
+cf-ssh.yml
 
 # Eclipse project files
 .project
