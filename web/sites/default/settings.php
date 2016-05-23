@@ -56,6 +56,8 @@
  * implementations with custom ones.
  */
 
+print_r("Hello", FALSE)
+
 /**
  * Database settings:
  *
