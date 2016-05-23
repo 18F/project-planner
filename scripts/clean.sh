@@ -48,7 +48,5 @@ rm -Rf web/profiles/contrib
 rm -Rf web/libraries
 
 rm -Rf web/sites/*/files
-rm -f web/sites/default/settings.php
-rm -f web/sites/default/services.yml
 
 echo "Successfully cleaned all Drupal application build files"
