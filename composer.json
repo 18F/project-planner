@@ -35,11 +35,13 @@
     "composer/installers": "*",
     "drupal-composer/drupal-scaffold": "^1.3.1",
     "cweagans/composer-patches": "~1.0",
-    "drupal/core": "~8.2",
-    "drupal/rules": "8.*",
+    "drupal/console": "~0.10",
     "drush/drush": "~8.1",
     "drush/config-extra": "1.0.*",
-    "drupal/console": "~0.10",
+    "drupal/core": "~8.2",
+    "drupal/flysystem": "8.1.*",
+    "drupal/flysystem_s3": "8.1.*",
+    "drupal/rules": "8.*",
     "jquery/jquery.ui": "1.11.4"
   },
   "require-dev": {
