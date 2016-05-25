@@ -56,7 +56,12 @@
  * implementations with custom ones.
  */
 
-print_r("Hello", FALSE)
+/**
+ * Collect external service information from environment.
+ *
+ * Cloud Foundry places all service credentials in VCAP_SERVICES
+ */
+$cf_service_data = json_decode($_ENV['VCAP_SERVICES'], true);
 
 /**
  * Database settings:
@@ -88,27 +93,18 @@ print_r("Hello", FALSE)
  * );
  * @endcode
  */
-$service_blob = json_decode($_ENV['VCAP_SERVICES'], true);
 $mysql_services = array();
 
-foreach($service_blob as $service_provider => $service_list) {
-  // looks for 'cleardb' or 'p-mysql' service
-  if ($service_provider === 'cleardb' || $service_provider === 'p-mysql') {
-    foreach($service_list as $mysql_service) {
-      $mysql_services[] = $mysql_service;
-    }
-    continue;
-  }
-
-  foreach ($service_list as $some_service) {
+foreach($cf_service_data as $service_provider => $service_list) {
+  foreach ($service_list as $service) {
     // looks for tags of 'mysql'
-    if (in_array('mysql', $some_service['tags'], true)) {
-      $mysql_services[] = $some_service;
+    if (in_array('mysql', $service['tags'], true)) {
+      $mysql_services[] = $service;
       continue;
     }
     // look for a service where the name includes 'mysql'
-    if (strpos($some_service['name'], 'mysql') !== false) {
-      $mysql_services[] = $some_service;
+    if (strpos($service['name'], 'mysql') !== false) {
+      $mysql_services[] = $service;
     }
   }
 }
@@ -122,7 +118,7 @@ $databases['default']['default'] = array(
   'host' => $mysql_services[0]['credentials']['host'],
   'port' => $mysql_services[0]['credentials']['port'],
   'prefix' => 'drupal_',
-  'collation' => 'utf8_general_ci',
+  'collation' => 'utf8mb4_general_ci',
 );
 
 /**
@@ -284,6 +280,49 @@ $databases['default']['default'] = array(
 $config_directories = array();
 
 /**
+ * Flysystem.
+ *
+ * The settings below are for configuring flysystem backends
+ */
+ /**
+$s3_services = array();
+
+foreach($cf_service_data as $service_provider => $service_list) {
+  foreach ($service_list as $service) {
+    // looks for tags of 's3'
+    if (in_array('s3', $service['tags'], true)) {
+      $s3_services[] = $service;
+      continue;
+    }
+    // look for a service where the name includes 's3'
+    if (strpos($service['name'], 's3') !== false) {
+      $s3_services[] = $service;
+    }
+  }
+}
+
+
+$settings['flysystem']['s3'] = array(
+  'driver' => 's3',
+  'config' => array(
+    'key'    => $s3_services[0]['credentials']['access_key_id'],
+    'secret' => $s3_services[0]['credentials']['secret_access_key'],
+    'region' => $s3_services[0]['credentials']['secret'],
+    'bucket' => $s3_services[0]['credentials']['bucket'],
+
+    // Optional configuration settings.
+    'options' => array(
+      'ACL' => 'public-read',
+      'StorageClass' => 'REDUCED_REDUNDANCY',
+    ),
+    'protocol' => 'https',            // Will be autodetected based on the current request.
+    'prefix' => 'an/optional/prefix', // Directory prefix for all uploaded/viewed files.
+  ),
+  'cache' => TRUE, // Creates a metadata cache to speed up lookups.
+);
+  * */
+
+/**
  * Settings:
  *
  * $settings contains environment-specific configuration, such as the files
@@ -303,7 +342,7 @@ $config_directories = array();
  *
  * @see install_select_profile()
  */
-# $settings['install_profile'] = '';
+$settings['install_profile'] = 'standard';
 
 /**
  * Salt for one-time login links, cancel links, form tokens, etc.
@@ -765,6 +804,6 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  *
  * Keep this code block at the end of this file to take full effect.
  */
-# if (file_exists(__DIR__ . '/settings.local.php')) {
-#   include __DIR__ . '/settings.local.php';
-# }
+//if (file_exists(__DIR__ . '/settings.local.php')) {
+//  include __DIR__ . '/settings.local.php';
+//}
