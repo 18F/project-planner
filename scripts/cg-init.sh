@@ -143,9 +143,6 @@ APP_FILES_NAME="$APP_NAME-files"
 cf create-service "$FILES_SERVICE_NAME" "$FILES_SERVICE_PLAN" "$APP_FILES_NAME"
 cf bind-service "$APP_NAME" "$APP_FILES_NAME"
 
-# Restage changes
-cf restage "$APP_NAME"
-
 if [ "$APP_START" == "start" ]; then
   # Start application
   cf start "$APP_NAME"
