@@ -71,11 +71,11 @@ composer install # Rebuild the code base to ensure we have a clean remote copy
 
 # Push application to cloud.gov 
 # (but do not start it until we create and attach the services)
-cf push --no-start
-
 if [ "$APP_START" == "start" ]; then
   # Start application
-  cf start "$APP_NAME"
+  cf push
+else 
+  cf push --no-start
 fi
 
 echo "Successfully pushed $APP_NAME application"
