@@ -56,20 +56,20 @@
   },
   "autoload": {
     "classmap": [
-      "scripts/composer/Initializer.php"
+      "scripts/composer/Hooks.php"
     ]
   },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
     "post-install-cmd": [
-      "DrupalProject\\composer\\Initializer::buildScaffold",
-      "DrupalProject\\composer\\Initializer::initializeFiles",
-      "DrupalProject\\composer\\Initializer::syncConfigurations"
+      "DrupalProject\\composer\\Hooks::buildScaffold",
+      "DrupalProject\\composer\\Hooks::initializeFiles",
+      "DrupalProject\\composer\\Hooks::syncConfigurations"
     ],
     "post-update-cmd": [
-      "DrupalProject\\composer\\Initializer::buildScaffold",
-      "DrupalProject\\composer\\Initializer::initializeFiles",
-      "DrupalProject\\composer\\Initializer::syncConfigurations"
+      "DrupalProject\\composer\\Hooks::buildScaffold",
+      "DrupalProject\\composer\\Hooks::initializeFiles",
+      "DrupalProject\\composer\\Hooks::syncConfigurations"
     ]
   },
   "extra": {
