@@ -18,3 +18,4 @@ cf-ssh.yml
 
 # Other files
 *.swp
+.DS_Store
