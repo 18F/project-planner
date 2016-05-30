@@ -111,14 +111,14 @@ foreach($cf_service_data as $service_provider => $service_list) {
 
 // Configure Drupal, using the first database found
 $databases['default']['default'] = array(
-  'driver' => 'mysql',
   'database' => $mysql_services[0]['credentials']['db_name'],
   'username' => $mysql_services[0]['credentials']['username'],
   'password' => $mysql_services[0]['credentials']['password'],
+  'prefix' => '',
   'host' => $mysql_services[0]['credentials']['host'],
   'port' => $mysql_services[0]['credentials']['port'],
-  'prefix' => 'drupal_',
-  'collation' => 'utf8mb4_general_ci',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
 );
 
 /**
@@ -277,14 +277,13 @@ $databases['default']['default'] = array(
  *   );
  * @endcode
  */
-$config_directories = array();
+$config_directories['sync'] = 'sites/default/files/config/sync';
 
 /**
  * Flysystem.
  *
  * The settings below are for configuring flysystem backends
  */
- /**
 $s3_services = array();
 
 foreach($cf_service_data as $service_provider => $service_list) {
@@ -320,7 +319,6 @@ $settings['flysystem']['s3'] = array(
   ),
   'cache' => TRUE, // Creates a metadata cache to speed up lookups.
 );
-  * */
 
 /**
  * Settings:
@@ -361,7 +359,7 @@ $settings['install_profile'] = 'standard';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'Wyu2EkD2lzJ3RiFtlUDicFVWJSLWlkntElZAH-KMumDwPg-V20oMeYOoa2hYAPGIAWn9lDVIqg';
 
 /**
  * Deployment identifier.
@@ -646,7 +644,7 @@ if ($settings['hash_salt']) {
  *
  * Note: This setting does not apply to installation and update pages.
  */
-# $settings['maintenance_theme'] = 'bartik';
+$settings['maintenance_theme'] = 'seven';
 
 /**
  * PHP settings:
@@ -659,6 +657,9 @@ if ($settings['hash_salt']) {
  * Settings defined there should not be duplicated here so as to avoid conflict
  * issues.
  */
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 /**
  * If you encounter a situation where users post a large amount of text, and
@@ -804,6 +805,6 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  *
  * Keep this code block at the end of this file to take full effect.
  */
-//if (file_exists(__DIR__ . '/settings.local.php')) {
-//  include __DIR__ . '/settings.local.php';
-//}
+# if (file_exists(__DIR__ . '/settings.local.php')) {
+#   include __DIR__ . '/settings.local.php';
+# }
