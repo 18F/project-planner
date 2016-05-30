@@ -46,5 +46,6 @@ class ScriptHandler {
       umask($oldmask);
       $event->getIO()->write("Create a sites/default/files directory with chmod 0777");
     }
+    $fs->chmod($root . '/sites/default/files', 0777);
   }
 }
