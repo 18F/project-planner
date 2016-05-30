@@ -1,0 +1,23 @@
+uuid: 262fc33f-f779-4d08-9f88-03546aa0d5fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_cots
+    - node.type.application
+id: node.application.field_external_cots
+field_name: field_external_cots
+entity_type: node
+bundle: application
+label: 'External COTS'
+description: 'Is this system commercial off the shelf software or hosted externally?'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

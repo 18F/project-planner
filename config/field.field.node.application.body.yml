@@ -1,0 +1,22 @@
+uuid: 61565182-6246-4c91-b86d-6f20f9c2ac92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.application
+  module:
+    - text
+id: node.application.body
+field_name: body
+entity_type: node
+bundle: application
+label: 'Description (Purpose)'
+description: 'Describe the nature of the project in plain language.  Please be as specific as possible so that it is easy to understand the breadth and depth of the project.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

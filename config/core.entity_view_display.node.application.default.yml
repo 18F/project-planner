@@ -1,0 +1,57 @@
+uuid: 03cde066-878f-4cd8-a7e3-a5b587509681
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.application.body
+    - field.field.node.application.field_external_cots
+    - field.field.node.application.field_poc_email
+    - field.field.node.application.field_poc_name
+    - field.field.node.application.field_poc_phone
+    - node.type.application
+  module:
+    - text
+    - user
+id: node.application.default
+targetEntityType: node
+bundle: application
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_external_cots:
+    weight: 104
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_poc_email:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_poc_name:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_poc_phone:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  links:
+    weight: 100
+hidden: {  }

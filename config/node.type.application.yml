@@ -1,0 +1,17 @@
+uuid: 51a8139a-c7e0-4fba-919e-dff39a348a54
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Application
+type: application
+description: 'An internally developed or externally acquired application currently in use or in planning stages'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

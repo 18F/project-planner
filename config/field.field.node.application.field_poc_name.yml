@@ -1,0 +1,19 @@
+uuid: ae4eaaf2-c70e-4df0-8556-36465018877b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poc_name
+    - node.type.application
+id: node.application.field_poc_name
+field_name: field_poc_name
+entity_type: node
+bundle: application
+label: 'POC Name'
+description: 'The full name of the primary point of contact for this system.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

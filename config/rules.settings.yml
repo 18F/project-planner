@@ -1,0 +1,6 @@
+log_errors: warning
+debug_log: false
+debug: false
+log_level: info
+_core:
+  default_config_hash: GRsNC962TCu5SKcNfmjz23tmhokyic9cwXbcZ35XpcU
