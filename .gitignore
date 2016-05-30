@@ -1,5 +1,7 @@
 # Drupal build files
 drush/contrib
+config/*.gz
+config/*.bzip
 vendor
 web/core
 web/modules/contrib
