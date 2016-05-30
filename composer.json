@@ -38,7 +38,10 @@
     "drupal/console": "~0.10",
     "drush/drush": "~8.1",
     "drush/config-extra": "1.0.*",
-    "drupal/core": "~8.2",
+    "drupal/core": "8.1.1",
+    "drupal/field_group": "8.1.*",
+    "drupal/entity_reference_revisions": "8.1.*",
+    "drupal/panelizer": "8.3.*",
     "drupal/flysystem": "8.1.*",
     "drupal/flysystem_s3": "8.1.*",
     "drupal/rules": "8.*",
@@ -53,18 +56,20 @@
   },
   "autoload": {
     "classmap": [
-      "scripts/composer/ScriptHandler.php"
+      "scripts/composer/Initializer.php"
     ]
   },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
     "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::buildScaffold",
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\Initializer::buildScaffold",
+      "DrupalProject\\composer\\Initializer::initializeFiles",
+      "DrupalProject\\composer\\Initializer::syncConfigurations"
     ],
     "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::buildScaffold",
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\Initializer::buildScaffold",
+      "DrupalProject\\composer\\Initializer::initializeFiles",
+      "DrupalProject\\composer\\Initializer::syncConfigurations"
     ]
   },
   "extra": {
