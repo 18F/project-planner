@@ -132,11 +132,14 @@ class DrupalHandler {
     if ($import) {
       $event->getIO()->write("Synchronizing Drupal configurations");
 
+      # Ensuring that the config module is enabled
+      static::_runCommand("$vendor/drush/drush/drush -y --root='$root' pm-enable 'config'", 1800, FALSE);
+
       # Set new site UUID to old UUID
       $site_info = Yaml::parse(file_get_contents("$config/system.site.yml"));
       $uuid = $site_info['uuid'];
 
-      static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-set 'system.site' uuid '$uuid'", 1800, TRUE);
+      static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-set 'system.site' uuid '$uuid'", 1800, FALSE);
 
       # Import configurations
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --source='$config'", 7200, TRUE);
