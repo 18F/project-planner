@@ -64,11 +64,13 @@
     "post-install-cmd": [
       "DrupalProject\\composer\\Hooks::buildScaffold",
       "DrupalProject\\composer\\Hooks::initializeFiles",
+      "DrupalProject\\composer\\Hooks::initializeSite",
       "DrupalProject\\composer\\Hooks::syncConfigurations"
     ],
     "post-update-cmd": [
       "DrupalProject\\composer\\Hooks::buildScaffold",
       "DrupalProject\\composer\\Hooks::initializeFiles",
+      "DrupalProject\\composer\\Hooks::initializeSite",
       "DrupalProject\\composer\\Hooks::syncConfigurations"
     ]
   },
