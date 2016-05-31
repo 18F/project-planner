@@ -65,13 +65,15 @@
       "DrupalProject\\composer\\DrupalHandler::buildScaffold",
       "DrupalProject\\composer\\DrupalHandler::initializeFiles",
       "DrupalProject\\composer\\DrupalHandler::setHashSalt",
-      "DrupalProject\\composer\\DrupalHandler::initializeSite"
+      "DrupalProject\\composer\\DrupalHandler::initializeSite",
+      "DrupalProject\\composer\\DrupalHandler::syncConfigurations"
     ],
     "post-update-cmd": [
       "DrupalProject\\composer\\DrupalHandler::buildScaffold",
       "DrupalProject\\composer\\DrupalHandler::initializeFiles",
       "DrupalProject\\composer\\DrupalHandler::setHashSalt",
-      "DrupalProject\\composer\\DrupalHandler::initializeSite"
+      "DrupalProject\\composer\\DrupalHandler::initializeSite",
+      "DrupalProject\\composer\\DrupalHandler::syncConfigurations"
     ]
   },
   "extra": {

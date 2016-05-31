@@ -13,6 +13,8 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
+use Symfony\Component\Yaml\Yaml;
+
 class DrupalHandler {
 
   //----------------------------------------------------------------------------
@@ -129,6 +131,14 @@ class DrupalHandler {
 
     if ($import) {
       $event->getIO()->write("Synchronizing Drupal configurations");
+
+      # Set new site UUID to old UUID
+      $site_info = Yaml::parse(file_get_contents("$config/system.site.yml"));
+      $uuid = $site_info['uuid'];
+
+      static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-set 'system.site' uuid '$uuid'", 1800, TRUE);
+
+      # Import configurations
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --source='$config'", 7200, TRUE);
     }
   }
