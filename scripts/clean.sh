@@ -47,6 +47,4 @@ rm -Rf web/themes/contrib
 rm -Rf web/profiles/contrib
 rm -Rf web/libraries
 
-rm -Rf web/sites/*/files
-
 echo "Successfully cleaned all Drupal application build files"
