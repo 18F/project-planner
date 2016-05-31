@@ -277,7 +277,7 @@ $databases['default']['default'] = array(
  *   );
  * @endcode
  */
-$config_directories['sync'] = __DIR__ . '/../../config';
+$config_directories['sync'] = __DIR__ . '/../../../config';
 
 /**
  * Flysystem.
