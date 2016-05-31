@@ -8,3 +8,4 @@ applications:
   buildpack: https://github.com/ddollar/heroku-buildpack-multi.git
   env:
     APP_LOG_LEVEL: INFO
+    APP_FILES_REGION: us-east-1
