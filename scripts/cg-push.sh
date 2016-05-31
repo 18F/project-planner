@@ -67,7 +67,6 @@ fi
 
 # Prepare application (include any custom updates)
 cd "$TOP_DIR"
-composer install # Rebuild the code base to ensure we have a clean remote copy
 
 # Push application to cloud.gov 
 # (but do not start it until we create and attach the services)
