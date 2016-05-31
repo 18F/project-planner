@@ -277,7 +277,7 @@ $databases['default']['default'] = array(
  *   );
  * @endcode
  */
-$config_directories['sync'] = 'sites/default/files/config/sync';
+$config_directories['sync'] = __DIR__ . '/../../config';
 
 /**
  * Flysystem.
@@ -300,13 +300,14 @@ foreach($cf_service_data as $service_provider => $service_list) {
   }
 }
 
+$s3_region = (isset($_ENV['APP_FILES_REGION']) ? $_ENV['APP_FILES_REGION'] : 'us-east-1');
 
 $settings['flysystem']['s3'] = array(
   'driver' => 's3',
   'config' => array(
     'key'    => $s3_services[0]['credentials']['access_key_id'],
     'secret' => $s3_services[0]['credentials']['secret_access_key'],
-    'region' => $s3_services[0]['credentials']['secret'],
+    'region' => $s3_region,
     'bucket' => $s3_services[0]['credentials']['bucket'],
 
     // Optional configuration settings.
@@ -359,7 +360,7 @@ $settings['install_profile'] = 'standard';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'Wyu2EkD2lzJ3RiFtlUDicFVWJSLWlkntElZAH-KMumDwPg-V20oMeYOoa2hYAPGIAWn9lDVIqg';
+$settings['hash_salt'] = file_get_contents(__DIR__ . '/../../../private/hash_salt.txt');
 
 /**
  * Deployment identifier.
