@@ -64,12 +64,14 @@
     "post-install-cmd": [
       "DrupalProject\\composer\\DrupalHandler::buildScaffold",
       "DrupalProject\\composer\\DrupalHandler::initializeFiles",
-      "DrupalProject\\composer\\DrupalHandler::setHashSalt"
+      "DrupalProject\\composer\\DrupalHandler::setHashSalt",
+      "DrupalProject\\composer\\DrupalHandler::initializeSite"
     ],
     "post-update-cmd": [
       "DrupalProject\\composer\\DrupalHandler::buildScaffold",
       "DrupalProject\\composer\\DrupalHandler::initializeFiles",
-      "DrupalProject\\composer\\DrupalHandler::setHashSalt"
+      "DrupalProject\\composer\\DrupalHandler::setHashSalt",
+      "DrupalProject\\composer\\DrupalHandler::initializeSite"
     ]
   },
   "extra": {

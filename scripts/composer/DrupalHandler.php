@@ -37,13 +37,13 @@ class DrupalHandler {
 
     // Prepare the settings file for installation
     if ($fs->exists($root . '/sites/default/settings.php')) {
-      $fs->chmod($root . '/sites/default/settings.php', 0666);
+      $fs->chmod($root . '/sites/default/settings.php', 0444);
       $event->getIO()->write("Ensure sites/default/settings.php file is read only");
     }
 
     // Prepare the services file for installation
     if ($fs->exists($root . '/sites/default/services.yml')) {
-      $fs->chmod($root . '/sites/default/services.yml', 0666);
+      $fs->chmod($root . '/sites/default/services.yml', 0444);
       $event->getIO()->write("Ensure sites/default/services.yml file is read only");
     }
 
@@ -54,13 +54,6 @@ class DrupalHandler {
       umask($oldmask);
       $event->getIO()->write("Create a sites/default/files directory with chmod 0777");
     }
-    // Initialize configuration sync directory
-    #if (!$fs->exists($root . '/sites/default/files/config/sync')) {
-    #  $oldmask = umask(0);
-    #  $fs->mkdir($root . '/sites/default/files/config/sync', 0777);
-    #  umask($oldmask);
-    #  $event->getIO()->write("Create a sites/default/files/config/sync directory with chmod 0777");
-    #}
     // Initialize CSS aggregation directory
     if (!$fs->exists($root . '/sites/default/files/css')) {
       $oldmask = umask(0);
@@ -82,14 +75,14 @@ class DrupalHandler {
   }
 
   /**
-   * Do something awesome
+   * Initialize a new Drupal site
    */
   public static function initializeSite(Event $event) {
     $fs = new Filesystem();
     $cwd = getcwd();
-    $config = static::_getDrupalConfig($cwd);
     $vendor = static::_getDrupalVendor($cwd);
     $root = static::_getDrupalRoot($cwd);
+    $db = static::_getDrupalBootstrapDB($cwd);
 
     try {
       # Command to check for existence of Drupal site
@@ -97,17 +90,19 @@ class DrupalHandler {
     }
     catch (ProcessFailedException $error) {
       # Get MySQL database connection
-      $mysql_uri = static::_getDrupalMySQL();
+      $mysql_conn = static::_getDrupalMySQL();
 
-      if (!is_null($mysql_uri)) {
-        $event->getIO()->write("Installing Drupal");
+      if (!is_null($mysql_conn)) {
+        $event->getIO()->write("Bootstrapping Drupal");
 
         # Try to install an initial Drupal site
         $event->getIO()->write(static::_runCommand(
-          "$vendor/drush/drush/drush -y --root='$root' site-install ".
-          "--db-url='$mysql_uri' ".
-          "--config-dir='$config' ".
-          "config_installer"
+          "mysql --host=" . $mysql_conn['host'] .
+          " --port=" . $mysql_conn['port'] .
+          " --user=" . $mysql_conn['username'] .
+          " --password=" . $mysql_conn['password'] .
+          " --database=" . $mysql_conn['db_name'] .
+          " < $db"
         ), 7200, TRUE);
       }
     }
@@ -176,7 +171,7 @@ class DrupalHandler {
     if (empty($mysql_services)) {
       return NULL;
     }
-    return $mysql_services[0]['credentials']['uri'];
+    return $mysql_services[0]['credentials'];
   }
 
   /**
@@ -208,9 +203,16 @@ class DrupalHandler {
   }
 
   /**
+   * Return the Rood Drupal configuration directory
+   */
+  protected static function _getDrupalBootstrapDB($project_root) {
+    return $project_root .  '/db/bootstrap.sql';
+  }
+
+  /**
    * Run a command as a process on the local system
    */
-  public static function _runCommand($command, $timeout = 3600, $follow = TRUE) {
+  protected static function _runCommand($command, $timeout = 3600, $follow = TRUE) {
     $process = new Process($command);
     $process->setTimeout($timeout);
     $process->setIdleTimeout($timeout);
@@ -238,7 +240,7 @@ class DrupalHandler {
   /**
    * Generate a random string of a specified length
    */
-  public static function _generateRandomString($length = 100) {
+  protected static function _generateRandomString($length = 100) {
     return substr(str_repeat(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), ceil($length / 60)), 0, $length);
   }
 }
