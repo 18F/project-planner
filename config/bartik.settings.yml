@@ -4,8 +4,9 @@ features:
   comment_user_verification: true
   favicon: true
 logo:
-  use_default: true
-  path: ''
+  use_default: false
+  path: assets/logo.png
 favicon:
-  use_default: true
-  path: ''
+  use_default: false
+  path: assets/favicon.ico
+  mimetype: image/vnd.microsoft.icon
