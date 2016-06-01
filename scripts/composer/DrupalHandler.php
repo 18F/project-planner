@@ -8,6 +8,7 @@
 namespace DrupalProject\composer;
 
 use Composer\Script\Event;
+
 use Symfony\Component\Filesystem\Filesystem;
 
 use Symfony\Component\Process\Process;
@@ -19,16 +20,6 @@ class DrupalHandler {
 
   //----------------------------------------------------------------------------
   // Initialization methods
-
-  /**
-   * Build Drupal Scaffold plugin stuff
-   */
-  public static function buildScaffold(Event $event) {
-    $fs = new Filesystem();
-    if (!$fs->exists(static::_getDrupalRoot(getcwd()) . '/autoload.php')) {
-      \DrupalComposer\DrupalScaffold\Plugin::scaffold($event);
-    }
-  }
 
   /**
    * Initialize public web facing files and directories
@@ -233,11 +224,11 @@ class DrupalHandler {
     $process->run(function ($type, $buffer) use (&$follow) {
       if ($type === Process::ERR) {
         if (!is_null($follow)) {
-          echo '[ERROR]> ' . $buffer;
+          echo ' > ' . $buffer;
         }
       } else {
         if ($follow) {
-          echo '[OUTPUT]> ' . $buffer;
+          echo ' > ' . $buffer;
         }
       }
     });
