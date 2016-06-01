@@ -1,20 +1,20 @@
-uuid: 18472487-82e3-4bac-8c45-3847c8ceee51
+uuid: 54664196-cf4f-4163-9feb-3c7ef4e1aeaa
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_success_criteria
     - node.type.workflow
   module:
     - text
-id: node.workflow.body
-field_name: body
+id: node.workflow.field_success_criteria
+field_name: field_success_criteria
 entity_type: node
 bundle: workflow
-label: Purpose
+label: 'Success Criteria'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

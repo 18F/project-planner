@@ -1,20 +1,20 @@
-uuid: 18472487-82e3-4bac-8c45-3847c8ceee51
+uuid: 9c1a1120-f73f-4cba-8568-5c190e5faa66
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_requirements
     - node.type.workflow
   module:
     - text
-id: node.workflow.body
-field_name: body
+id: node.workflow.field_requirements
+field_name: field_requirements
 entity_type: node
 bundle: workflow
-label: Purpose
+label: Requirements
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

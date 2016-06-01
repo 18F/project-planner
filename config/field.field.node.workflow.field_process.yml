@@ -1,20 +1,20 @@
-uuid: 18472487-82e3-4bac-8c45-3847c8ceee51
+uuid: 76755bc7-07bd-4ebc-bbae-387a478d9226
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_process
     - node.type.workflow
   module:
     - text
-id: node.workflow.body
-field_name: body
+id: node.workflow.field_process
+field_name: field_process
 entity_type: node
 bundle: workflow
-label: Purpose
+label: Process
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
