@@ -1,0 +1,19 @@
+uuid: f02b81b1-9fce-4594-bfea-e8e2dffde7d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poc_email
+    - node.type.infrastructure
+id: node.infrastructure.field_poc_email
+field_name: field_poc_email
+entity_type: node
+bundle: infrastructure
+label: 'POC Email'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

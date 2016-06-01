@@ -1,0 +1,23 @@
+uuid: 9d8bdf57-792b-4fa5-99df-1f46ded582b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mission_critical
+    - node.type.infrastructure
+id: node.infrastructure.field_mission_critical
+field_name: field_mission_critical
+entity_type: node
+bundle: infrastructure
+label: 'Mission Critical'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

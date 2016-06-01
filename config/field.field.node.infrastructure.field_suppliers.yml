@@ -1,0 +1,29 @@
+uuid: 0b929d11-39f7-4c9a-bb83-9266fc4fc464
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_suppliers
+    - node.type.infrastructure
+    - node.type.supplier
+id: node.infrastructure.field_suppliers
+field_name: field_suppliers
+entity_type: node
+bundle: infrastructure
+label: Suppliers
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      supplier: supplier
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

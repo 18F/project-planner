@@ -1,0 +1,23 @@
+uuid: 4d3b8146-ab36-4e15-98f2-c73d125b80bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sensitive
+    - node.type.infrastructure
+id: node.infrastructure.field_sensitive
+field_name: field_sensitive
+entity_type: node
+bundle: infrastructure
+label: Sensitive
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

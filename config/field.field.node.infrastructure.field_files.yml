@@ -1,0 +1,27 @@
+uuid: 3d796809-c4ce-4a81-a478-8ecdfab19c27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_files
+    - node.type.infrastructure
+  module:
+    - file
+id: node.infrastructure.field_files
+field_name: field_files
+entity_type: node
+bundle: infrastructure
+label: Files
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'flysystem-[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf csv xls doc docx pps ppt odf odt ods tar gz bzip'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

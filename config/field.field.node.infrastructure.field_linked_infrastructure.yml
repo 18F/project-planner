@@ -1,0 +1,28 @@
+uuid: 1c5e0070-34e6-4740-985a-13abc81588a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_infrastructure
+    - node.type.infrastructure
+id: node.infrastructure.field_linked_infrastructure
+field_name: field_linked_infrastructure
+entity_type: node
+bundle: infrastructure
+label: 'Linked Infrastructure'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      infrastructure: infrastructure
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
