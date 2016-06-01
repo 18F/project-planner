@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.team.body
+    - field.field.node.team.field_members
     - node.type.team
   module:
     - text
@@ -19,6 +20,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_members:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   links:
     weight: 100
 hidden: {  }

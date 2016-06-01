@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.team.body
+    - field.field.node.team.field_members
     - node.type.team
   module:
     - field_group
@@ -23,6 +24,18 @@ third_party_settings:
         classes: ''
         id: ''
         required_fields: true
+    group_participants:
+      children:
+        - field_members
+      parent_name: ''
+      weight: 1
+      label: Participants
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
 id: node.team.default
 targetEntityType: node
 bundle: team
@@ -36,6 +49,14 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+  field_members:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
   title:
     type: string_textfield
     weight: 1

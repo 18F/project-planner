@@ -13,5 +13,5 @@ type: application
 description: 'A current or planned project to internally develop or externally acquire an application'
 help: ''
 new_revision: true
-preview_mode: 1
+preview_mode: 0
 display_submitted: true
