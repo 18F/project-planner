@@ -4,7 +4,7 @@ base theme: bootstrap
 
 name: '18F Bootstrap extension theme (based on CDN)'
 description: 'Uses the jsDelivr CDN for all CSS and JavaScript. No source files or compiling is necessary and is recommended for simple sites or beginners.'
-package: 'Bootstrap'
+package: '18F Bootstrap'
 
 regions:
   navigation: 'Navigation'
