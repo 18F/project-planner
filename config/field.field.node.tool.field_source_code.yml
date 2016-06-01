@@ -1,0 +1,23 @@
+uuid: afbc1783-2350-4316-864e-3dacc9b0adf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_code
+    - node.type.tool
+  module:
+    - link
+id: node.tool.field_source_code
+field_name: field_source_code
+entity_type: node
+bundle: tool
+label: 'Source Code'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

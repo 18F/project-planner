@@ -1,0 +1,23 @@
+uuid: 0d9a6f9c-60bf-4cd9-8823-5d0930c6e4a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_issue_tracker
+    - node.type.tool
+  module:
+    - link
+id: node.tool.field_issue_tracker
+field_name: field_issue_tracker
+entity_type: node
+bundle: tool
+label: 'Issue Tracker'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link
