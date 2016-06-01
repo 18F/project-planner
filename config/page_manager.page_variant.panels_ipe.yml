@@ -1,0 +1,38 @@
+uuid: 59735a9b-eb9c-47b3-9dd0-aab1dc97052e
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.home_page
+  module:
+    - panels
+    - system
+id: panels_ipe
+label: 'Panels IPE'
+variant: panels_variant
+variant_settings:
+  blocks:
+    8ef65da2-1767-4cf3-bcc2-56c6f4ac7ebd:
+      id: system_messages_block
+      label: Messages
+      provider: system
+      label_display: '0'
+      region: right
+      weight: 0
+      uuid: 8ef65da2-1767-4cf3-bcc2-56c6f4ac7ebd
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 289bc697-235d-4793-9d1d-c199b3a70077
+  label: null
+  weight: 0
+  layout: twocol
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: panels_ipe
+  builder: ipe
+page: home_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
