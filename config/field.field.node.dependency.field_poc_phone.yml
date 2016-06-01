@@ -1,0 +1,21 @@
+uuid: 49b39498-fe22-4c70-923f-b61d8a062f83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poc_phone
+    - node.type.dependency
+  module:
+    - telephone
+id: node.dependency.field_poc_phone
+field_name: field_poc_phone
+entity_type: node
+bundle: dependency
+label: 'POC Phone'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

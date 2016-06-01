@@ -1,0 +1,29 @@
+uuid: 0674ea81-a77a-49b7-87a5-ddea386c5f39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_tools
+    - node.type.dependency
+    - node.type.tool
+id: node.dependency.field_linked_tools
+field_name: field_linked_tools
+entity_type: node
+bundle: dependency
+label: 'Linked Tools'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      tool: tool
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
