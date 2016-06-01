@@ -146,7 +146,7 @@ content:
     third_party_settings: {  }
     type: string
   field_poc_phone:
-    weight: 106
+    weight: 123
     label: above
     settings: {  }
     third_party_settings: {  }

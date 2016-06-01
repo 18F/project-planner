@@ -1,4 +1,4 @@
-uuid: f0adbed9-e7f5-41bf-bcc9-18481e612cd6
+uuid: d6d09754-7e8d-48af-8091-25517ac06797
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ type: telephone
 settings: {  }
 module: telephone
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

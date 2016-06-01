@@ -38,8 +38,8 @@ third_party_settings:
       children:
         - title
         - body
-        - field_architecture
         - group_classification
+        - field_architecture
       parent_name: ''
       weight: 0
       label: Overview
@@ -204,7 +204,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_reference_autocomplete_tags
   field_linked_dependencies:
     weight: 33
     settings:
@@ -212,7 +212,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_reference_autocomplete_tags
   field_linked_infrastructure:
     weight: 31
     settings:
@@ -220,7 +220,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_reference_autocomplete_tags
   field_linked_services:
     weight: 30
     settings:
@@ -228,7 +228,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_reference_autocomplete_tags
   field_linked_tools:
     weight: 32
     settings:
@@ -236,7 +236,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_reference_autocomplete_tags
   field_linked_workflows:
     weight: 34
     settings:
@@ -244,7 +244,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_reference_autocomplete_tags
   field_mission_critical:
     weight: 4
     settings:
@@ -266,7 +266,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_poc_phone:
-    weight: 5
+    weight: 35
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -286,20 +286,14 @@ content:
     type: link_default
   field_suppliers:
     weight: 28
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_team:
     weight: 27
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   title:
     type: string_textfield
     weight: 1
