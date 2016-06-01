@@ -1,0 +1,18 @@
+uuid: 6a400201-c9d9-4a99-875a-deea89015ae0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.workflow
+id: node.workflow.title
+field_name: title
+entity_type: node
+bundle: workflow
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

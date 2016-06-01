@@ -1,17 +1,17 @@
-uuid: 381445c2-686e-4c94-ae39-8d9de243ce5c
+uuid: 337def06-d0b4-4e82-b646-5313d2a6f5fd
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.application.body
-    - node.type.application
+    - field.field.node.workflow.body
+    - node.type.workflow
   module:
     - text
     - user
-id: node.application.teaser
+id: node.workflow.teaser
 targetEntityType: node
-bundle: application
+bundle: workflow
 mode: teaser
 content:
   body:
@@ -23,8 +23,4 @@ content:
     third_party_settings: {  }
   links:
     weight: 100
-hidden:
-  field_external_cots: true
-  field_poc_email: true
-  field_poc_name: true
-  field_poc_phone: true
+hidden: {  }

@@ -1,15 +1,15 @@
-uuid: 262fc33f-f779-4d08-9f88-03546aa0d5fa
+uuid: a852b68b-2b93-4a13-af8f-7e07a9a1c567
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_external_cots
+    - field.storage.node.field_sensitive
     - node.type.application
-id: node.application.field_external_cots
-field_name: field_external_cots
+id: node.application.field_sensitive
+field_name: field_sensitive
 entity_type: node
 bundle: application
-label: 'External COTS'
+label: Sensitive
 description: ''
 required: false
 translatable: false

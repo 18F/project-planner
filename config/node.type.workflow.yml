@@ -1,4 +1,4 @@
-uuid: 51a8139a-c7e0-4fba-919e-dff39a348a54
+uuid: a6001b98-8d79-4647-8554-5a3b184eacbf
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Application
-type: application
-description: 'A current or planned project to internally develop or externally acquire an application'
+name: Workflow
+type: workflow
+description: 'A current or planned process that is deployed across projects'
 help: ''
 new_revision: true
 preview_mode: 1

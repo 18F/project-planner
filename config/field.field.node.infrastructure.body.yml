@@ -1,17 +1,17 @@
-uuid: 61565182-6246-4c91-b86d-6f20f9c2ac92
+uuid: 9d5a4ee3-bd88-4cea-8d06-e620082812a9
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.application
+    - node.type.infrastructure
   module:
     - text
-id: node.application.body
+id: node.infrastructure.body
 field_name: body
 entity_type: node
-bundle: application
-label: 'Description (Purpose)'
+bundle: infrastructure
+label: Description
 description: ''
 required: true
 translatable: true

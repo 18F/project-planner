@@ -1,0 +1,17 @@
+uuid: a1ab624e-9922-4154-91dd-37d1a2edc8ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Tool
+type: tool
+description: 'A current or planned project to develop or acquire a software or hardware productivity tool that can be used across multiple projects'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,15 +1,15 @@
-uuid: 262fc33f-f779-4d08-9f88-03546aa0d5fa
+uuid: 6353edbc-87d9-4b4c-add5-e0f416185e74
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_external_cots
+    - field.storage.node.field_mission_critical
     - node.type.application
-id: node.application.field_external_cots
-field_name: field_external_cots
+id: node.application.field_mission_critical
+field_name: field_mission_critical
 entity_type: node
 bundle: application
-label: 'External COTS'
+label: 'Mission Critical'
 description: ''
 required: false
 translatable: false

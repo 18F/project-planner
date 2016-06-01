@@ -1,19 +1,19 @@
-uuid: 61565182-6246-4c91-b86d-6f20f9c2ac92
+uuid: f2eca299-de5c-48ea-a48b-db8cc723f103
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.application
+    - node.type.supplier
   module:
     - text
-id: node.application.body
+id: node.supplier.body
 field_name: body
 entity_type: node
-bundle: application
-label: 'Description (Purpose)'
+bundle: supplier
+label: Description
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

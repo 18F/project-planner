@@ -1,15 +1,16 @@
-uuid: 078e889c-f48f-4681-bb88-416084db8211
+uuid: 148f7133-0b2f-4620-b25e-9012d363d637
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-id: node.field_poc_email
-field_name: field_poc_email
+id: node.field_source_code
+field_name: field_source_code
 entity_type: node
-type: email
+type: link
 settings: {  }
-module: core
+module: link
 locked: false
 cardinality: 1
 translatable: true

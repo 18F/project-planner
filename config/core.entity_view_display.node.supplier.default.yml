@@ -1,0 +1,24 @@
+uuid: 81e124f0-5a0c-4d4b-bbc8-7a5ae32230b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.supplier.body
+    - node.type.supplier
+  module:
+    - text
+    - user
+id: node.supplier.default
+targetEntityType: node
+bundle: supplier
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

@@ -1,4 +1,4 @@
-uuid: 51a8139a-c7e0-4fba-919e-dff39a348a54
+uuid: 3e14339b-5358-439e-8de1-e10c78de12d6
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Application
-type: application
-description: 'A current or planned project to internally develop or externally acquire an application'
+name: Supplier
+type: supplier
+description: 'An external partner that supplies commercial goods and services to serve the needs of internal projects'
 help: ''
 new_revision: true
 preview_mode: 1

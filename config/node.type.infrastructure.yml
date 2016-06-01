@@ -1,0 +1,17 @@
+uuid: 5296da5a-5dcf-45f1-877c-44e7ba622874
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Infrastructure
+type: infrastructure
+description: 'A current or planned project that involves the management of physical or low level technological dependencies'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

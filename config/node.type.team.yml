@@ -1,4 +1,4 @@
-uuid: 51a8139a-c7e0-4fba-919e-dff39a348a54
+uuid: 151ed45e-3f8f-4db6-87f6-acdfc672cd5e
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Application
-type: application
-description: 'A current or planned project to internally develop or externally acquire an application'
+name: Team
+type: team
+description: 'An internal group that manages projects and suppliers'
 help: ''
 new_revision: true
 preview_mode: 1

@@ -1,13 +1,13 @@
-uuid: 078e889c-f48f-4681-bb88-416084db8211
+uuid: d4f2fbe5-8b1d-4726-8d70-3720da522da8
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_poc_email
-field_name: field_poc_email
+id: node.field_sensitive
+field_name: field_sensitive
 entity_type: node
-type: email
+type: boolean
 settings: {  }
 module: core
 locked: false

@@ -1,0 +1,24 @@
+uuid: ef87c827-2ba2-4a3d-b87f-274935acbc40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.infrastructure.body
+    - node.type.infrastructure
+  module:
+    - text
+    - user
+id: node.infrastructure.default
+targetEntityType: node
+bundle: infrastructure
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

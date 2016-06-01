@@ -1,14 +1,15 @@
-uuid: 078e889c-f48f-4681-bb88-416084db8211
+uuid: 5b9d3ef1-4c6f-4f46-9565-691e4ae4f51b
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_poc_email
-field_name: field_poc_email
+id: node.field_team
+field_name: field_team
 entity_type: node
-type: email
-settings: {  }
+type: entity_reference
+settings:
+  target_type: node
 module: core
 locked: false
 cardinality: 1

@@ -4,15 +4,152 @@ status: true
 dependencies:
   config:
     - field.field.node.application.body
+    - field.field.node.application.field_architecture
+    - field.field.node.application.field_diagrams
     - field.field.node.application.field_external_cots
+    - field.field.node.application.field_files
+    - field.field.node.application.field_issue_tracker
+    - field.field.node.application.field_linked_applications
+    - field.field.node.application.field_linked_dependencies
+    - field.field.node.application.field_linked_infrastructure
+    - field.field.node.application.field_linked_services
+    - field.field.node.application.field_linked_tools
+    - field.field.node.application.field_linked_workflows
+    - field.field.node.application.field_mission_critical
     - field.field.node.application.field_poc_email
     - field.field.node.application.field_poc_name
     - field.field.node.application.field_poc_phone
+    - field.field.node.application.field_sensitive
+    - field.field.node.application.field_source_code
+    - field.field.node.application.field_suppliers
+    - field.field.node.application.field_team
+    - image.style.thumbnail
     - node.type.application
   module:
-    - path
+    - field_group
+    - file
+    - image
+    - link
     - telephone
     - text
+third_party_settings:
+  field_group:
+    group_overview:
+      children:
+        - title
+        - body
+        - field_architecture
+        - group_classification
+      parent_name: ''
+      weight: 0
+      label: Overview
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+        formatter: closed
+        effect: none
+        direction: vertical
+    group_point_of_contact:
+      children:
+        - field_poc_name
+        - field_poc_email
+        - field_poc_phone
+      parent_name: ''
+      weight: 1
+      label: 'Point of Contact'
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+        formatter: closed
+        effect: none
+        direction: vertical
+    group_dependencies:
+      children:
+        - field_linked_applications
+        - field_linked_services
+        - field_linked_infrastructure
+        - field_linked_tools
+        - field_linked_dependencies
+        - field_linked_workflows
+      parent_name: ''
+      weight: 5
+      label: Dependencies
+      format_type: fieldset
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+        description: ''
+        required_fields: true
+    group_participants:
+      children:
+        - field_team
+        - field_suppliers
+      parent_name: ''
+      weight: 2
+      label: Participants
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+        formatter: closed
+        effect: none
+        direction: vertical
+    group_assets:
+      children:
+        - field_diagrams
+        - field_files
+      parent_name: ''
+      weight: 4
+      label: Assets
+      format_type: fieldset
+      format_settings:
+        label: Assets
+        required_fields: true
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        effect: none
+        direction: vertical
+    group_links:
+      children:
+        - field_source_code
+        - field_issue_tracker
+      parent_name: ''
+      weight: 3
+      label: Links
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+        formatter: closed
+        effect: none
+        direction: vertical
+    group_classification:
+      children:
+        - field_mission_critical
+        - field_sensitive
+        - field_external_cots
+      parent_name: group_overview
+      weight: 3
+      label: Classification
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
 id: node.application.default
 targetEntityType: node
 bundle: application
@@ -20,73 +157,159 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 2
     settings:
-      rows: 9
+      rows: 5
+      placeholder: ''
       summary_rows: 3
+    third_party_settings: {  }
+  field_architecture:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+      summary_rows: 3
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+  field_diagrams:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_external_cots:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_files:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_issue_tracker:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_linked_applications:
+    weight: 29
+    settings:
+      match_operator: CONTAINS
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-  created:
-    type: datetime_timestamp
-    weight: 10
-    settings: {  }
+    type: entity_reference_autocomplete
+  field_linked_dependencies:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-  field_external_cots:
+    type: entity_reference_autocomplete
+  field_linked_infrastructure:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_linked_services:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_linked_tools:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_linked_workflows:
     weight: 34
     settings:
-      display_label: false
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_mission_critical:
+    weight: 4
+    settings:
+      display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_poc_email:
-    weight: 35
+    weight: 4
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: email_default
   field_poc_name:
-    weight: 33
+    weight: 3
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_poc_phone:
-    weight: 36
+    weight: 5
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
-  path:
-    type: path
-    weight: 30
-    settings: {  }
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 15
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
-    third_party_settings: {  }
-  title:
-    type: string_textfield
-    weight: -5
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
+  field_sensitive:
     weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_source_code:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_suppliers:
+    weight: 28
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+    type: entity_reference_autocomplete
+  field_team:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  title:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

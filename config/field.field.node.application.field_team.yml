@@ -1,0 +1,29 @@
+uuid: 8597386c-1931-4a43-a6d8-f2baf80eb484
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team
+    - node.type.application
+    - node.type.team
+id: node.application.field_team
+field_name: field_team
+entity_type: node
+bundle: application
+label: Team
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      team: team
+    sort:
+      field: title
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

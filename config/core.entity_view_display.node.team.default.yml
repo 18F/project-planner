@@ -1,0 +1,24 @@
+uuid: 100618b0-0c48-4c33-99e7-f2c982d4fa1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.team.body
+    - node.type.team
+  module:
+    - text
+    - user
+id: node.team.default
+targetEntityType: node
+bundle: team
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

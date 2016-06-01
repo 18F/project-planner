@@ -10,7 +10,7 @@ field_name: field_poc_name
 entity_type: node
 bundle: application
 label: 'POC Name'
-description: 'The full name of the primary point of contact for this system.'
+description: ''
 required: true
 translatable: false
 default_value: {  }

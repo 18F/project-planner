@@ -12,7 +12,7 @@ field_name: field_poc_phone
 entity_type: node
 bundle: application
 label: 'POC Phone'
-description: 'Optional phone numbers for reaching primary point of contact'
+description: ''
 required: false
 translatable: false
 default_value: {  }
