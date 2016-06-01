@@ -315,8 +315,9 @@ $settings['flysystem']['s3'] = array(
       'ACL' => 'public-read',
       'StorageClass' => 'REDUCED_REDUNDANCY',
     ),
-    'protocol' => 'https',            // Will be autodetected based on the current request.
-    'prefix' => 'an/optional/prefix', // Directory prefix for all uploaded/viewed files.
+    'protocol' => 'https',      // Will be autodetected based on the current request.
+    'prefix' => 'flysystem-s3', // Directory prefix for all uploaded/viewed files.
+    'cname' => 's3.amazonaws.com'
   ),
   'cache' => TRUE, // Creates a metadata cache to speed up lookups.
 );
