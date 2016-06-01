@@ -1,0 +1,29 @@
+uuid: b8caeaa1-a5d4-43f4-92af-4f8dfca56e91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_applications
+    - node.type.application
+    - node.type.service
+id: node.service.field_linked_applications
+field_name: field_linked_applications
+entity_type: node
+bundle: service
+label: 'Linked Applications'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      application: application
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

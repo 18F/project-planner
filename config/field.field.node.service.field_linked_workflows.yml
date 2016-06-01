@@ -1,0 +1,29 @@
+uuid: 50877069-df6c-427c-9851-e8a624bddf10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_workflows
+    - node.type.service
+    - node.type.workflow
+id: node.service.field_linked_workflows
+field_name: field_linked_workflows
+entity_type: node
+bundle: service
+label: 'Linked Workflows'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      workflow: workflow
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 57b4a68c-324c-4688-845f-f1bbce0a3b08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poc_phone
+    - node.type.service
+  module:
+    - telephone
+id: node.service.field_poc_phone
+field_name: field_poc_phone
+entity_type: node
+bundle: service
+label: 'POC Phone'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

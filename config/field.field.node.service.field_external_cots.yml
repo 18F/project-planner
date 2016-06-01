@@ -1,0 +1,23 @@
+uuid: e3ab3537-2470-4e2c-9bfc-d9c314322bb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_cots
+    - node.type.service
+id: node.service.field_external_cots
+field_name: field_external_cots
+entity_type: node
+bundle: service
+label: 'External COTS'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
