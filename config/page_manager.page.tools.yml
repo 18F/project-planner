@@ -1,0 +1,11 @@
+uuid: 069517e1-55e2-4a3e-bac2-9d84adba2027
+langcode: en
+status: true
+dependencies: {  }
+id: tools
+label: Tools
+use_admin_theme: false
+path: /tools
+access_logic: and
+access_conditions: {  }
+parameters: {  }

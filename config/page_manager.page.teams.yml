@@ -1,0 +1,11 @@
+uuid: fef69604-39cc-41da-b6db-b59399adbeac
+langcode: en
+status: true
+dependencies: {  }
+id: teams
+label: Teams
+use_admin_theme: false
+path: /teams
+access_logic: and
+access_conditions: {  }
+parameters: {  }

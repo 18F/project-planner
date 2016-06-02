@@ -1,0 +1,11 @@
+uuid: abdafbd8-4fe4-40e5-bd3c-e95f9c724373
+langcode: en
+status: true
+dependencies: {  }
+id: infrastructure
+label: Infrastructure
+use_admin_theme: false
+path: /infrastructure
+access_logic: and
+access_conditions: {  }
+parameters: {  }

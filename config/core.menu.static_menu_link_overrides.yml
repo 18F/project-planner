@@ -1,6 +1,6 @@
 definitions:
   contact__site_page:
-    weight: -49
+    weight: -50
     menu_name: footer
     parent: ''
     expanded: false

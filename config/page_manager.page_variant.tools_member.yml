@@ -1,0 +1,37 @@
+uuid: 5cb7027a-0110-40b5-be3f-4ba26d22edbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.tools
+  module:
+    - panels
+    - user
+id: tools_member
+label: Member
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  uuid: fc7e9773-9b11-43b2-a133-647cd1849fff
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: tools_member
+  builder: ipe
+page: tools
+weight: 0
+selection_criteria:
+  2d9041bf-352b-4fe9-ba9c-6f56613dea46:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: 2d9041bf-352b-4fe9-ba9c-6f56613dea46
+selection_logic: and
+static_context: {  }

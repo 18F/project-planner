@@ -1,0 +1,46 @@
+uuid: 4ad51b95-0203-4ecb-8375-72bcb23d4506
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.teams
+  module:
+    - panels
+    - user
+id: teams_anonymous
+label: Anonymous
+variant: panels_variant
+variant_settings:
+  blocks:
+    aadea5b1-ba29-44b8-907d-dbb9e5c4920b:
+      id: user_login_block
+      label: 'Login required'
+      provider: user
+      label_display: visible
+      region: middle
+      weight: 0
+      uuid: aadea5b1-ba29-44b8-907d-dbb9e5c4920b
+      context_mapping: {  }
+  id: panels_variant
+  uuid: ba364a4d-6c96-435c-a323-956773addbd6
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: teams_anonymous
+  builder: ipe
+page: teams
+weight: 0
+selection_criteria:
+  1107501b-28d2-467d-8c7f-aea7a8febdf8:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: 1107501b-28d2-467d-8c7f-aea7a8febdf8
+selection_logic: and
+static_context: {  }

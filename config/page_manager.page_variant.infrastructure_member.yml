@@ -1,0 +1,37 @@
+uuid: 4f0e272f-ebe7-4c4d-8dc9-0b8951760a31
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.infrastructure
+  module:
+    - panels
+    - user
+id: infrastructure_member
+label: Member
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  uuid: d4b861e0-c3cf-465d-bdc3-0a983d74ed35
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: infrastructure_member
+  builder: ipe
+page: infrastructure
+weight: 0
+selection_criteria:
+  c7443c8b-9943-45c8-aaf5-d0dbb7518681:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: c7443c8b-9943-45c8-aaf5-d0dbb7518681
+selection_logic: and
+static_context: {  }

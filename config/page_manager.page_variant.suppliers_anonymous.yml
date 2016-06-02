@@ -1,0 +1,46 @@
+uuid: 366a8899-fc76-43c0-b6f9-1ac33aa966f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.suppliers
+  module:
+    - panels
+    - user
+id: suppliers_anonymous
+label: Anonymous
+variant: panels_variant
+variant_settings:
+  blocks:
+    f01f0921-294b-46c1-a73d-f3ea50620697:
+      id: user_login_block
+      label: 'Login required'
+      provider: user
+      label_display: visible
+      region: middle
+      weight: 0
+      uuid: f01f0921-294b-46c1-a73d-f3ea50620697
+      context_mapping: {  }
+  id: panels_variant
+  uuid: a3ee0235-ef85-4eb7-9a34-5086618a34e1
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: suppliers_anonymous
+  builder: ipe
+page: suppliers
+weight: 0
+selection_criteria:
+  8ed1de6e-75bf-418a-8024-37ffeb8a65fc:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: 8ed1de6e-75bf-418a-8024-37ffeb8a65fc
+selection_logic: and
+static_context: {  }

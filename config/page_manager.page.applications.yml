@@ -1,0 +1,11 @@
+uuid: 654dee16-7db0-4a83-a2cb-d781dc073465
+langcode: en
+status: true
+dependencies: {  }
+id: applications
+label: Applications
+use_admin_theme: false
+path: /applications
+access_logic: and
+access_conditions: {  }
+parameters: {  }

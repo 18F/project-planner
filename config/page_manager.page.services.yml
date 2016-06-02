@@ -1,0 +1,11 @@
+uuid: 6abfeca7-378d-4c52-9e84-645bd6a7e728
+langcode: en
+status: true
+dependencies: {  }
+id: services
+label: Services
+use_admin_theme: false
+path: /services
+access_logic: and
+access_conditions: {  }
+parameters: {  }

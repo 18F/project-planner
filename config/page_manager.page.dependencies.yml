@@ -1,0 +1,11 @@
+uuid: d53a754d-0ccc-403c-a419-68716a4818e9
+langcode: en
+status: true
+dependencies: {  }
+id: dependencies
+label: Dependencies
+use_admin_theme: false
+path: /dependencies
+access_logic: and
+access_conditions: {  }
+parameters: {  }

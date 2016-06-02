@@ -1,0 +1,46 @@
+uuid: d8be0e1a-4fbb-4d99-b5cd-266e182d0fdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.services
+  module:
+    - panels
+    - user
+id: services_anonymous
+label: Anonymous
+variant: panels_variant
+variant_settings:
+  blocks:
+    358e70e9-1ecf-47fa-8b9c-889530ef92fe:
+      id: user_login_block
+      label: 'Login required'
+      provider: user
+      label_display: visible
+      region: middle
+      weight: 0
+      uuid: 358e70e9-1ecf-47fa-8b9c-889530ef92fe
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 512c937b-5e09-4400-99c0-f0ae3e17bfd0
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: services_anonymous
+  builder: ipe
+page: services
+weight: 0
+selection_criteria:
+  bb9f7321-3749-4554-a6e7-840b45a0555e:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: bb9f7321-3749-4554-a6e7-840b45a0555e
+selection_logic: and
+static_context: {  }

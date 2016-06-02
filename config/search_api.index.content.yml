@@ -41,11 +41,6 @@ field_settings:
     type: text
     indexed_locked: true
 processor_settings:
-  add_url:
-    plugin_id: add_url
-    settings:
-      weights:
-        preprocess_index: -30
   node_status:
     plugin_id: node_status
     settings:
@@ -97,6 +92,11 @@ processor_settings:
       fields: {  }
       weights:
         preprocess_index: -10
+  add_url:
+    plugin_id: add_url
+    settings:
+      weights:
+        preprocess_index: -30
   highlight:
     plugin_id: highlight
     settings:
