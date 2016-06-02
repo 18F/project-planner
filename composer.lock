@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "11cda26c1a7ecbdbd7c512aee90d01f9",
-    "content-hash": "84150874515f5289af16290853a9e445",
+    "hash": "fb274bf33810481e5eb1deaf00aa2893",
+    "content-hash": "610432cfb338afe62dfd4dea52d931a6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -787,16 +787,16 @@
             "time": "2014-09-09 13:34:57"
         },
         {
-            "name": "drupal/bootstrap",
-            "version": "8.3.0-beta3",
+            "name": "drupal/business",
+            "version": "8.1.6",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/bootstrap",
-                "reference": "d278e0d9464bda2ff320aaa0d5e541a09fb3b6a1"
+                "url": "https://git.drupal.org/project/business",
+                "reference": "8fb244def39afaf276878c6f6106b121e53fe899"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.0-beta3.zip",
+                "url": "https://ftp.drupal.org/files/projects/business-8.x-1.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -806,48 +806,16 @@
             "type": "drupal-theme",
             "extra": {
                 "branch-alias": {
-                    "dev-8.x-3.x": "8.3.x-dev"
+                    "dev-8.x-1.x": "8.1.x-dev"
                 }
             },
             "notification-url": "https://packagist.drupal-composer.org/downloads/",
             "license": [
                 "GPL-2.0+"
             ],
-            "description": "Built to use Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development.",
-            "homepage": "https://www.drupal.org/project/bootstrap",
-            "time": "2016-03-01 22:10:15"
-        },
-        {
-            "name": "drupal/bootstrap_layouts",
-            "version": "8.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/bootstrap_layouts.git",
-                "reference": "4b13a7bdf8768ee5d7dbd7beaf4b7f243463f5b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_layouts-8.x-3.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "drupal/core": "8.*",
-                "drupal/layout_plugin": "8.*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-8.x-3.x": "8.3.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.drupal-composer.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "This module is going to generate layouts with Bootstrap grid system.",
-            "homepage": "https://www.drupal.org/project/bootstrap_layouts",
-            "time": "2016-03-11 09:20:06"
+            "description": "Business is a Responsive business Drupal 8 theme. Developed by <a href=\"http://dropthemes.in\">Dropthemes.in</a>.",
+            "homepage": "https://www.drupal.org/project/business",
+            "time": "2016-05-27 08:53:18"
         },
         {
             "name": "drupal/console",
@@ -1331,52 +1299,6 @@
             "time": "2016-02-03 09:29:07"
         },
         {
-            "name": "drupal/fontyourface",
-            "version": "8.3.0-alpha2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/fontyourface",
-                "reference": "81f610429e03e21d16f6f197b4d4fd6d4e827c1e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fontyourface-8.x-3.0-alpha2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "drupal/core": "8.*",
-                "drupal/taxonomy": "8.*",
-                "drupal/views": "8.*"
-            },
-            "replace": {
-                "drupal/adobe_edge_fonts": "self.version",
-                "drupal/fontscom_api": "self.version",
-                "drupal/fontsquirrel_api": "self.version",
-                "drupal/google_fonts_api": "self.version",
-                "drupal/typekit_api": "self.version"
-            },
-            "suggest": {
-                "drupal/core": "Required by drupal/adobe_edge_fonts, drupal/fontscom_api, drupal/fontsquirrel_api, drupal/google_fonts_api, drupal/typekit_api"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-8.x-3.x": "8.3.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.drupal-composer.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Web font management tools.",
-            "homepage": "https://www.drupal.org/project/fontyourface",
-            "keywords": [
-                "Drupal"
-            ],
-            "time": "2016-05-18 07:02:20"
-        },
-        {
             "name": "drupal/layout_plugin",
             "version": "8.1.0-alpha22",
             "source": {
@@ -1731,6 +1653,89 @@
             "description": "React on events and conditionally evaluate actions.",
             "homepage": "https://www.drupal.org/project/rules",
             "time": "2016-03-07 17:31:13"
+        },
+        {
+            "name": "drupal/search_api",
+            "version": "8.1.0-alpha15",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/search_api",
+                "reference": "f8f3ce33a9f608aa830688767fd5ffbd108eb889"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.0-alpha15.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*"
+            },
+            "replace": {
+                "drupal/search_api_db": "self.version",
+                "drupal/search_api_db_defaults": "self.version"
+            },
+            "suggest": {
+                "drupal/core": "Required by drupal/search_api_db, drupal/search_api_db_defaults"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Seidl",
+                    "homepage": "https://www.drupal.org/u/drunken-monkey"
+                },
+                {
+                    "name": "Nick Veenhof",
+                    "homepage": "https://www.drupal.org/u/nick_vh"
+                },
+                {
+                    "name": "See other contributors",
+                    "homepage": "https://www.drupal.org/node/790418/committers"
+                }
+            ],
+            "description": "Provides a generic framework for modules offering search capabilities.",
+            "homepage": "https://www.drupal.org/project/search_api",
+            "time": "2016-05-20 10:43:24"
+        },
+        {
+            "name": "drupal/space",
+            "version": "8.1.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/space.git",
+                "reference": "958ef65eccd5520c9d1a28c135e2e3e5cb0966f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/space-8.x-1.0-beta2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "A theme with a space setting.",
+            "homepage": "https://www.drupal.org/project/space",
+            "time": "2016-01-18 17:27:34"
         },
         {
             "name": "drush/config-extra",
