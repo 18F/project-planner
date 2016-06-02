@@ -49,10 +49,10 @@
     "drupal/flysystem": "8.1.*",
     "drupal/flysystem_s3": "8.1.*",
     "drupal/rules": "8.3.*",
+    "drupal/search_api": "8.1.*",
     "drupal/facets": "8.1.*",
-    "drupal/fontyourface": "8.3.*",
-    "drupal/bootstrap": "8.3.*",
-    "drupal/bootstrap_layouts": "8.3.*",
+    "drupal/space": "8.1.*",
+    "drupal/business": "8.1.*",
     "jquery/jquery.ui": "1.11.4"
   },
   "require-dev": {
