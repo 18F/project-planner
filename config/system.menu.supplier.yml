@@ -1,0 +1,8 @@
+uuid: 321d1249-4927-4776-b612-6d18ccc7dc58
+langcode: en
+status: true
+dependencies: {  }
+id: supplier
+label: Supplier
+description: 'Supplier links'
+locked: false

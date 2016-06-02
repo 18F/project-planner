@@ -1,0 +1,46 @@
+uuid: 3b1f8ac8-a10e-4606-98ff-5aac5c61a2a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.home_page
+  module:
+    - panels
+    - user
+id: anonymous
+label: Anonymous
+variant: panels_variant
+variant_settings:
+  blocks:
+    4b79d562-8f02-42ad-865f-c48b227345b5:
+      id: user_login_block
+      label: 'User login'
+      provider: user
+      label_display: '0'
+      region: middle
+      weight: 0
+      uuid: 4b79d562-8f02-42ad-865f-c48b227345b5
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 6ad8cd75-6239-4be0-9d2d-e48f2f3db5b2
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: 'Login required'
+  storage_type: page_manager
+  storage_id: anonymous
+  builder: standard
+page: home_page
+weight: 0
+selection_criteria:
+  b94ca04f-0739-4a78-85ce-42214be88b78:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: b94ca04f-0739-4a78-85ce-42214be88b78
+selection_logic: and
+static_context: {  }

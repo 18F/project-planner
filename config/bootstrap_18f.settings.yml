@@ -1,0 +1,22 @@
+schema: '8000'
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: assets/favicon.ico
+  url: 'https://project-planner.apps.cloud.gov/assets/favicon.ico'
+  use_default: 0
+features:
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: 1
+logo:
+  path: assets/logo.png
+  url: ''
+  use_default: 0
+breadcrumb_home: 1
+button_size: btn-lg
+fluid_container: 1
+image_shape: img-rounded
+modal_size: modal-lg
+cdn_jsdelivr_version: 3.3.6
+cdn_provider: ''

@@ -1,17 +1,17 @@
-uuid: 89b49900-2c39-41ae-bbb5-cfa8307fd296
+uuid: e50c8fa0-0225-49cd-94c8-ac61281951d4
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - bootstrap_18f
 _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
-id: bartik_branding
-theme: bartik
+id: bootstrap_18f_branding
+theme: bootstrap_18f
 region: header
-weight: -6
+weight: 0
 provider: null
 plugin: system_branding_block
 settings:

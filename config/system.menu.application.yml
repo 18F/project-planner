@@ -1,0 +1,8 @@
+uuid: 47daa181-50f1-4209-a9bc-3e93ba5d7379
+langcode: en
+status: true
+dependencies: {  }
+id: application
+label: Application
+description: 'Application links'
+locked: false

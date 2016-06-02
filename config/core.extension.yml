@@ -22,6 +22,7 @@ module:
   facets: 0
   field: 0
   field_group: 0
+  field_group_migrate: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -33,6 +34,11 @@ module:
   layout_plugin: 0
   link: 0
   menu_ui: 0
+  migrate: 0
+  migrate_plus: 0
+  migrate_source_csv: 0
+  migrate_source_json: 0
+  migrate_tools: 0
   node: 0
   options: 0
   page_cache: 0
@@ -47,6 +53,8 @@ module:
   rest: 0
   rules: 0
   search: 0
+  search_api: 0
+  search_api_db: 0
   serialization: 0
   shortcut: 0
   syslog: 0

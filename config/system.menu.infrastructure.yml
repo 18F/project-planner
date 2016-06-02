@@ -1,0 +1,8 @@
+uuid: 2dbe249c-65e3-45e7-9255-cfe12a3bc0a0
+langcode: en
+status: true
+dependencies: {  }
+id: infrastructure
+label: Infrastructure
+description: 'Infrastructure links'
+locked: false

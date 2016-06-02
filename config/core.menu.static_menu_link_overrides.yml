@@ -1,7 +1,31 @@
 definitions:
   contact__site_page:
-    enabled: true
+    weight: -49
     menu_name: footer
+    parent: ''
+    expanded: false
+    enabled: true
+  user__page:
+    menu_name: account
+    parent: ''
+    weight: -48
+    expanded: false
+    enabled: true
+  user__logout:
+    menu_name: account
+    parent: ''
+    weight: -47
+    expanded: false
+    enabled: true
+  node__add_page:
+    enabled: false
+    menu_name: tools
+    parent: ''
+    expanded: false
+    weight: 0
+  tracker__page:
+    enabled: false
+    menu_name: tools
     parent: ''
     weight: 0
     expanded: false

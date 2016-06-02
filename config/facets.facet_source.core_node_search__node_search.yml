@@ -1,0 +1,13 @@
+uuid: null
+langcode: en
+status: true
+dependencies:
+  module:
+    - core_search_facets
+third_party_settings:
+  core_search_facets:
+    advanced_filters: 1
+id: core_node_search__node_search
+name: 'core_node_search:node_search'
+filter_key: source
+url_processor: query_string

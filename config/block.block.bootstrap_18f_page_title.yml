@@ -1,15 +1,13 @@
-uuid: 13595d82-1e00-4e81-8117-734411a37c8e
+uuid: c4992b49-b0f5-4216-b1aa-1289965f13e8
 langcode: en
 status: true
 dependencies:
-  module:
-    - facets
   theme:
-    - bartik
+    - bootstrap_18f
 _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
-id: bartik_page_title
-theme: bartik
+id: bootstrap_18f_page_title
+theme: bootstrap_18f
 region: content
 weight: -7
 provider: null
@@ -19,10 +17,4 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility:
-  other_facet:
-    id: other_facet
-    facets: ''
-    facet_value: ''
-    negate: false
-    context_mapping: {  }
+visibility: {  }

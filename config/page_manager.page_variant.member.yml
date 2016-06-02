@@ -1,0 +1,50 @@
+uuid: 4e23f2d6-f6e3-486c-b9ae-19667d31f02f
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.home_page
+    - views.view.content_recent
+  module:
+    - panels
+    - user
+    - views
+id: member
+label: Member
+variant: panels_variant
+variant_settings:
+  blocks:
+    b790913f-e4af-4723-8fe4-ebd7ea8ce9c6:
+      id: 'views_block:content_recent-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: right
+      weight: 0
+      uuid: b790913f-e4af-4723-8fe4-ebd7ea8ce9c6
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 1c32cf1e-4915-4e8a-9542-cac5c78709ac
+  label: null
+  weight: 0
+  layout: twocol
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: member
+  builder: standard
+page: home_page
+weight: 0
+selection_criteria:
+  e68bfd20-0462-489a-a049-a253b1dbe6ad:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: e68bfd20-0462-489a-a049-a253b1dbe6ad
+selection_logic: and
+static_context: {  }
