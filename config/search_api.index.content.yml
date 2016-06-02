@@ -1,0 +1,225 @@
+uuid: 897e8777-010e-4457-8e8c-911f15b7757b
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.database
+  module:
+    - search_api
+    - node
+id: content
+name: Content
+description: ''
+read_only: false
+field_settings:
+  status:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  uid:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  search_api_node_grants:
+    label: 'Node access information'
+    datasource_id: null
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  rendered_item:
+    label: 'Rendered HTML output'
+    datasource_id: null
+    property_path: rendered_item
+    type: text
+    indexed_locked: true
+processor_settings:
+  add_url:
+    plugin_id: add_url
+    settings:
+      weights:
+        preprocess_index: -30
+  node_status:
+    plugin_id: node_status
+    settings:
+      weights:
+        preprocess_index: -10
+  tokenizer:
+    plugin_id: tokenizer
+    settings:
+      fields: {  }
+      spaces: ''
+      overlap_cjk: 1
+      minimum_word_size: '3'
+      weights:
+        preprocess_index: -6
+        preprocess_query: -6
+  ignore_character:
+    plugin_id: ignore_character
+    settings:
+      fields: {  }
+      ignorable: '[''¿¡!?,.:;]'
+      strip:
+        character_sets:
+          Pc: Pc
+          Pd: Pd
+          Pe: Pe
+          Pf: Pf
+          Pi: Pi
+          Po: Po
+          Ps: Ps
+          Cc: 0
+          Cf: 0
+          Co: 0
+          Mc: 0
+          Me: 0
+          Mn: 0
+          Sc: 0
+          Sk: 0
+          Sm: 0
+          So: 0
+          Zl: 0
+          Zp: 0
+          Zs: 0
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+  aggregated_field:
+    plugin_id: aggregated_field
+    settings:
+      fields: {  }
+      weights:
+        preprocess_index: -10
+  highlight:
+    plugin_id: highlight
+    settings:
+      highlight: always
+      excerpt: true
+      excerpt_length: 256
+      prefix: '<strong>'
+      suffix: '</strong>'
+      weights:
+        postprocess_query: 0
+  transliteration:
+    plugin_id: transliteration
+    settings:
+      fields: {  }
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+  ignorecase:
+    plugin_id: ignorecase
+    settings:
+      fields: {  }
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+  rendered_item:
+    plugin_id: rendered_item
+    settings:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          application: ''
+          dependency: ''
+          infrastructure: ''
+          service: ''
+          supplier: ''
+          team: ''
+          tool: ''
+          workflow: ''
+      weights:
+        preprocess_index: -10
+  stopwords:
+    plugin_id: stopwords
+    settings:
+      fields: {  }
+      stopwords:
+        - a
+        - an
+        - and
+        - are
+        - as
+        - at
+        - be
+        - but
+        - by
+        - for
+        - if
+        - in
+        - into
+        - is
+        - it
+        - 'no'
+        - not
+        - of
+        - 'on'
+        - or
+        - s
+        - such
+        - t
+        - that
+        - the
+        - their
+        - then
+        - there
+        - these
+        - they
+        - this
+        - to
+        - was
+        - will
+        - with
+      weights:
+        preprocess_index: -5
+        preprocess_query: -2
+        postprocess_query: -2
+  content_access:
+    plugin_id: content_access
+    settings:
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+  html_filter:
+    plugin_id: html_filter
+    settings:
+      fields: {  }
+      title: true
+      alt: true
+      tags:
+        h1: 5
+        h2: 3
+        h3: 2
+        strong: 2
+        b: 2
+        em: 1
+        u: 1
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+options:
+  index_directly: true
+  cron_limit: 50
+datasource_settings:
+  'entity:node':
+    plugin_id: 'entity:node'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+      languages:
+        default: true
+        selected: {  }
+tracker_settings:
+  default:
+    plugin_id: default
+    settings: {  }
+server: database

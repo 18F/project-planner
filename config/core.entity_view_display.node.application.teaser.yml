@@ -5,10 +5,99 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.application.body
+    - field.field.node.application.field_architecture
+    - field.field.node.application.field_diagrams
+    - field.field.node.application.field_external_cots
+    - field.field.node.application.field_files
+    - field.field.node.application.field_issue_tracker
+    - field.field.node.application.field_linked_applications
+    - field.field.node.application.field_linked_dependencies
+    - field.field.node.application.field_linked_infrastructure
+    - field.field.node.application.field_linked_services
+    - field.field.node.application.field_linked_tools
+    - field.field.node.application.field_linked_workflows
+    - field.field.node.application.field_mission_critical
+    - field.field.node.application.field_poc_email
+    - field.field.node.application.field_poc_name
+    - field.field.node.application.field_poc_phone
+    - field.field.node.application.field_sensitive
+    - field.field.node.application.field_source_code
+    - field.field.node.application.field_suppliers
+    - field.field.node.application.field_team
     - node.type.application
   module:
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: false
+    displays:
+      default:
+        blocks:
+          84d0633a-06a3-4b2f-9a9e-32395fd7ce63:
+            id: 'entity_field:node:uid'
+            label: 'Authored by'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: author
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: middle
+            weight: 0
+            uuid: 84d0633a-06a3-4b2f-9a9e-32395fd7ce63
+          ff6aa1de-7f2e-4b04-b7ac-f4bdbaf55d22:
+            id: 'entity_field:node:created'
+            label: 'Authored on'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: timestamp
+              settings:
+                date_format: medium
+                custom_date_format: ''
+                timezone: ''
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: middle
+            weight: 0
+            uuid: ff6aa1de-7f2e-4b04-b7ac-f4bdbaf55d22
+          0141daba-ab77-4bdd-89b0-f32740d2cc72:
+            id: 'entity_field:node:body'
+            label: 'Description (Purpose)'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_summary_or_trimmed
+              settings:
+                trim_length: 600
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: middle
+            weight: 101
+            uuid: 0141daba-ab77-4bdd-89b0-f32740d2cc72
+        id: panels_variant
+        uuid: 063a13ec-def6-4dfe-8b13-18d285265666
+        label: ''
+        weight: 0
+        layout: onecol
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: ''
+        storage_id: ''
+        builder: ipe
 id: node.application.teaser
 targetEntityType: node
 bundle: application
@@ -23,8 +112,25 @@ content:
     third_party_settings: {  }
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_architecture: true
+  field_diagrams: true
   field_external_cots: true
+  field_files: true
+  field_issue_tracker: true
+  field_linked_applications: true
+  field_linked_dependencies: true
+  field_linked_infrastructure: true
+  field_linked_services: true
+  field_linked_tools: true
+  field_linked_workflows: true
+  field_mission_critical: true
   field_poc_email: true
   field_poc_name: true
   field_poc_phone: true
+  field_sensitive: true
+  field_source_code: true
+  field_suppliers: true
+  field_team: true
