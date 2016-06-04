@@ -38,8 +38,8 @@ done
 # Build a fresh application code base
 cd "$TOP_DIR"
 
-rm -f "composer.lock"
-./scripts/clean.sh
+rm -f composer.lock
+"$SCRIPT_DIR/clean.sh"
 
 composer install
 
