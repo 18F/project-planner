@@ -1,0 +1,4 @@
+server_name: 'dev'
+cpus: 2
+memory_size: 2048
+ip_address: 172.168.5.100
