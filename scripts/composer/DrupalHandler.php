@@ -60,11 +60,10 @@ class DrupalHandler {
    * Generate and set a fixed hash salt
    */
   public static function setHashSalt(Event $event) {
-    $fs = new Filesystem();
     $private = static::_getDrupalPrivate(getcwd());
     $hash_salt = static::_generateRandomString();
 
-    $fs->dumpFile("$private/hash_salt.txt", $hash_salt);
+    file_put_contents("$private/hash_salt.txt", $hash_salt);
   }
 
   /**
