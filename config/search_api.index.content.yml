@@ -41,21 +41,57 @@ field_settings:
     type: text
     indexed_locked: true
 processor_settings:
-  node_status:
-    plugin_id: node_status
+  add_url:
+    plugin_id: add_url
+    settings:
+      weights:
+        preprocess_index: -30
+  aggregated_field:
+    plugin_id: aggregated_field
+    settings:
+      fields: {  }
+      weights:
+        preprocess_index: -10
+  content_access:
+    plugin_id: content_access
     settings:
       weights:
         preprocess_index: -10
-  tokenizer:
-    plugin_id: tokenizer
+        preprocess_query: -10
+  highlight:
+    plugin_id: highlight
+    settings:
+      highlight: always
+      excerpt: true
+      excerpt_length: 256
+      prefix: '<strong>'
+      suffix: '</strong>'
+      weights:
+        postprocess_query: 0
+  html_filter:
+    plugin_id: html_filter
     settings:
       fields: {  }
-      spaces: ''
-      overlap_cjk: 1
-      minimum_word_size: '3'
+      title: true
+      alt: true
+      tags:
+        h1: 5
+        h2: 3
+        h3: 2
+        strong: 2
+        b: 2
+        em: 1
+        u: 1
       weights:
-        preprocess_index: -6
-        preprocess_query: -6
+        preprocess_index: -10
+        preprocess_query: -10
+  ignorecase:
+    plugin_id: ignorecase
+    settings:
+      fields: {  }
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
   ignore_character:
     plugin_id: ignore_character
     settings:
@@ -86,41 +122,11 @@ processor_settings:
       weights:
         preprocess_index: -10
         preprocess_query: -10
-  aggregated_field:
-    plugin_id: aggregated_field
+  node_status:
+    plugin_id: node_status
     settings:
-      fields: {  }
       weights:
         preprocess_index: -10
-  add_url:
-    plugin_id: add_url
-    settings:
-      weights:
-        preprocess_index: -30
-  highlight:
-    plugin_id: highlight
-    settings:
-      highlight: always
-      excerpt: true
-      excerpt_length: 256
-      prefix: '<strong>'
-      suffix: '</strong>'
-      weights:
-        postprocess_query: 0
-  transliteration:
-    plugin_id: transliteration
-    settings:
-      fields: {  }
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
-  ignorecase:
-    plugin_id: ignorecase
-    settings:
-      fields: {  }
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
   rendered_item:
     plugin_id: rendered_item
     settings:
@@ -182,26 +188,20 @@ processor_settings:
         preprocess_index: -5
         preprocess_query: -2
         postprocess_query: -2
-  content_access:
-    plugin_id: content_access
-    settings:
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
-  html_filter:
-    plugin_id: html_filter
+  tokenizer:
+    plugin_id: tokenizer
     settings:
       fields: {  }
-      title: true
-      alt: true
-      tags:
-        h1: 5
-        h2: 3
-        h3: 2
-        strong: 2
-        b: 2
-        em: 1
-        u: 1
+      spaces: ''
+      overlap_cjk: 1
+      minimum_word_size: '3'
+      weights:
+        preprocess_index: -6
+        preprocess_query: -6
+  transliteration:
+    plugin_id: transliteration
+    settings:
+      fields: {  }
       weights:
         preprocess_index: -10
         preprocess_query: -10
