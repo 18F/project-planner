@@ -134,6 +134,14 @@ class DrupalHandler {
 
       # Import configurations
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --source='$config'", 7200, TRUE);
+
+      if (isset($_ENV['DOCKER_IMAGE'])) {
+        $config_override = static::_getDrupalDockerConfig($cwd, $_ENV['DOCKER_IMAGE']);
+
+        if ($fs->exists($config_override)) {
+          static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --partial --source='$config_override'", 7200, TRUE);
+        }
+      }
     }
   }
 
@@ -179,10 +187,17 @@ class DrupalHandler {
   }
 
   /**
-   * Return the Rood Drupal configuration directory
+   * Return the Root Drupal configuration directory
    */
   protected static function _getDrupalConfig($project_root) {
     return $project_root .  '/config';
+  }
+
+  /**
+   * Return the Dockerized Drupal configuration directory
+   */
+  protected static function _getDrupalDockerConfig($project_root, $docker_image) {
+    return $project_root . '/docker/' . $docker_image . '/config';
   }
 
   /**
