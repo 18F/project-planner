@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: vm_config["ip_address"]
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder ".", project_directory, owner: "www-data", group: "www-data", mount_options: ["dmode=775"]
+  config.vm.synced_folder ".", project_directory, owner: "www-data", group: "vagrant", mount_options: ["dmode=775"]
   
   config.vm.network "forwarded_port", guest: 8080, host: 80
   config.vm.network "forwarded_port", guest: 3306, host: 3306
