@@ -51,6 +51,9 @@ fi
 #-------------------------------------------------------------------------------
 # Begin
 
+# This needs to be defined so Composer knows where to find our configuration overrides
+export DOCKER_IMAGE="apache-php"
+
 # Build project and fetch dependencies
 composer install -n -d "$PROJECT_DIR"
 
