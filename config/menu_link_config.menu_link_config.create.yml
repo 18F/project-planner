@@ -1,0 +1,15 @@
+uuid: 9b955b1e-bf26-447b-a104-7dbf4b0af42c
+langcode: en
+status: true
+dependencies: {  }
+id: create
+title: CREATE
+route_name: node.add_page
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: main
+enabled: true
+parent: ''
+weight: -50
+description: 'Create new records'

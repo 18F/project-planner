@@ -1,0 +1,15 @@
+uuid: 20e5fdbc-317a-49cd-ac97-b79d78db9474
+langcode: en
+status: true
+dependencies: {  }
+id: applications
+title: APPLICATIONS
+route_name: page_manager.page_view_applications
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: main
+enabled: true
+parent: ''
+weight: -47
+description: 'Display information about applications'

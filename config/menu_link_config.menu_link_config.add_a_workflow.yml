@@ -1,0 +1,16 @@
+uuid: 8473320d-b19d-45d4-aee0-f09118921cd0
+langcode: en
+status: true
+dependencies: {  }
+id: add_a_workflow
+title: 'Add a workflow'
+route_name: node.add
+route_parameters:
+  node_type: a6001b98-8d79-4647-8554-5a3b184eacbf
+options: {  }
+expanded: false
+menu_name: workflow
+enabled: true
+parent: ''
+weight: 0
+description: 'Add a new workflow employed across one or more projects'

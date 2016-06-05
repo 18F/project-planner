@@ -1,0 +1,15 @@
+uuid: 56f6b5d0-3592-401c-b3ff-90976ad33a96
+langcode: en
+status: true
+dependencies: {  }
+id: teams
+title: TEAMS
+route_name: page_manager.page_view_teams
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: main
+enabled: true
+parent: ''
+weight: -49
+description: 'Display information about current teams'

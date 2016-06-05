@@ -1,0 +1,15 @@
+uuid: 158f3f6f-79e2-40a4-962c-aebef0b447ef
+langcode: en
+status: true
+dependencies: {  }
+id: services
+title: SERVICES
+route_name: page_manager.page_view_services
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: main
+enabled: true
+parent: ''
+weight: -46
+description: 'Display information about shared services'

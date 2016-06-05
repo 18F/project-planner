@@ -1,0 +1,16 @@
+uuid: 15ffb6d5-c98a-419d-ace0-ca2bf9523d77
+langcode: en
+status: true
+dependencies: {  }
+id: add_a_supplier
+title: 'Add a supplier'
+route_name: node.add
+route_parameters:
+  node_type: 3e14339b-5358-439e-8de1-e10c78de12d6
+options: {  }
+expanded: false
+menu_name: supplier
+enabled: true
+parent: ''
+weight: 0
+description: 'Add a new supplier of commercial goods and services'

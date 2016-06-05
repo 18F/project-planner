@@ -1,0 +1,16 @@
+uuid: 78aadef9-e7c3-47f6-8e65-ee1b8bed33f2
+langcode: en
+status: true
+dependencies: {  }
+id: add_a_dependency
+title: 'Add a dependency'
+route_name: node.add
+route_parameters:
+  node_type: 72bf108b-06b8-4bd7-9a17-1c348e443edf
+options: {  }
+expanded: false
+menu_name: dependency
+enabled: true
+parent: ''
+weight: 0
+description: 'Add a new external dependency (beyond our control)'

@@ -1,0 +1,16 @@
+uuid: 1d67ba44-3f76-47c9-9863-d6a41fe1e8d1
+langcode: en
+status: true
+dependencies: {  }
+id: add_an_application
+title: 'Add an application'
+route_name: node.add
+route_parameters:
+  node_type: 51a8139a-c7e0-4fba-919e-dff39a348a54
+options: {  }
+expanded: false
+menu_name: application
+enabled: true
+parent: ''
+weight: 0
+description: 'Create a new application project'

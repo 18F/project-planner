@@ -1,0 +1,15 @@
+uuid: 154885b9-2273-4055-9284-9756779368da
+langcode: en
+status: true
+dependencies: {  }
+id: suppliers
+title: SUPPLIERS
+route_name: page_manager.page_view_suppliers
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: main
+enabled: true
+parent: ''
+weight: -48
+description: 'Display information about current suppliers'

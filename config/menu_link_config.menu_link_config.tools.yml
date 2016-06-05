@@ -1,0 +1,15 @@
+uuid: a3dc30da-7108-40a5-a418-12edb86ddfe9
+langcode: en
+status: true
+dependencies: {  }
+id: tools
+title: TOOLS
+route_name: page_manager.page_view_tools
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: main
+enabled: true
+parent: ''
+weight: -44
+description: 'Display information about tools'

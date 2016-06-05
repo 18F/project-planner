@@ -1,0 +1,16 @@
+uuid: 25e6bd5e-0f50-4afe-afcd-0e7f9ec66956
+langcode: en
+status: true
+dependencies: {  }
+id: add_a_service
+title: 'Add a service'
+route_name: node.add
+route_parameters:
+  node_type: e7d9f2ae-fbae-4a2c-8719-88aa3671fcca
+options: {  }
+expanded: false
+menu_name: service
+enabled: true
+parent: ''
+weight: 0
+description: 'Add a new shared service project'

@@ -1,0 +1,15 @@
+uuid: 6fb507dd-2c39-4082-b2a6-1dfd2d4d6358
+langcode: en
+status: true
+dependencies: {  }
+id: about
+title: About
+route_name: page_manager.page_view_about
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: footer
+enabled: true
+parent: ''
+weight: -49
+description: 'About this site'

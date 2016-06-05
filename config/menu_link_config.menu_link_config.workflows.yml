@@ -1,0 +1,15 @@
+uuid: 6c6eb703-d007-4023-8100-9e03a7e94a0c
+langcode: en
+status: true
+dependencies: {  }
+id: workflows
+title: WORKFLOWS
+route_name: page_manager.page_view_workflows
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: main
+enabled: true
+parent: ''
+weight: -42
+description: 'Display information about workflows'

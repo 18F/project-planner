@@ -1,0 +1,15 @@
+uuid: 9b2fdd42-4544-4671-9d19-af20e0198913
+langcode: en
+status: true
+dependencies: {  }
+id: infrastructure
+title: INFRASTRUCTURE
+route_name: page_manager.page_view_infrastructure
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: main
+enabled: true
+parent: ''
+weight: -45
+description: 'Display information about infrastructure'

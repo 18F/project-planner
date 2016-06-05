@@ -1,0 +1,15 @@
+uuid: 5c34efef-547e-4aad-b1b4-9dcc5ec98526
+langcode: en
+status: true
+dependencies: {  }
+id: gsa
+title: GSA
+route_name: null
+route_parameters: {  }
+options: {  }
+expanded: false
+menu_name: footer
+enabled: true
+parent: ''
+weight: -47
+description: 'We''re part of the GSA'
