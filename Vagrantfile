@@ -1,6 +1,8 @@
 
 require 'yaml'
-vm_config = YAML.load_file("config.yml")
+
+vm_config = YAML.load_file("config.default.yml")
+vm_config.merge!(YAML.load_file("config.yml")) if File.exist?("config.yml")
 
 required_plugins = %w(vagrant-vbguest)
 project_directory = '/var/www'
@@ -16,7 +18,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: vm_config["ip_address"]
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder ".", project_directory
+  config.vm.synced_folder ".", project_directory, owner: "www-data", group: "www-data", mount_options: ["dmode=775"]
   
   config.vm.network "forwarded_port", guest: 8080, host: 80
   config.vm.network "forwarded_port", guest: 3306, host: 3306
