@@ -15,7 +15,30 @@ services:
     links:
       - drupal-mysql:mysql
     environment:
-      VCAP_SERVICES: '{"docker-mysql": [{"name": "mysql", "tags": [], "credentials": {"host": "mysql", "port": 3306, "username": "drupal", "password": "drupal", "db_name": "drupal"}}]}'
+      APP_FILES_REGION: "{{AWS_FILES_REGION}}"
+      VCAP_SERVICES: >-
+        {
+          "docker-mysql": [{
+            "name": "mysql",
+            "tags": ["mysql"],
+            "credentials": {
+              "host": "mysql",
+              "port": 3306,
+              "username": "drupal",
+              "password": "drupal",
+              "db_name": "drupal"
+            }
+          }],
+          "docker-s3": [{
+            "name": "s3",
+            "tags": ["s3"],
+            "credentials": {
+              "access_key_id": "{{AWS_ACCESS_KEY_ID}}",
+              "secret_access_key": "{{AWS_SECRET_ACCESS_KEY}}",
+              "bucket": "{{AWS_FILES_BUCKET}}"
+            }
+          }]
+        }
     volumes:
       - .:/var/www
   drupal-mysql:
