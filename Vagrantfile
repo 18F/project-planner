@@ -1,8 +1,8 @@
 
 require 'yaml'
 
-vm_config = YAML.load_file("config.default.yml")
-vm_config.merge!(YAML.load_file("config.yml")) if File.exist?("config.yml")
+vm_config = YAML.load_file("vagrant-config.default.yml")
+vm_config.merge!(YAML.load_file("vagrant-config.yml")) if File.exist?("vagrant-config.yml")
 
 required_plugins = %w(vagrant-vbguest)
 project_directory = '/var/www'
