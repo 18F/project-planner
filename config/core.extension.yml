@@ -33,6 +33,7 @@ module:
   image: 0
   layout_plugin: 0
   link: 0
+  menu_link_config: 0
   menu_ui: 0
   migrate: 0
   migrate_plus: 0
