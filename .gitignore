@@ -19,9 +19,6 @@ web/sites/default/settings.local.php
 .vagrant
 config.yml
 
-# Cloud Foundry
-cf-ssh.yml
-
 # Eclipse project files
 .project
 .cache
