@@ -1,0 +1,38 @@
+version: '2'
+services:
+  drupal-web:
+    hostname: drupal-web
+    build:
+      context: .
+      dockerfile: ./docker/apache-php/Dockerfile
+    restart: always
+    expose:
+      - "8080"
+    ports:
+      - "8080:80"
+    depends_on:
+      - drupal-mysql
+    links:
+      - drupal-mysql:mysql
+    environment:
+      VCAP_SERVICES: '{"docker-mysql": [{"name": "mysql", "tags": [], "credentials": {"host": "mysql", "port": 3306, "username": "drupal", "password": "drupal", "db_name": "drupal"}}]}'
+    volumes:
+      - .:/var/www
+  drupal-mysql:
+    hostname: drupal-mysql
+    image: mysql:latest
+    restart: always
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+      MYSQL_DATABASE: drupal
+    volumes:
+      - drupal-data:/var/lib/mysql
+volumes:
+  drupal-data:
+    external: false
