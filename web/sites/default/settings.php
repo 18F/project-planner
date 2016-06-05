@@ -797,7 +797,9 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  * example.org, with all subdomains included.
  */
 $settings['trusted_host_patterns'] = array(
- '^.+\.apps.cloud\.gov$',
+ '^.+\.apps\.cloud\.gov$',
+ '^.+\.local$',
+ '^localhost$'
 );
 
 /**
