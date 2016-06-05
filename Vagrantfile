@@ -116,16 +116,23 @@ Vagrant.configure("2") do |config|
   end
   
   config.vm.provision "shell" do |s|
-    s.name = "Spin up web environment"
+    s.name = "Spin up Dockerized web environment"
     s.inline = <<-SHELL
       project_dir="${1}"
+      script_dir="${2}"
     
       cd "$project_dir"
+      
+      echo "Running composer install on the project directory"
+      "$script_dir/docker-compose.sh"
+    
+      echo "Running composer install on the project directory"
       docker-compose up -d
     SHELL
             
     s.args = [
       project_directory,
+      "#{project_directory}/scripts",
     ] 
   end
 end
