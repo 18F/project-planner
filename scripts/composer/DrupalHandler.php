@@ -132,13 +132,15 @@ class DrupalHandler {
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-set 'system.site' uuid '$uuid'", 1800, FALSE);
 
       # Import configurations
-      static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --source='$config'", 7200, TRUE);
+      if (!isset($_ENV['DRUPAL_NO_IMPORT'])) {
+        static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --source='$config'", 7200, TRUE);
 
-      if (isset($_ENV['DOCKER_IMAGE'])) {
-        $config_override = static::_getDrupalDockerConfig($cwd, $_ENV['DOCKER_IMAGE']);
+        if (isset($_ENV['DOCKER_IMAGE'])) {
+          $config_override = static::_getDrupalDockerConfig($cwd, $_ENV['DOCKER_IMAGE']);
 
-        if ($fs->exists($config_override)) {
-          static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --partial --source='$config_override'", 7200, TRUE);
+          if ($fs->exists($config_override)) {
+            static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --partial --source='$config_override'", 7200, TRUE);
+          }
         }
       }
       # Run any database updates
