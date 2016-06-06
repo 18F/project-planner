@@ -1,0 +1,26 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "AWS Cloudformation template to create a test S3 bucket for the Project Planner app",
+  "Parameters": {
+    "Name": {
+      "Description": "Name of the S3 bucket to create",
+      "Type": "String",
+      "Default": "project-planner-test"
+    }
+  },
+  "Resources": {
+    "Bucket": {
+      "Type" : "AWS::S3::Bucket",
+      "Properties" : {
+        "AccessControl" : "PublicRead",
+        "BucketName" : { "Ref": "Name" }
+      }
+    }
+  },
+  "Outputs" : {
+    "Bucket": {
+      "Description": "AWS S3 Bucket",
+      "Value" : { "Ref": "Bucket" }
+    }
+  }
+}
