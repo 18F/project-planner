@@ -15,6 +15,7 @@ services:
     links:
       - drupal-mysql:mysql
     environment:
+      DOCKER_IMAGE: "apache-php"
       APP_FILES_REGION: "{{AWS_FILES_REGION}}"
       VCAP_SERVICES: >-
         {
