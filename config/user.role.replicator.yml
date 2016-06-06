@@ -1,0 +1,12 @@
+uuid: de00125f-b4cf-4aa6-9911-6eabad176880
+langcode: en
+status: true
+dependencies: {  }
+id: replicator
+label: Replicator
+weight: 0
+is_admin: false
+permissions:
+  - 'perform push replication'
+  - 'administer users'
+  - 'administer workspaces'

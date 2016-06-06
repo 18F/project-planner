@@ -2,6 +2,7 @@ module:
   action: 0
   automated_cron: 0
   backup_migrate: 0
+  basic_auth: 0
   block: 0
   block_content: 0
   breakpoint: 0
@@ -57,6 +58,7 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  relaxed: 0
   replication: 0
   rest: 0
   rules: 0
