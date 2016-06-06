@@ -11,6 +11,3 @@ applications:
   memory: 512M
   name: project-planner-ssh
   no-route: true
-  services:
-    - project-planner-db
-    - project-planner-files
