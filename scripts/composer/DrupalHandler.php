@@ -141,6 +141,11 @@ class DrupalHandler {
           static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --partial --source='$config_override'", 7200, TRUE);
         }
       }
+      # Run any database updates
+      static::_runCommand("$vendor/drush/drush/drush -y --root='$root' updatedb", 7200, TRUE);
+
+      # Run any updates on entity fields
+      static::_runCommand("$vendor/drush/drush/drush -y --root='$root' entity-updates", 7200, TRUE);
     }
   }
 
