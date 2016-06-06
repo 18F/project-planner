@@ -1,6 +1,7 @@
 module:
   action: 0
   automated_cron: 0
+  backup_migrate: 0
   block: 0
   block_content: 0
   breakpoint: 0
@@ -16,9 +17,11 @@ module:
   ctools_views: 0
   datetime: 0
   dblog: 0
+  deploy: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
+  entity_storage_migrate: 0
   facets: 0
   field: 0
   field_group: 0
@@ -31,15 +34,18 @@ module:
   help: 0
   history: 0
   image: 0
+  key_value: 0
   layout_plugin: 0
   link: 0
   menu_link_config: 0
   menu_ui: 0
   migrate: 0
+  migrate_drupal: 0
   migrate_plus: 0
   migrate_source_csv: 0
   migrate_source_json: 0
   migrate_tools: 0
+  multiversion: 0
   node: 0
   options: 0
   page_cache: 0
@@ -51,6 +57,7 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  replication: 0
   rest: 0
   rules: 0
   search: 0
@@ -69,6 +76,7 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  workspace: 0
   menu_link_content: 1
   views: 10
   minimal: 1000
