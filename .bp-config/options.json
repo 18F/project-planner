@@ -16,6 +16,6 @@
   "PHP_MODULES_PATTERN": "/php/{PHP_VERSION}/php-{MODULE_NAME}-{PHP_VERSION}.tar.gz",
   "PHP_MODULES_STRIP": true,
   "PHP_MODULES": [],
-  "PHP_EXTENSIONS": [ "bz2", "zlib", "curl", "mcrypt", "gd", "pdo", "pdo_mysql", "apc", "mbstring"],
-  "ZEND_EXTENSIONS": []
+  "PHP_EXTENSIONS": ["gd", "mbstring", "pdo", "pdo_mysql", "mysqli", "zip"],
+  "ZEND_EXTENSIONS": ["opcache"]
 }
