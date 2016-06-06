@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd1f025ab641ad9d243c4ab33d3dd269",
-    "content-hash": "e913c4de13de12e9cbcd2d5c29f2c400",
+    "hash": "8063fb7d017c977378040c0e55ba44a4",
+    "content-hash": "bec9d4bc0105f1ec6d104d08e218bb2b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1736,23 +1736,18 @@
         },
         {
             "name": "drupal/multiversion",
-            "version": "8.1.0-alpha7",
+            "version": "dev-8.x-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/multiversion.git",
-                "reference": "5f0ac19fad865bbde5aad716ee41c9141e3171d0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/multiversion-8.x-1.0-alpha7.zip",
-                "reference": null,
-                "shasum": null
+                "reference": "67e7d9418ea7172950b9cf4762c5a092c4d9ba6e"
             },
             "require": {
                 "drupal/core": "8.*",
                 "drupal/entity_storage_migrate": "8.*",
                 "drupal/key_value": "8.*",
-                "drupal/serialization": "8.*"
+                "drupal/serialization": "8.*",
+                "drupal/system": ">=8.1.0"
             },
             "type": "drupal-module",
             "extra": {
@@ -1766,7 +1761,7 @@
             ],
             "description": "Extends the revision support for content entities.",
             "homepage": "https://www.drupal.org/project/multiversion",
-            "time": "2016-04-15 11:20:16"
+            "time": "2016-05-05 16:11:34"
         },
         {
             "name": "drupal/page_manager",
@@ -6486,7 +6481,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "backupmigrate/core": 20,
-        "psr/log": 20
+        "psr/log": 20,
+        "drupal/multiversion": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
