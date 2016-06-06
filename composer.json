@@ -45,6 +45,7 @@
     "drush/config-extra": "1.0.*",
     "drupal/core": "8.1.2",
     "drupal/deploy": "8.1.*",
+    "drupal/relaxed": "8.1.*",
     "drupal/multiversion": "8.1.x-dev",
     "drupal/backup_migrate": "8.4.*",
     "drupal/migrate_tools": "8.2.*",

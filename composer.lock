@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8063fb7d017c977378040c0e55ba44a4",
-    "content-hash": "bec9d4bc0105f1ec6d104d08e218bb2b",
+    "hash": "4f80e416e56230c13449162664760885",
+    "content-hash": "479800c3e4d3e7c9c027b7d1b821d7b4",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1884,6 +1884,42 @@
             "time": "2016-02-16 20:51:34"
         },
         {
+            "name": "drupal/relaxed",
+            "version": "8.1.0-alpha6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/relaxed.git",
+                "reference": "eb167cb2ed7af488682d1e06dcbd00924a49ef85"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/relaxed-8.x-1.0-alpha6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/basic_auth": "8.*",
+                "drupal/core": "8.*",
+                "drupal/multiversion": "8.*",
+                "drupal/replication": "8.*",
+                "drupal/rest": "8.*",
+                "relaxedws/replicator": "dev-master"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Provides a RESTful API that exposes all content entities over UUID endpoints. Utility endpoints are also provided subscribing to changes and handling content replication.",
+            "homepage": "https://www.drupal.org/project/relaxed",
+            "time": "2016-04-15 14:56:46"
+        },
+        {
             "name": "drupal/replication",
             "version": "8.1.0-alpha1",
             "source": {
@@ -2736,16 +2772,16 @@
         },
         {
             "name": "league/flysystem-aws-s3-v3",
-            "version": "1.0.11",
+            "version": "1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem-aws-s3-v3.git",
-                "reference": "1f7ae4e3cc178686c49a9d23cab43ed1e955368c"
+                "reference": "d9c27edda5b4b2840c3f602d4ce6fbfeaab10e5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/1f7ae4e3cc178686c49a9d23cab43ed1e955368c",
-                "reference": "1f7ae4e3cc178686c49a9d23cab43ed1e955368c",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/d9c27edda5b4b2840c3f602d4ce6fbfeaab10e5a",
+                "reference": "d9c27edda5b4b2840c3f602d4ce6fbfeaab10e5a",
                 "shasum": ""
             },
             "require": {
@@ -2779,7 +2815,7 @@
                 }
             ],
             "description": "Flysystem adapter for the AWS S3 SDK v3.x",
-            "time": "2016-05-03 19:35:35"
+            "time": "2016-06-06 11:18:47"
         },
         {
             "name": "league/flysystem-cached-adapter",
