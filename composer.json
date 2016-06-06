@@ -19,6 +19,10 @@
       "url": "https://packagist.drupal-composer.org"
     },
     {
+      "type": "vcs",
+      "url": "https://github.com/backupmigrate/backup_migrate_core"
+    },
+    {
       "type": "package",
       "package": {
         "name": "jquery/jquery.ui",
@@ -32,12 +36,16 @@
     }
   ],
   "require": {
+    "backupmigrate/core": "dev-master",
+    "psr/log": "dev-master",
     "composer/installers": "*",
     "cweagans/composer-patches": "~1.0",
     "drupal/console": "~0.10",
     "drush/drush": "~8.1",
     "drush/config-extra": "1.0.*",
-    "drupal/core": "8.1.1",
+    "drupal/core": "8.1.2",
+    "drupal/deploy": "8.1.*",
+    "drupal/backup_migrate": "8.4.*",
     "drupal/migrate_tools": "8.2.*",
     "drupal/migrate_plus": "8.2.*",
     "drupal/migrate_source_csv": "8.*",
@@ -62,6 +70,9 @@
      "drupal/drupal": "*"
   },
   "autoload": {
+    "psr-4": {
+      "BackupMigrate\\Drupal\\": "src"
+    },
     "classmap": [
       "scripts/composer/DrupalHandler.php"
     ]

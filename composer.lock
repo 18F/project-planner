@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "764e689e937bd2e2375967c24f5ff932",
-    "content-hash": "2ef583685f6e461ed2d0af456f795359",
+    "hash": "fd1f025ab641ad9d243c4ab33d3dd269",
+    "content-hash": "e913c4de13de12e9cbcd2d5c29f2c400",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -148,6 +148,52 @@
                 "sdk"
             ],
             "time": "2016-06-02 20:13:40"
+        },
+        {
+            "name": "backupmigrate/core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/backupmigrate/backup_migrate_core.git",
+                "reference": "135e4fffbc624dd2e07fc617def43183954f7ae4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/backupmigrate/backup_migrate_core/zipball/135e4fffbc624dd2e07fc617def43183954f7ae4",
+                "reference": "135e4fffbc624dd2e07fc617def43183954f7ae4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/log": "dev-master"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.*",
+                "phpunit/dbunit": "~1.4",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BackupMigrate\\Core\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "BackupMigrate\\Core\\Tests\\": "tests"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Ronan Dowling"
+                }
+            ],
+            "description": "Backup and Migrate",
+            "support": {
+                "source": "https://github.com/backupmigrate/backup_migrate_core/tree/master",
+                "issues": "https://github.com/backupmigrate/backup_migrate_core/issues"
+            },
+            "time": "2016-05-05 15:45:57"
         },
         {
             "name": "composer/installers",
@@ -666,6 +712,59 @@
             "time": "2015-12-25 13:10:16"
         },
         {
+            "name": "doctrine/couchdb",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/couchdb-client.git",
+                "reference": "c80f25002d83712209517793d3f5402edaefe68a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/couchdb-client/zipball/c80f25002d83712209517793d3f5402edaefe68a",
+                "reference": "c80f25002d83712209517793d3f5402edaefe68a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\CouchDB": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Lukas Kahwe Smith",
+                    "email": "smith@pooteeweet.org"
+                }
+            ],
+            "description": "CouchDB Client",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "couchdb",
+                "persistence"
+            ],
+            "time": "2016-02-28 22:17:26"
+        },
+        {
             "name": "doctrine/inflector",
             "version": "v1.1.0",
             "source": {
@@ -787,6 +886,50 @@
             "time": "2014-09-09 13:34:57"
         },
         {
+            "name": "drupal/backup_migrate",
+            "version": "8.4.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/backup_migrate",
+                "reference": "83e694bfae7ab83d77aaacef8cc711b46d7d9571"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/backup_migrate-8.x-4.0-alpha1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "backupmigrate/core": "dev-master",
+                "drupal/core": "8.*",
+                "php": ">=5.4.0",
+                "psr/log": "dev-master"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-4.x": "8.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BackupMigrate\\Drupal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Ronan Dowling"
+                }
+            ],
+            "description": "Backup the Drupal database and files or migrate them to another environment.",
+            "homepage": "https://www.drupal.org/project/backup_migrate",
+            "time": "2016-05-09 18:14:40"
+        },
+        {
             "name": "drupal/console",
             "version": "0.11.3",
             "source": {
@@ -873,16 +1016,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.1.1",
+            "version": "8.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-core.git",
-                "reference": "e405a10c85a874a70932fe53670993f790df746f"
+                "reference": "a5d3f14db87ef953d227fb411489bada1afbb0a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-core/zipball/e405a10c85a874a70932fe53670993f790df746f",
-                "reference": "e405a10c85a874a70932fe53670993f790df746f",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-core/zipball/a5d3f14db87ef953d227fb411489bada1afbb0a8",
+                "reference": "a5d3f14db87ef953d227fb411489bada1afbb0a8",
                 "shasum": ""
             },
             "require": {
@@ -943,6 +1086,7 @@
                 "drupal/core-discovery": "self.version",
                 "drupal/core-event-dispatcher": "self.version",
                 "drupal/core-file-cache": "self.version",
+                "drupal/core-filesystem": "self.version",
                 "drupal/core-gettext": "self.version",
                 "drupal/core-graph": "self.version",
                 "drupal/core-php-storage": "self.version",
@@ -1006,7 +1150,7 @@
                 "drupal/views_ui": "self.version"
             },
             "require-dev": {
-                "behat/mink": "~1.6",
+                "behat/mink": "~1.7",
                 "behat/mink-goutte-driver": "~1.2",
                 "jcalderonzumba/gastonjs": "~1.0.2",
                 "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
@@ -1036,7 +1180,7 @@
                 "GPL-2.0+"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2016-05-04 11:20:24"
+            "time": "2016-06-01 23:31:24"
         },
         {
             "name": "drupal/ctools",
@@ -1079,6 +1223,45 @@
             "time": "2016-05-06 18:51:13"
         },
         {
+            "name": "drupal/deploy",
+            "version": "8.1.0-alpha6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/deploy",
+                "reference": "64801c143d6f6be7ca35baa0197c549fb097fb53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/deploy-8.x-1.0-alpha6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/workspace": "8.*",
+                "relaxedws/replicator": "dev-master"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Millwood",
+                    "email": "tim@millwoodonline.co.uk"
+                }
+            ],
+            "description": " Allows content to be deployed between servers. Either to be used as a content staging solution or to deploy content across a cluster of different sites.",
+            "homepage": "https://www.drupal.org/project/deploy",
+            "time": "2016-04-09 13:16:41"
+        },
+        {
             "name": "drupal/entity_reference_revisions",
             "version": "8.1.0-rc7",
             "source": {
@@ -1108,6 +1291,34 @@
             "description": "Adds a Entity Reference field type with revision support.",
             "homepage": "https://www.drupal.org/project/entity_reference_revisions",
             "time": "2016-05-26 00:06:06"
+        },
+        {
+            "name": "drupal/entity_storage_migrate",
+            "version": "dev-8.x-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/entity_storage_migrate.git",
+                "reference": "cb4b5bfb09b98b518be51fa2f1d5bf5d377f5bf0"
+            },
+            "require": {
+                "drupal/core": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "This module makes it possible to install modules that provide new entity storage handlers on sites that already have entity data on the site.",
+            "homepage": "http://drupal.org/project/entity_storage_migrate",
+            "keywords": [
+                "Drupal"
+            ],
+            "time": "2016-03-29 15:36:34"
         },
         {
             "name": "drupal/facets",
@@ -1266,6 +1477,32 @@
             "description": "Provides an Amazon S3 plugin for Flysystem.",
             "homepage": "https://www.drupal.org/project/flysystem_s3",
             "time": "2016-02-03 09:29:07"
+        },
+        {
+            "name": "drupal/key_value",
+            "version": "8.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/key_value.git",
+                "reference": "e5cf1d9918c63869f1a265bb82c40b25370a5dea"
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/serialization": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Extends the core key-value API with a backend for lists and sorted sets that you can do range queries on.",
+            "homepage": "https://www.drupal.org/project/key_value",
+            "time": "2015-12-05 00:22:40"
         },
         {
             "name": "drupal/layout_plugin",
@@ -1498,6 +1735,40 @@
             "time": "2016-05-05 23:01:53"
         },
         {
+            "name": "drupal/multiversion",
+            "version": "8.1.0-alpha7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/multiversion.git",
+                "reference": "5f0ac19fad865bbde5aad716ee41c9141e3171d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/multiversion-8.x-1.0-alpha7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/entity_storage_migrate": "8.*",
+                "drupal/key_value": "8.*",
+                "drupal/serialization": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Extends the revision support for content entities.",
+            "homepage": "https://www.drupal.org/project/multiversion",
+            "time": "2016-04-15 11:20:16"
+        },
+        {
             "name": "drupal/page_manager",
             "version": "8.1.0-alpha23",
             "source": {
@@ -1618,6 +1889,38 @@
             "time": "2016-02-16 20:51:34"
         },
         {
+            "name": "drupal/replication",
+            "version": "8.1.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/replication.git",
+                "reference": "d7cf2f9967334c5562aebf047c33677ff583ac34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/replication-8.x-1.0-alpha1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/multiversion": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Provides services and entities types so assist with and log content replication.",
+            "homepage": "http://drupal.org/project/replication",
+            "time": "2016-04-15 13:23:13"
+        },
+        {
             "name": "drupal/rules",
             "version": "8.3.0-alpha1",
             "source": {
@@ -1699,6 +2002,43 @@
             "description": "Provides a generic framework for modules offering search capabilities.",
             "homepage": "https://www.drupal.org/project/search_api",
             "time": "2016-05-20 10:43:24"
+        },
+        {
+            "name": "drupal/workspace",
+            "version": "8.1.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/workspace",
+                "reference": "80469970a545a8d340c8434357d5adc7beee5985"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/workspace-8.x-1.0-alpha1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/datetime": "8.*",
+                "drupal/options": "8.*",
+                "drupal/replication": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Provides the ability to have multiple workspaces on a single site to facilitate things like full-site preview and content staging.",
+            "homepage": "https://www.drupal.org/project/workspace",
+            "keywords": [
+                "Drupal"
+            ],
+            "time": "2016-04-15 11:04:22"
         },
         {
             "name": "drush/config-extra",
@@ -3112,22 +3452,30 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d8e60a5619fff77f9669da8997697443ef1a1d7e",
+                "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Psr\\Log\\": ""
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3141,12 +3489,13 @@
                 }
             ],
             "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
             "keywords": [
                 "log",
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2016-01-06 21:40:42"
         },
         {
             "name": "psy/psysh",
@@ -3219,6 +3568,48 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "relaxedws/replicator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/relaxedws/couchdb-replicator.git",
+                "reference": "72d7297b17f78e5caed1b78344a19f0f1ad179b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/relaxedws/couchdb-replicator/zipball/72d7297b17f78e5caed1b78344a19f0f1ad179b5",
+                "reference": "72d7297b17f78e5caed1b78344a19f0f1ad179b5",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/couchdb": "dev-master"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.6.*"
+            },
+            "bin": [
+                "replicator"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Relaxed\\Replicator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "abhishek kumar",
+                    "email": "abhi170893@gmail.com"
+                }
+            ],
+            "description": "couchdb-replicator",
+            "time": "2016-04-29 15:23:32"
         },
         {
             "name": "stack/builder",
@@ -6093,7 +6484,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "backupmigrate/core": 20,
+        "psr/log": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
