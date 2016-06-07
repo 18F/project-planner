@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.supplier.body
+    - field.field.node.supplier.field_status
+    - field.field.node.supplier.field_tags
     - node.type.supplier
   module:
     - text
@@ -19,6 +21,20 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_status:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_tags:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   links:
     weight: 100
 hidden: {  }

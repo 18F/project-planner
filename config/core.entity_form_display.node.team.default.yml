@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.node.team.body
     - field.field.node.team.field_members
+    - field.field.node.team.field_status
+    - field.field.node.team.field_tags
     - node.type.team
   module:
     - field_group
@@ -14,6 +16,8 @@ third_party_settings:
     group_overview:
       children:
         - title
+        - field_status
+        - field_tags
         - body
       parent_name: ''
       weight: 0
@@ -43,7 +47,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 2
+    weight: 4
     settings:
       rows: 9
       summary_rows: 3
@@ -51,6 +55,19 @@ content:
     third_party_settings: {  }
   field_members:
     weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+  field_status:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_tags:
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60

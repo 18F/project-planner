@@ -19,7 +19,9 @@ dependencies:
     - field.field.node.workflow.field_process
     - field.field.node.workflow.field_requirements
     - field.field.node.workflow.field_sensitive
+    - field.field.node.workflow.field_status
     - field.field.node.workflow.field_success_criteria
+    - field.field.node.workflow.field_tags
     - field.field.node.workflow.field_teams
     - node.type.workflow
   module:
@@ -146,12 +148,26 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+  field_status:
+    weight: 120
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_success_criteria:
     weight: 118
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_tags:
+    weight: 121
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_teams:
     weight: 119
     label: above

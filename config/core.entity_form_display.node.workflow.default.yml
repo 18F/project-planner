@@ -19,7 +19,9 @@ dependencies:
     - field.field.node.workflow.field_process
     - field.field.node.workflow.field_requirements
     - field.field.node.workflow.field_sensitive
+    - field.field.node.workflow.field_status
     - field.field.node.workflow.field_success_criteria
+    - field.field.node.workflow.field_tags
     - field.field.node.workflow.field_teams
     - image.style.thumbnail
     - node.type.workflow
@@ -35,6 +37,8 @@ third_party_settings:
     group_overview:
       children:
         - title
+        - field_status
+        - field_tags
         - body
         - field_process
         - field_success_criteria
@@ -53,7 +57,7 @@ third_party_settings:
       children:
         - field_sensitive
       parent_name: group_overview
-      weight: 6
+      weight: 8
       label: Classification
       format_type: fieldset
       format_settings:
@@ -136,7 +140,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 2
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -231,7 +235,7 @@ content:
     third_party_settings: {  }
     type: telephone_default
   field_process:
-    weight: 3
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
@@ -239,7 +243,7 @@ content:
     third_party_settings: {  }
     type: text_textarea_with_summary
   field_requirements:
-    weight: 5
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -252,14 +256,27 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+  field_status:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_success_criteria:
-    weight: 4
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
       summary_rows: 2
     third_party_settings: {  }
     type: text_textarea_with_summary
+  field_tags:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
   field_teams:
     weight: 26
     settings:

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.supplier.body
+    - field.field.node.supplier.field_status
+    - field.field.node.supplier.field_tags
     - node.type.supplier
   module:
     - field_group
@@ -13,6 +15,8 @@ third_party_settings:
     group_overview:
       children:
         - title
+        - field_status
+        - field_tags
         - body
       parent_name: ''
       weight: 1
@@ -30,12 +34,25 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 3
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+  field_status:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_tags:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
   title:
     type: string_textfield
     weight: 0

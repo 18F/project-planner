@@ -18,7 +18,9 @@ dependencies:
     - field.field.node.dependency.field_poc_name
     - field.field.node.dependency.field_poc_phone
     - field.field.node.dependency.field_sensitive
+    - field.field.node.dependency.field_status
     - field.field.node.dependency.field_suppliers
+    - field.field.node.dependency.field_tags
     - field.field.node.dependency.field_team
     - image.style.thumbnail
     - node.type.dependency
@@ -34,6 +36,8 @@ third_party_settings:
     group_overview:
       children:
         - title
+        - field_status
+        - field_tags
         - body
         - group_classification
       parent_name: ''
@@ -50,7 +54,7 @@ third_party_settings:
         - field_mission_critical
         - field_sensitive
       parent_name: group_overview
-      weight: 3
+      weight: 5
       label: Classification
       format_type: fieldset
       format_settings:
@@ -134,7 +138,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 2
+    weight: 4
     settings:
       rows: 9
       summary_rows: 3
@@ -240,11 +244,24 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+  field_status:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_suppliers:
     weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_tags:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
   field_team:
     weight: 3
     settings: {  }
