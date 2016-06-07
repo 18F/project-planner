@@ -1,0 +1,13 @@
+uuid: c7d4bd00-6765-4948-8c27-3b10b2f2dcb5
+langcode: en
+status: true
+dependencies: {  }
+id: private_files_export
+label: 'Private files export'
+enabled: true
+keep: null
+period: 3600
+cron: null
+source_id: private_files
+destination_id: private_files
+settings_profile_id: files_export
