@@ -1,12 +1,7 @@
 uuid: b3ed3501-6019-42e3-bd2a-d96023c3e4ed
 langcode: en
 status: true
-dependencies:
-  module:
-    - core_search_facets
-third_party_settings:
-  core_search_facets:
-    advanced_filters: 1
+dependencies: {  }
 id: core_node_search__node_search
 name: 'core_node_search:node_search'
 filter_key: source

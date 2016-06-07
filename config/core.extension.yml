@@ -12,7 +12,6 @@ module:
   config: 0
   contact: 0
   contextual: 0
-  core_search_facets: 0
   ctools: 0
   ctools_block: 0
   ctools_views: 0
@@ -40,12 +39,6 @@ module:
   link: 0
   menu_link_config: 0
   menu_ui: 0
-  migrate: 0
-  migrate_drupal: 0
-  migrate_plus: 0
-  migrate_source_csv: 0
-  migrate_source_json: 0
-  migrate_tools: 0
   multiversion: 0
   node: 0
   options: 0
@@ -62,7 +55,6 @@ module:
   replication: 0
   rest: 0
   rules: 0
-  search: 0
   search_api: 0
   search_api_db: 0
   serialization: 0
