@@ -1,11 +1,16 @@
 ---
 applications:
-- name: project-planner
+- name: "project-planner"
   instances: 1
-  memory: 512M
-  host: project-planner
-  domain: apps.cloud.gov
-  buildpack: https://github.com/ddollar/heroku-buildpack-multi.git
+  memory: "512M"
+  host: "project-planner"
+  domain: "apps.cloud.gov"
+  buildpack: "https://github.com/ddollar/heroku-buildpack-multi.git"
   env:
-    APP_LOG_LEVEL: INFO
-    APP_FILES_REGION: us-east-1
+    APP_LOG_LEVEL: "INFO"
+    APP_FILES_REGION: "us-east-1"
+    DRUPAL_THEME: "bootstrap_18f"
+    DRUPAL_DB: "bootstrap"
+    DRUPAL_SALT: "true"
+    DRUPAL_INIT: "false"
+    DRUPAL_SYNC: "true"
