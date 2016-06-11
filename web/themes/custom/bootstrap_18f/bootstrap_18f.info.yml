@@ -21,3 +21,4 @@ regions:
 
 libraries:
   - 'bootstrap_18f/global-styling'
+  - 'bootstrap_18f/bootstrap-scripts'
