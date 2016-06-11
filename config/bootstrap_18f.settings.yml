@@ -1,4 +1,5 @@
 schema: '8000'
+cdn_jsdelivr_version: 3.3.6
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: assets/favicon.ico
@@ -13,4 +14,4 @@ logo:
   path: assets/logo.png
   url: ''
   use_default: false
-cdn_jsdelivr_version: 3.3.6
+cdn_provider: ''
