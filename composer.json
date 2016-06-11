@@ -13,33 +13,20 @@
   ],
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "repositories": [
-    {
+  "repositories": {
+    "drupal": {
       "type": "composer",
-      "url": "https://packagist.drupal-composer.org"
+      "url":  "https://packages.drupal.org/8"
     },
-    {
+    "backup_migrate_core": {
       "type": "vcs",
       "url": "https://github.com/backupmigrate/backup_migrate_core"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "jquery/jquery.ui",
-        "version": "1.11.4",
-        "type": "drupal-library",
-        "dist": {
-          "url": "https://jqueryui.com/resources/download/jquery-ui-1.11.4.zip",
-          "type": "zip"
-        }
-      }
     }
-  ],
+  },
   "require": {
     "backupmigrate/core": "dev-master",
     "psr/log": "dev-master",
     "composer/installers": "*",
-    "cweagans/composer-patches": "~1.0",
     "drupal/console": "~0.10",
     "drush/drush": "~8.1",
     "drush/config-extra": "1.0.*",
@@ -58,7 +45,7 @@
     "drupal/search_api": "8.1.*",
     "drupal/facets": "8.1.*",
     "drupal/menu_link_config": "8.*",
-    "jquery/jquery.ui": "1.11.4"
+    "drupal/bootstrap": "3.0.x-dev"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.8",
