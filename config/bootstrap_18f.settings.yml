@@ -1,0 +1,16 @@
+schema: '8000'
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: assets/favicon.ico
+  url: 'http://project-planner.local:8080/assets/favicon.ico'
+  use_default: false
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: assets/logo.png
+  url: ''
+  use_default: false
+cdn_jsdelivr_version: 3.3.6

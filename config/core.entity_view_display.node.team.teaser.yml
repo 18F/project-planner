@@ -25,3 +25,5 @@ content:
     weight: 100
 hidden:
   field_members: true
+  field_status: true
+  field_tags: true

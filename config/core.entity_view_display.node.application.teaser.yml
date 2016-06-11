@@ -132,5 +132,7 @@ hidden:
   field_poc_phone: true
   field_sensitive: true
   field_source_code: true
+  field_status: true
   field_suppliers: true
+  field_tags: true
   field_team: true

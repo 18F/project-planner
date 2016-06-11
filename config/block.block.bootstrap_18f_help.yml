@@ -1,15 +1,15 @@
-uuid: bb319615-381e-4d48-b59b-e0cac98cdde3
+uuid: 8bb10c4b-34fc-45f6-8162-eb7c566cd788
 langcode: en
 status: true
 dependencies:
   module:
     - help
   theme:
-    - bartik
+    - bootstrap_18f
 _core:
   default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
-id: bartik_help
-theme: bartik
+id: bootstrap_18f_help
+theme: bootstrap_18f
 region: content
 weight: -7
 provider: null

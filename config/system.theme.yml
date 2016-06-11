@@ -1,4 +1,4 @@
-admin: '0'
-default: bartik
+admin: bootstrap_18f
+default: bootstrap_18f
 _core:
   default_config_hash: fOjer9hADYYnbCJVZMFZIIM1azTFWyg84ZkFDHfAbUg

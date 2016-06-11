@@ -1,4 +1,4 @@
-uuid: b1fc5aaa-da58-4a0d-b002-7a834330e634
+uuid: f9817fc1-488f-42f4-b6a6-403b1fe9395c
 langcode: en
 status: false
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - bootstrap_18f
 _core:
   default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
-id: bartik_tools
-theme: bartik
-region: '-1'
+id: bootstrap_18f_tools
+theme: bootstrap_18f
+region: navigation
 weight: -5
 provider: null
 plugin: 'system_menu_block:tools'

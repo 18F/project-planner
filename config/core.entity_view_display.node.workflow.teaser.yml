@@ -39,5 +39,7 @@ hidden:
   field_process: true
   field_requirements: true
   field_sensitive: true
+  field_status: true
   field_success_criteria: true
+  field_tags: true
   field_teams: true

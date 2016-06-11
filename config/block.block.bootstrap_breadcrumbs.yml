@@ -1,17 +1,17 @@
-uuid: d144c5a7-eebf-4cd9-be21-5ce4ca802d07
+uuid: 1155d03d-c32a-474e-b15f-b4da7044f5c8
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - seven
+    - bootstrap
 _core:
-  default_config_hash: WWu2OQswgCztl9OeXjD1stexIEMZsSgPMYIdC-JHx9c
-id: seven_breadcrumbs
-theme: seven
-region: breadcrumb
-weight: 0
+  default_config_hash: wDR9JKEATSWldBjw8du8s3G2zjEYeQf88nlld11hMLo
+id: bootstrap_breadcrumbs
+theme: bootstrap
+region: header
+weight: -100
 provider: null
 plugin: system_breadcrumb_block
 settings:
