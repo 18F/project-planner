@@ -13,17 +13,18 @@
   ],
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "repositories": {
-    "drupal": {
+  "repositories": [
+    {
       "type": "composer",
       "url":  "https://packages.drupal.org/8"
     },
-    "backup_migrate_core": {
+    {
       "type": "vcs",
       "url": "https://github.com/backupmigrate/backup_migrate_core"
     }
-  },
+  ],
   "require": {
+    "cweagans/composer-patches": "~1.0",
     "backupmigrate/core": "dev-master",
     "psr/log": "dev-master",
     "composer/installers": "*",
@@ -66,12 +67,14 @@
     "post-install-cmd": [
       "DrupalProject\\composer\\DrupalHandler::initializeFiles",
       "DrupalProject\\composer\\DrupalHandler::setHashSalt",
+      "DrupalProject\\composer\\DrupalHandler::buildTheme",
       "DrupalProject\\composer\\DrupalHandler::initializeSite",
       "DrupalProject\\composer\\DrupalHandler::syncConfigurations"
     ],
     "post-update-cmd": [
       "DrupalProject\\composer\\DrupalHandler::initializeFiles",
       "DrupalProject\\composer\\DrupalHandler::setHashSalt",
+      "DrupalProject\\composer\\DrupalHandler::buildTheme",
       "DrupalProject\\composer\\DrupalHandler::initializeSite",
       "DrupalProject\\composer\\DrupalHandler::syncConfigurations"
     ]
