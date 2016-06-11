@@ -19,6 +19,11 @@ use Symfony\Component\Yaml\Yaml;
 class DrupalHandler {
 
   //----------------------------------------------------------------------------
+  // Global properties
+
+  protected static $site_exists = NULL;
+
+  //----------------------------------------------------------------------------
   // Initialization methods
 
   /**
@@ -63,7 +68,21 @@ class DrupalHandler {
     $private = static::_getDrupalPrivate(getcwd());
     $hash_salt = static::_generateRandomString();
 
-    file_put_contents("$private/hash_salt.txt", $hash_salt);
+    if (static::_check('DRUPAL_SALT')) {
+      file_put_contents("$private/hash_salt.txt", $hash_salt);
+    }
+  }
+
+  /**
+   * Build theme files
+   */
+  public static function buildTheme(Event $event) {
+    $fs = new Filesystem();
+    $root = static::_getDrupalRoot(getcwd());
+
+    $event->getIO()->write("Building Drupal theme files");
+    $theme = static::_getDrupalTheme($root);
+    static::_runCommand("lessc $theme/less/style.less > $theme/css/style.css");
   }
 
   /**
@@ -76,11 +95,7 @@ class DrupalHandler {
     $root = static::_getDrupalRoot($cwd);
     $db = static::_getDrupalBootstrapDB($cwd);
 
-    try {
-      # Command to check for existence of Drupal site
-      static::_runCommand("$vendor/drush/drush/drush --root='$root' cache-rebuild", 3600, NULL);
-    }
-    catch (ProcessFailedException $error) {
+    if (static::_check('DRUPAL_INIT') && !static::_siteExists($vendor, $root)) {
       # Get MySQL database connection
       $mysql_conn = static::_getDrupalMySQL();
 
@@ -109,17 +124,8 @@ class DrupalHandler {
     $config = static::_getDrupalConfig($cwd);
     $vendor = static::_getDrupalVendor($cwd);
     $root = static::_getDrupalRoot($cwd);
-    $import = TRUE;
 
-    try {
-      # Command to check for existence of Drupal site
-      static::_runCommand("$vendor/drush/drush/drush --root='$root' cache-rebuild", 3600, NULL);
-    }
-    catch (ProcessFailedException $error) {
-      $import = FALSE;
-    }
-
-    if ($import) {
+    if (static::_check('DRUPAL_SYNC') && static::_siteExists($vendor, $root)) {
       $event->getIO()->write("Synchronizing Drupal configurations");
 
       # Ensuring that the config module is enabled
@@ -132,15 +138,13 @@ class DrupalHandler {
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-set 'system.site' uuid '$uuid'", 1800, FALSE);
 
       # Import configurations
-      if (!isset($_ENV['DRUPAL_NO_IMPORT'])) {
-        static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --source='$config'", 7200, TRUE);
+      static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --source='$config'", 7200, TRUE);
 
-        if (isset($_ENV['DOCKER_IMAGE'])) {
-          $config_override = static::_getDrupalDockerConfig($cwd, $_ENV['DOCKER_IMAGE']);
+      if (isset($_ENV['DOCKER_IMAGE'])) {
+        $config_override = static::_getDrupalDockerConfig($cwd, $_ENV['DOCKER_IMAGE']);
 
-          if ($fs->exists($config_override)) {
-            static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --partial --source='$config_override'", 7200, TRUE);
-          }
+        if ($fs->exists($config_override)) {
+          static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --partial --source='$config_override'", 7200, TRUE);
         }
       }
       # Run any database updates
@@ -153,6 +157,27 @@ class DrupalHandler {
 
   //----------------------------------------------------------------------------
   // Helper methods
+
+  /**
+   * Check if site exists and return boolean to indicate if so
+   */
+  protected static function _siteExists($vendor, $root) {
+    if (is_null(static::$site_exists)) {
+      static::$site_exists = FALSE;
+
+      try {
+        # Command to check for existence of Drupal site
+        $message = static::_runCommand("$vendor/drush/drush/drush --root='$root' status", 3600, NULL);
+
+        if (preg_match('/Drupal\sbootstrap\s+\:\s+Successful\s/i', $message)) {
+          static::$site_exists = TRUE;
+        }
+      }
+      catch (ProcessFailedException $error) {
+      }
+    }
+    return static::$site_exists;
+  }
 
   /**
    * Gather all Cloud Foundry services through the environment
@@ -207,31 +232,40 @@ class DrupalHandler {
   }
 
   /**
-   * Return the Rood Drupal private asset directory
+   * Return the Root Drupal private asset directory
    */
   protected static function _getDrupalPrivate($project_root) {
     return $project_root .  '/private';
   }
 
   /**
-   * Return the Rood Drupal vendor directory
+   * Return the Root Drupal vendor directory
    */
   protected static function _getDrupalVendor($project_root) {
     return $project_root .  '/vendor';
   }
 
   /**
-   * Return the Rood Drupal web directory
+   * Return the Root Drupal web directory
    */
   protected static function _getDrupalRoot($project_root) {
     return $project_root .  '/web';
   }
 
   /**
-   * Return the Rood Drupal configuration directory
+   * Return the Root Drupal theme directory
+   */
+  protected static function _getDrupalTheme($drupal_root) {
+    $theme_name = (isset($_ENV['DRUPAL_THEME']) ? trim($_ENV['DRUPAL_THEME']) : 'bootstrap_18f');
+    return $drupal_root .  '/themes/custom/' . $theme_name;
+  }
+
+  /**
+   * Return the Root Drupal configuration directory
    */
   protected static function _getDrupalBootstrapDB($project_root) {
-    return $project_root .  '/db/bootstrap.sql';
+    $db_name = (isset($_ENV['DRUPAL_DB']) ? trim($_ENV['DRUPAL_DB']) : 'bootstrap');
+    return $project_root .  '/db/' . preg_replace('/\.sql$/i', '', $db_name) . '.sql';
   }
 
   /**
@@ -267,5 +301,21 @@ class DrupalHandler {
    */
   protected static function _generateRandomString($length = 100) {
     return substr(str_repeat(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), ceil($length / 60)), 0, $length);
+  }
+
+  /**
+   * Check an environment variable and return corresponding boolean value
+   */
+  protected static function _check($variable, $default = TRUE) {
+    $value = FALSE;
+
+    if (!isset($_ENV[$variable])) {
+      $value = $default;
+    } elseif (!is_null($_ENV[$variable]) && strlen($_ENV[$variable]) > 0) {
+      if (preg_match('/^\s*(true|yes|1)\s*$/i', $_ENV[$variable])) {
+        $value = TRUE;
+      }
+    }
+    return $value;
   }
 }
