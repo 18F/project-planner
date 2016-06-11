@@ -1,0 +1,3 @@
+[submodule "web/themes/custom/bootstrap_18f/bootstrap"]
+	path = web/themes/custom/bootstrap_18f/bootstrap
+	url = https://github.com/twbs/bootstrap.git
