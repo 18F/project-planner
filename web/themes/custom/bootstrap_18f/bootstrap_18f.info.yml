@@ -8,16 +8,13 @@ package: 'Bootstrap'
 
 regions:
   navigation: 'Navigation'
-  navigation_collapsible: 'Navigation (Collapsible)'
-  header: 'Top Bar'
+  header: 'Header'
   highlighted: 'Highlighted'
   help: 'Help'
-  content: 'Content'
-  sidebar_first: 'Primary'
-  sidebar_second: 'Secondary'
-  footer: 'Footer'
   page_top: 'Page top'
+  content: 'Content'
   page_bottom: 'Page bottom'
+  footer: 'Footer'
 
 libraries:
   - 'bootstrap_18f/global-styling'
