@@ -1,6 +1,15 @@
 /**
  * Form styles.
  */
+select::-ms-expand {
+  display: none;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
 
 // Browsers do not recognize pseudo :after selectors, we must create a wrapper
 // around the select element to style it properly.
@@ -61,4 +70,16 @@
       color: @state-warning-text;
     }
   }
+}
+
+// Modules form checkbox style
+td.checkbox {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.checkboxes label {
+    display: block;
+    float: left;
+    padding-right: 10px;
+    white-space: nowrap;
 }
