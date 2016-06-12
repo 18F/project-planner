@@ -1,5 +1,6 @@
 schema: '8000'
 cdn_jsdelivr_version: 3.3.6
+cdn_provider: ''
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: assets/favicon.ico
@@ -14,4 +15,20 @@ logo:
   path: assets/logo.png
   url: ''
   use_default: false
-cdn_provider: ''
+breadcrumb_home: 1
+navbar_inverse: 1
+navbar_position: fixed-top
+region_wells:
+  navigation: ''
+  navigation_collapsible: ''
+  header: ''
+  highlighted: ''
+  help: ''
+  content: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  footer: ''
+button_size: btn-lg
+fluid_container: 1
+image_shape: img-rounded
+modal_size: modal-lg

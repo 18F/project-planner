@@ -1,15 +1,15 @@
-uuid: d0159689-8010-4f82-804c-2b2e73b5a5cb
+uuid: cdef7d41-7151-4d55-abb6-1bbc12295e2d
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bootstrap_18f
+    - seven
 _core:
   default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
-id: bootstrap_18f_content
-theme: bootstrap_18f
+id: seven_content
+theme: seven
 region: content
 weight: -2
 provider: null

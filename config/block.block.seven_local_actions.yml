@@ -1,15 +1,15 @@
-uuid: fc83f7ea-56f4-4aeb-ab20-09b6579dfd29
+uuid: ffd6fb59-c65b-4960-a22f-9de4cb1dbf1d
 langcode: en
 status: true
 dependencies:
   theme:
-    - bootstrap_18f
+    - seven
 _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
-id: bootstrap_18f_local_actions
-theme: bootstrap_18f
-region: content
-weight: -3
+id: seven_local_actions
+theme: seven
+region: highlighted
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:

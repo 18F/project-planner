@@ -1,18 +1,18 @@
-uuid: 72ad4b9e-c637-4cf4-8bb7-7622098471e8
+uuid: b162d537-e656-4b01-b710-b902de0fe5ce
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.footer
   module:
     - system
   theme:
-    - bootstrap_18f
+    - seven
 _core:
   default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
-id: bootstrap_18f_footer
-theme: bootstrap_18f
-region: footer
+id: seven_footer
+theme: seven
+region: '-1'
 weight: -5
 provider: null
 plugin: 'system_menu_block:footer'

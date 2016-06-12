@@ -1,17 +1,17 @@
-uuid: d7c08b1a-0efa-4ed6-83c5-0c0f18eae010
+uuid: eaec9622-bc32-451b-a819-1104cb18df8b
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bootstrap_18f
+    - seven
 _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
-id: bootstrap_18f_messages
-theme: bootstrap_18f
+id: seven_messages
+theme: seven
 region: highlighted
-weight: -6
+weight: -5
 provider: null
 plugin: system_messages_block
 settings:

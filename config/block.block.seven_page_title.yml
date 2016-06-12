@@ -1,17 +1,17 @@
-uuid: 0d618384-b8c9-4531-97db-122f84123beb
+uuid: bd8d142f-d852-4178-a7d5-e6659a454306
 langcode: en
 status: true
 dependencies:
   module:
     - facets
   theme:
-    - bootstrap_18f
+    - seven
 _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
-id: bootstrap_18f_page_title
-theme: bootstrap_18f
+id: seven_page_title
+theme: seven
 region: content
-weight: -5
+weight: -4
 provider: null
 plugin: page_title_block
 settings:

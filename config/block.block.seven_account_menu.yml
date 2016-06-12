@@ -1,19 +1,19 @@
-uuid: 23b8465c-592f-4674-89fa-1566108eeddb
+uuid: c221b69c-8b90-4e55-90ca-24c98a78a01f
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.account
   module:
     - system
   theme:
-    - bootstrap_18f
+    - seven
 _core:
   default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
-id: bootstrap_18f_account_menu
-theme: bootstrap_18f
-region: header
-weight: -5
+id: seven_account_menu
+theme: seven
+region: '-1'
+weight: -4
 provider: null
 plugin: 'system_menu_block:account'
 settings:
