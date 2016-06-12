@@ -3,3 +3,6 @@
  * @file
  * Bootstrap 18F theme PHP code.
  */
+function bootstrap_18f_preprocess_html(&$variables) {
+
+}
