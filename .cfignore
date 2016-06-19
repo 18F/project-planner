@@ -1,3 +1,6 @@
+# Backups
+private/backup_migrate/*
+
 # Version control
 .git
 
