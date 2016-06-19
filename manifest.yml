@@ -10,6 +10,7 @@ applications:
     APP_LOG_LEVEL: "INFO"
     APP_FILES_REGION: "us-east-1"
     DRUPAL_THEME: "bootstrap_18f"
+    DRUPAL_BUILD_THEME: "false"
     DRUPAL_DB: "bootstrap"
     DRUPAL_SALT: "true"
     DRUPAL_INIT: "false"
