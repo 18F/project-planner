@@ -1,0 +1,15 @@
+uuid: dc048b47-4e0e-4e08-af36-a5e3f3e42f02
+langcode: en
+status: true
+dependencies: {  }
+id: user_view
+label: 'User view'
+use_admin_theme: null
+path: '/user/{user}'
+access_logic: and
+access_conditions: {  }
+parameters:
+  user:
+    machine_name: user
+    type: 'entity:user'
+    label: User

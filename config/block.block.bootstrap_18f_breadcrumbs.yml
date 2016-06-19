@@ -1,6 +1,6 @@
 uuid: 971a0488-4956-4aa8-a676-c5c4cbe7a95b
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: bootstrap_18f_breadcrumbs
 theme: bootstrap_18f
-region: '-1'
-weight: -4
+region: header
+weight: -3
 provider: null
 plugin: system_breadcrumb_block
 settings:

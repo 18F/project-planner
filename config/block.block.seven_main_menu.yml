@@ -1,6 +1,6 @@
-uuid: acfe671e-2e3a-402f-9529-63c22aadb5d3
+uuid: 1b60ae50-b6be-4c1d-9d1c-bae620f4e9fd
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,8 +12,8 @@ _core:
   default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
 id: seven_main_menu
 theme: seven
-region: pre_content
-weight: -5
+region: '-1'
+weight: -4
 provider: null
 plugin: 'system_menu_block:main'
 settings:

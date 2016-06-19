@@ -1,0 +1,46 @@
+uuid: 8c3d5666-9476-4bf0-80da-decf45a0c12b
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.user_view
+  module:
+    - panels
+    - user
+id: anonymous
+label: Anonymous
+variant: panels_variant
+variant_settings:
+  blocks:
+    80d510e8-29a3-4199-9897-a445f52a6b37:
+      id: user_login_block
+      label: 'Login required'
+      provider: user
+      label_display: visible
+      region: main
+      weight: 0
+      uuid: 80d510e8-29a3-4199-9897-a445f52a6b37
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 9407a5f3-a741-4096-b0eb-33b6f8fdddea
+  label: null
+  weight: 0
+  layout: booststrap-12
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: anonymous
+  builder: standard
+page: user_view
+weight: 0
+selection_criteria:
+  70585029-7d70-4609-9ca2-fbaa3cf7de4e:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: 70585029-7d70-4609-9ca2-fbaa3cf7de4e
+selection_logic: and
+static_context: {  }

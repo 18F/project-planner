@@ -1,0 +1,86 @@
+uuid: 29e56cd8-7a9f-470f-a93c-87e95865d6cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.user_view
+    - views.view.who_s_online
+  module:
+    - ctools_block
+    - panels
+    - user
+    - views
+id: member
+label: Member
+variant: panels_variant
+variant_settings:
+  blocks:
+    2d9e241d-7d98-4266-bb59-cd5a9582d9ec:
+      id: local_tasks_block
+      label: Tabs
+      provider: core
+      label_display: '0'
+      primary: true
+      secondary: true
+      region: sidebar_right
+      weight: 0
+      uuid: 2d9e241d-7d98-4266-bb59-cd5a9582d9ec
+      context_mapping: {  }
+    0d643e71-cf9c-4aed-a32c-a8965d2259e3:
+      id: 'views_block:who_s_online-who_s_online_block'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: sidebar_left
+      weight: 0
+      uuid: 0d643e71-cf9c-4aed-a32c-a8965d2259e3
+      context_mapping: {  }
+    cc53cdf9-465f-460f-8f7b-0f05993adcd7:
+      id: local_actions_block
+      label: 'Primary admin actions'
+      provider: core
+      label_display: '0'
+      region: sidebar_right
+      uuid: cc53cdf9-465f-460f-8f7b-0f05993adcd7
+      context_mapping: {  }
+    359b7794-7df4-445b-b484-7553cf0326bb:
+      id: 'entity_field:user:name'
+      label: 'Name: '
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: user_name
+        settings:
+          link_to_entity: false
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_right
+      uuid: 359b7794-7df4-445b-b484-7553cf0326bb
+      context_mapping:
+        entity: user
+  id: panels_variant
+  uuid: 305d35ac-e2df-4fb9-aa71-21e4184f4792
+  label: null
+  weight: 0
+  layout: booststrap-4-8
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: member
+  builder: standard
+page: user_view
+weight: 0
+selection_criteria:
+  5a54849e-c84a-4017-8dde-f40ade458e56:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: 5a54849e-c84a-4017-8dde-f40ade458e56
+selection_logic: and
+static_context: {  }

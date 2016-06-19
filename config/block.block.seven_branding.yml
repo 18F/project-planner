@@ -1,8 +1,9 @@
-uuid: edf6ee50-c907-4109-a6cb-7d8d0c6961b9
+uuid: 39b4bc7a-a156-40b8-b58c-9a83a6a4cf18
 langcode: en
-status: true
+status: false
 dependencies:
   module:
+    - facets
     - system
   theme:
     - seven
@@ -10,8 +11,8 @@ _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
 id: seven_branding
 theme: seven
-region: header
-weight: -6
+region: '-1'
+weight: -1
 provider: null
 plugin: system_branding_block
 settings:
@@ -19,7 +20,13 @@ settings:
   label: 'Site branding'
   provider: system
   label_display: '0'
-  use_site_logo: true
+  use_site_logo: false
   use_site_name: true
-  use_site_slogan: true
-visibility: {  }
+  use_site_slogan: false
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }

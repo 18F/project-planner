@@ -10,8 +10,8 @@ _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: bootstrap_18f_page_title
 theme: bootstrap_18f
-region: content
-weight: -5
+region: header
+weight: -2
 provider: null
 plugin: page_title_block
 settings:

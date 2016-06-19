@@ -160,3 +160,5 @@ resources:
         - basic_auth
 _core:
   default_config_hash: r77vqoPGHQWXV0qlQmMfkUsvGDsQcWPmcDnC1K4C3i8
+username: admin
+password: YWRtaW45ODc=

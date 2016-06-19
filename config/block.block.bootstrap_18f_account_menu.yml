@@ -13,7 +13,7 @@ _core:
 id: bootstrap_18f_account_menu
 theme: bootstrap_18f
 region: header
-weight: -5
+weight: -4
 provider: null
 plugin: 'system_menu_block:account'
 settings:

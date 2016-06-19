@@ -11,7 +11,7 @@ _core:
 id: bootstrap_18f_branding
 theme: bootstrap_18f
 region: header
-weight: -6
+weight: -5
 provider: null
 plugin: system_branding_block
 settings:

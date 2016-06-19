@@ -9,7 +9,7 @@ _core:
 id: bootstrap_18f_local_tasks
 theme: bootstrap_18f
 region: content
-weight: -4
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:
