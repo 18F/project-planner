@@ -128,7 +128,7 @@ class DrupalHandler {
     $vendor = static::_getDrupalVendor($cwd);
     $root = static::_getDrupalRoot($cwd);
 
-    if (static::_check('DRUPAL_SYNC') && static::_siteExists($vendor, $root)) {
+    if (static::_check('DRUPAL_SYNC') && static::_siteExists($vendor, $root, TRUE)) {
       # Ensuring that the config module is enabled
       $event->getIO()->write(" * Ensuring config module is enabled");
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' pm-enable 'config'", 1800, FALSE);
@@ -166,8 +166,8 @@ class DrupalHandler {
   /**
    * Check if site exists and return boolean to indicate if so
    */
-  protected static function _siteExists($vendor, $root) {
-    if (is_null(static::$site_exists)) {
+  protected static function _siteExists($vendor, $root, $force = FALSE) {
+    if ($force || is_null(static::$site_exists)) {
       static::$site_exists = FALSE;
 
       try {
