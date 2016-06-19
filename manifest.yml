@@ -13,5 +13,5 @@ applications:
     DRUPAL_BUILD_THEME: "false"
     DRUPAL_DB: "bootstrap"
     DRUPAL_SALT: "true"
-    DRUPAL_INIT: "false"
+    DRUPAL_INIT: "true"
     DRUPAL_SYNC: "true"
