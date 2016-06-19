@@ -15,6 +15,9 @@ web/libraries
 web/sites/*/files
 web/sites/default/settings.local.php
 
+# Cloud Foundry files
+cf-ssh.yml
+
 # Vagrant files
 .vagrant
 config.yml
