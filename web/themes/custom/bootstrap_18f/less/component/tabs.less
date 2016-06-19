@@ -130,31 +130,59 @@
 }
 
 // Navtab styles
-.tabs > ul {
-  border-bottom: 2px solid @18f-dark-blue;
-  margin-bottom: 15px;
+.tabs--primary {
+  border-bottom: 2px solid @gray-lighter;
+  margin-bottom: 5px;
 }
-.tabs > ul > li > a {
-  background: @18f-light-blue;
+.tabs--primary > li > a {
+  background: @gray-lighter;
   color: @18f-dark-blue;
-  border: 1px solid @18f-dark-blue;
+  border: 1px solid @gray-lighter;
   font-weight: bold;
   &:hover,
   &:focus {
-    border: 1px solid @18f-dark-blue;
-    background: lighten(@18f-light-blue, 25%);
+    border: 1px solid @gray-lighter;
+    background: lighten(@gray-lighter, 25%);
     color: lighten(@18f-dark-blue, 25%);
   }
 }
-.tabs > ul > li > a.is-active {
-  background: @18f-dark-blue;
-  color: #fff;
-  border: 1px solid @18f-dark-blue;
+.tabs--primary > li > a.is-active {
+  background: #fff;
+  color: @gray;
+  border: 1px solid @gray-lighter;
+  font-weight: normal;
+  &:hover,
+  &:focus {
+    border: 1px solid @gray-lighter;
+    background: #fff;
+    color: @gray;
+  }
+}
+
+.tabs--secondary {
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+.tabs--secondary > li > a {
+  background: @gray-lighter;
+  color: @18f-dark-blue;
   font-weight: bold;
   &:hover,
   &:focus {
-    border: 1px solid @18f-dark-blue;
-    background: lighten(@18f-dark-blue, 25%);
-    color: #fff;
+    border: 1px solid @gray-lighter;
+    background: lighten(@gray-lighter, 25%);
+    color: lighten(@18f-dark-blue, 25%);
+  }
+}
+.tabs--secondary > li > a.is-active {
+  border: 1px solid @gray-lighter;
+  background: #fff;
+  color: @gray;
+  font-weight: normal;
+  &:hover,
+  &:focus {
+    border: 1px solid @gray-lighter;
+    background: #fff;
+    color: @gray;
   }
 }
