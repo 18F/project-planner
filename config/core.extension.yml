@@ -3,6 +3,7 @@ module:
   automated_cron: 0
   backup_migrate: 0
   basic_auth: 0
+  big_pipe: 0
   block: 0
   block_content: 0
   bootstrap_layouts: 0
@@ -33,6 +34,7 @@ module:
   filter: 0
   flysystem: 0
   flysystem_s3: 0
+  hal: 0
   help: 0
   history: 0
   image: 0
