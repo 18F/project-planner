@@ -35,29 +35,29 @@ class DrupalHandler {
 
     // Prepare the settings file for installation
     if ($fs->exists($root . '/sites/default/settings.php')) {
+      $event->getIO()->write(" * Ensuring sites/default/settings.php is read only");
       $fs->chmod($root . '/sites/default/settings.php', 0444);
-      $event->getIO()->write("Ensure sites/default/settings.php file is read only");
     }
 
     // Prepare the services file for installation
     if ($fs->exists($root . '/sites/default/services.yml')) {
+      $event->getIO()->write(" * Ensuring sites/default/services.yml is read only");
       $fs->chmod($root . '/sites/default/services.yml', 0444);
-      $event->getIO()->write("Ensure sites/default/services.yml file is read only");
     }
 
     // Initialize files directory
     if (!$fs->exists($root . '/sites/default/files')) {
+      $event->getIO()->write(" * Creating a sites/default/files directory with chmod 0777");
       $oldmask = umask(0);
       $fs->mkdir($root . '/sites/default/files', 0777);
       umask($oldmask);
-      $event->getIO()->write("Create a sites/default/files directory with chmod 0777");
     }
     // Initialize CSS aggregation directory
     if (!$fs->exists($root . '/sites/default/files/css')) {
+      $event->getIO()->write(" * Creating a sites/default/css directory with chmod 0777");
       $oldmask = umask(0);
       $fs->mkdir($root . '/sites/default/files/css', 0777);
       umask($oldmask);
-      $event->getIO()->write("Create a sites/default/css directory with chmod 0777");
     }
   }
 
@@ -69,6 +69,7 @@ class DrupalHandler {
     $hash_salt = static::_generateRandomString();
 
     if (static::_check('DRUPAL_SALT')) {
+      $event->getIO()->write(" * Generating new Drupal Hash Salt");
       file_put_contents("$private/hash_salt.txt", $hash_salt);
     }
   }
@@ -80,9 +81,11 @@ class DrupalHandler {
     $fs = new Filesystem();
     $root = static::_getDrupalRoot(getcwd());
 
-    $event->getIO()->write("Building Drupal theme files");
-    $theme = static::_getDrupalTheme($root);
-    static::_runCommand("lessc $theme/less/style.less > $theme/css/style.css");
+    if (static::_check('DRUPAL_BUILD_THEME') && !empty(static::_runCommand("which lessc", 1800, NULL, FALSE))) {
+      $event->getIO()->write(" * Building Drupal theme files");
+      $theme = static::_getDrupalTheme($root);
+      static::_runCommand("lessc $theme/less/style.less > $theme/css/style.css");
+    }
   }
 
   /**
@@ -100,7 +103,7 @@ class DrupalHandler {
       $mysql_conn = static::_getDrupalMySQL();
 
       if (!is_null($mysql_conn)) {
-        $event->getIO()->write("Bootstrapping Drupal");
+        $event->getIO()->write(" * Bootstrapping Drupal");
 
         # Try to install an initial Drupal site
         $event->getIO()->write(static::_runCommand(
@@ -126,18 +129,18 @@ class DrupalHandler {
     $root = static::_getDrupalRoot($cwd);
 
     if (static::_check('DRUPAL_SYNC') && static::_siteExists($vendor, $root)) {
-      $event->getIO()->write("Synchronizing Drupal configurations");
-
       # Ensuring that the config module is enabled
+      $event->getIO()->write(" * Ensuring config module is enabled");
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' pm-enable 'config'", 1800, FALSE);
 
       # Set new site UUID to old UUID
+      $event->getIO()->write(" * Synchronizing Drupal site UUIDs (config to live)");
       $site_info = Yaml::parse(file_get_contents("$config/system.site.yml"));
       $uuid = $site_info['uuid'];
-
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-set 'system.site' uuid '$uuid'", 1800, FALSE);
 
       # Import configurations
+      $event->getIO()->write(" * Importing Drupal configurations");
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' config-import --source='$config'", 7200, TRUE);
 
       if (isset($_ENV['DOCKER_IMAGE'])) {
@@ -148,9 +151,11 @@ class DrupalHandler {
         }
       }
       # Run any database updates
+      $event->getIO()->write(" * Applying any needed database updates");
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' updatedb", 7200, TRUE);
 
       # Run any updates on entity fields
+      $event->getIO()->write(" * Synchronizing entity definitions from configuration");
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' entity-updates", 7200, TRUE);
     }
   }
@@ -271,7 +276,7 @@ class DrupalHandler {
   /**
    * Run a command as a process on the local system
    */
-  protected static function _runCommand($command, $timeout = 3600, $follow = TRUE) {
+  protected static function _runCommand($command, $timeout = 3600, $follow = TRUE, $abort = TRUE) {
     $process = new Process($command);
     $process->setTimeout($timeout);
     $process->setIdleTimeout($timeout);
@@ -279,17 +284,17 @@ class DrupalHandler {
     $process->run(function ($type, $buffer) use (&$follow) {
       if ($type === Process::ERR) {
         if (!is_null($follow)) {
-          echo ' > ' . $buffer;
+          echo '  - ' . $buffer;
         }
       } else {
         if ($follow) {
-          echo ' > ' . $buffer;
+          echo '  - ' . $buffer;
         }
       }
     });
 
     // executes after the command finishes
-    if (!$process->isSuccessful()) {
+    if ($abort && !$process->isSuccessful()) {
       throw new ProcessFailedException($process);
     }
 
