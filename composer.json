@@ -91,7 +91,7 @@
     "installer-types": [],
     "installer-paths": {
       "web/core": ["type:drupal-core"],
-      "web/libraries/{$name}/": ["type:drupal-library", "mbostock/d3"],
+      "web/libraries/{$name}/": ["type:drupal-library"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/profiles/contrib/{$name}": ["type:drupal-profile"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
