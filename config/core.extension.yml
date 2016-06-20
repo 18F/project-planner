@@ -14,11 +14,13 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  csv_serialization: 0
   ctools: 0
   ctools_block: 0
   ctools_views: 0
   datetime: 0
   dblog: 0
+  default_content: 0
   deploy: 0
   devel: 0
   dynamic_page_cache: 0
@@ -75,7 +77,6 @@ module:
   update: 0
   user: 0
   views_ui: 0
-  webprofiler: 0
   workspace: 0
   menu_link_content: 1
   views: 10
