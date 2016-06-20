@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0a61411625e51b6474aeca2b2067c76a",
-    "content-hash": "71d97568d6910e66be88d248c7643f11",
+    "hash": "44256b1e622da639e82810b34f9156e4",
+    "content-hash": "e74b4195ab3b49c9aab5dac322982338",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2038,6 +2038,61 @@
             "description": "Provides services and entities types so assist with and log content replication.",
             "homepage": "http://drupal.org/project/replication",
             "time": "2016-04-15 13:23:13"
+        },
+        {
+            "name": "drupal/restui",
+            "version": "1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/restui",
+                "reference": "8.x-1.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/restui-8.x-1.11.zip",
+                "reference": null,
+                "shasum": "2679094457b67014a34e617aef8908c5c26b89ca"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.11.x": "1.11.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.11",
+                    "datestamp": "1448976839"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "-enzo-",
+                    "homepage": "https://www.drupal.org/user/294937"
+                },
+                {
+                    "name": "clemens.tolboom",
+                    "homepage": "https://www.drupal.org/user/125814"
+                },
+                {
+                    "name": "juampynr",
+                    "homepage": "https://www.drupal.org/user/682736"
+                },
+                {
+                    "name": "klausi",
+                    "homepage": "https://www.drupal.org/user/262198"
+                }
+            ],
+            "description": "Provides a user interface to manage REST resources",
+            "homepage": "https://www.drupal.org/project/restui",
+            "support": {
+                "source": "https://www.drupal.org/project/restui"
+            }
         },
         {
             "name": "drupal/rules",
