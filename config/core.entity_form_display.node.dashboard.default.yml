@@ -8,6 +8,7 @@ dependencies:
     - node.type.dashboard
   module:
     - field_group
+    - panelizer
     - text
 third_party_settings:
   field_group:
@@ -15,6 +16,7 @@ third_party_settings:
       children:
         - title
         - body
+        - panelizer
       parent_name: ''
       weight: 0
       label: Overview
@@ -37,6 +39,12 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+  panelizer:
+    type: panelizer
+    weight: 3
+    settings:
+      allow_panel_choice: false
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 1
@@ -46,7 +54,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  panelizer: true
   path: true
   promote: true
   sticky: true
