@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "44256b1e622da639e82810b34f9156e4",
-    "content-hash": "e74b4195ab3b49c9aab5dac322982338",
+    "hash": "c6fed91ee27346722424df8268632b7b",
+    "content-hash": "532c1dd6221d3bdd3f5b0784980e73c1",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2050,7 +2050,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/restui-8.x-1.11.zip",
-                "reference": null,
+                "reference": "8.x-1.11",
                 "shasum": "2679094457b67014a34e617aef8908c5c26b89ca"
             },
             "require": {
@@ -2176,6 +2176,44 @@
             "description": "Provides a generic framework for modules offering search capabilities.",
             "homepage": "https://www.drupal.org/project/search_api",
             "time": "2016-05-20 10:43:24"
+        },
+        {
+            "name": "drupal/simple_oauth",
+            "version": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/simple_oauth",
+                "reference": "f2a6ad0b65f221798f45a1c914d274d2539b7834"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta2+2-dev",
+                    "datestamp": "1457800141"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "e0ipso",
+                    "homepage": "https://www.drupal.org/user/550110"
+                }
+            ],
+            "description": "The OAuth 2.0 Authorization Framework: Bearer Token Usage",
+            "homepage": "https://www.drupal.org/project/simple_oauth",
+            "support": {
+                "source": "https://www.drupal.org/project/simple_oauth"
+            },
+            "time": "2016-03-12 16:26:31"
         },
         {
             "name": "drupal/workspace",
@@ -6900,7 +6938,8 @@
         "drupal/bootstrap": 20,
         "drupal/devel": 20,
         "drupal/default_content": 20,
-        "drupal/csv_serialization": 20
+        "drupal/csv_serialization": 20,
+        "drupal/simple_oauth": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
