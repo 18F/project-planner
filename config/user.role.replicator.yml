@@ -10,3 +10,4 @@ permissions:
   - 'perform push replication'
   - 'administer users'
   - 'administer workspaces'
+  - 'perform pull replication'

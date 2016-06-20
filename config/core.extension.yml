@@ -61,6 +61,7 @@ module:
   relaxed: 0
   replication: 0
   rest: 0
+  restui: 0
   rules: 0
   search_api: 0
   search_api_db: 0

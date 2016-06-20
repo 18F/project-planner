@@ -2,20 +2,23 @@ resources:
   'entity:node':
     GET:
       supported_formats:
+        - csv
         - hal_json
+        - json
       supported_auth:
         - basic_auth
+        - cookie
     POST:
       supported_formats:
         - hal_json
       supported_auth:
         - basic_auth
-    PATCH:
+    DELETE:
       supported_formats:
         - hal_json
       supported_auth:
         - basic_auth
-    DELETE:
+    PATCH:
       supported_formats:
         - hal_json
       supported_auth:

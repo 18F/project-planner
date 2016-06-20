@@ -18,66 +18,136 @@ third_party_settings:
     displays:
       default:
         blocks:
-          6c11240d-7807-4f89-a25c-d91f45d690c6:
-            id: 'entity_field:node:uid'
-            label: 'Authored by'
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: hidden
-              type: author
-              settings: {  }
-              third_party_settings: {  }
-              weight: 0
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
-            region: middle
-            weight: 0
-            uuid: 6c11240d-7807-4f89-a25c-d91f45d690c6
-          8d2ef6cc-f2e7-4c12-a84e-fa1fe219ea70:
-            id: 'entity_field:node:created'
-            label: 'Authored on'
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: hidden
-              type: timestamp
-              settings:
-                date_format: medium
-                custom_date_format: ''
-                timezone: ''
-              third_party_settings: {  }
-              weight: 0
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
-            region: middle
-            weight: 0
-            uuid: 8d2ef6cc-f2e7-4c12-a84e-fa1fe219ea70
           9cd289f5-880c-47e0-9d66-3a2aa9fc2b9a:
             id: 'entity_field:node:body'
             label: Description
             provider: ctools_block
-            label_display: '0'
+            label_display: visible
             formatter:
-              label: hidden
+              label: above
               type: text_default
               settings: {  }
               third_party_settings: {  }
               weight: 0
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-            region: middle
-            weight: 101
+            region: sidebar_right
+            weight: 2
             uuid: 9cd289f5-880c-47e0-9d66-3a2aa9fc2b9a
+          73f6bca6-e566-4405-a098-ae8595743d5c:
+            id: 'system_menu_block:service'
+            label: Service
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            context_mapping: {  }
+            region: sidebar_left
+            uuid: 73f6bca6-e566-4405-a098-ae8595743d5c
+            weight: 2
+          9efc7745-f937-4a4f-aefa-9f848b22d149:
+            id: 'entity_field:node:title'
+            label: Name
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: above
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: sidebar_right
+            uuid: 9efc7745-f937-4a4f-aefa-9f848b22d149
+            weight: 1
+          effbb25e-757e-43bd-9f6f-662b8c9df0c5:
+            id: 'system_menu_block:application'
+            label: Application
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            context_mapping: {  }
+            region: sidebar_left
+            uuid: effbb25e-757e-43bd-9f6f-662b8c9df0c5
+            weight: 1
+          27cedb11-c481-4a82-99d9-8aab05eaa99d:
+            id: 'system_menu_block:infrastructure'
+            label: Infrastructure
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            context_mapping: {  }
+            region: sidebar_left
+            uuid: 27cedb11-c481-4a82-99d9-8aab05eaa99d
+            weight: 3
+          acc7e99e-98ba-4197-bc10-e6e8c2d88cfd:
+            id: 'system_menu_block:tools'
+            label: Tools
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            context_mapping: {  }
+            region: sidebar_left
+            uuid: acc7e99e-98ba-4197-bc10-e6e8c2d88cfd
+            weight: 4
+          2bc49d7d-c2a5-49be-85e5-277fcd436699:
+            id: 'system_menu_block:dependency'
+            label: Dependency
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            context_mapping: {  }
+            region: sidebar_left
+            uuid: 2bc49d7d-c2a5-49be-85e5-277fcd436699
+            weight: 5
+          7e2cc906-2306-4a87-9eae-1681e4cf66d2:
+            id: 'system_menu_block:workflow'
+            label: Workflow
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            context_mapping: {  }
+            region: sidebar_left
+            uuid: 7e2cc906-2306-4a87-9eae-1681e4cf66d2
+            weight: 6
+          c796199d-420c-490e-b11d-3b661e873c76:
+            id: 'system_menu_block:team'
+            label: Team
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            context_mapping: {  }
+            region: sidebar_left
+            uuid: c796199d-420c-490e-b11d-3b661e873c76
+            weight: 7
+          aebc6839-6bf8-444e-ad52-e991c95efe08:
+            id: 'system_menu_block:supplier'
+            label: Supplier
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            context_mapping: {  }
+            region: sidebar_left
+            uuid: aebc6839-6bf8-444e-ad52-e991c95efe08
+            weight: 8
         id: panels_variant
         uuid: a0217d16-388a-42e5-9242-8142b5c65c42
         label: ''
         weight: 0
-        layout: onecol
+        layout: booststrap-4-8
         layout_settings: {  }
         page_title: '[node:title]'
-        storage_type: ''
-        storage_id: ''
+        storage_type: panelizer_default
+        storage_id: 'node:dashboard:full:default'
         builder: ipe
 id: node.dashboard.full
 targetEntityType: node
