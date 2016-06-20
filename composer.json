@@ -72,10 +72,18 @@
   },
   "scripts": {
     "post-install-cmd": [
-
+      "DrupalProject\\composer\\DrupalHandler::initializeFiles",
+      "DrupalProject\\composer\\DrupalHandler::setHashSalt",
+      "DrupalProject\\composer\\DrupalHandler::buildTheme",
+      "DrupalProject\\composer\\DrupalHandler::initializeSite",
+      "DrupalProject\\composer\\DrupalHandler::syncConfigurations"
     ],
     "post-update-cmd": [
-
+      "DrupalProject\\composer\\DrupalHandler::initializeFiles",
+      "DrupalProject\\composer\\DrupalHandler::setHashSalt",
+      "DrupalProject\\composer\\DrupalHandler::buildTheme",
+      "DrupalProject\\composer\\DrupalHandler::initializeSite",
+      "DrupalProject\\composer\\DrupalHandler::syncConfigurations"
     ]
   },
   "extra": {
