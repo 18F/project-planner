@@ -1,0 +1,12 @@
+uuid: 11dbfb12-2a44-40f4-ba88-be9f5271fc7b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SEUWlb7tNFwN3K8AXQ4GM3qp3m2-fQlz7bEjHQWVbPc
+id: global
+label: Global
+description: 'Tokens with access to this resource can get their requests authenticated with the corresponding Drupal user.'
+locked: true
+permissions:
+  - 'access content'

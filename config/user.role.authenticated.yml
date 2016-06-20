@@ -52,3 +52,4 @@ permissions:
   41: 'restful get entity:node'
   42: 'restful patch entity:node'
   43: 'restful post entity:node'
+  48: 'edit terms in tags'

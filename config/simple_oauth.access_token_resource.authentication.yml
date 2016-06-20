@@ -1,0 +1,11 @@
+uuid: 26173fad-7cc3-4a53-be93-7a880e9fc348
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 36e1N-wGUFqXmROc_RoCEKRwxTMQxO3IPntpcMZUhJ8
+id: authentication
+label: Authentication
+description: 'Tokens that grant access to this resource will have access to generate new access tokens.'
+locked: true
+permissions: null
