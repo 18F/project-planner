@@ -1,7 +1,24 @@
 
+/**
+ * General list styles
+ */
 ol, ul {
   padding-left: 1.5em;
   .popover &:last-child {
     margin-bottom: 0;
   }
+}
+
+/**
+ * Definition list styles
+ */
+dt, dd {
+  font-size: ceil((@font-size-base * 1.5));
+  display: inline-block;
+  vertical-align: top;
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 10px;
+  border-top: 1px solid @gray-lighter;
 }
