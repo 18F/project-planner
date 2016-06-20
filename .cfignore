@@ -1,5 +1,6 @@
 # Backups
-private/backup_migrate/*
+private/backup_migrate/*.mysql
+private/backup_migrate/*.mysql.info
 
 # Version control
 .git
