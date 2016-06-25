@@ -14,6 +14,7 @@
  * at the bottom of 'sites/example.com/settings.php'.
  */
 $run_as_dev = isset($_GET['dev']);
+putenv("DEV_MODE=true");
 
 /**
  * Assertions.

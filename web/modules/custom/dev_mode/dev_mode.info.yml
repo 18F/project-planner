@@ -1,0 +1,6 @@
+name: Development Mode
+description: If an environment is configured this module runs tasks necessary to running the site in development mode (no caching / lots of error reporting / etc...)
+package: Custom
+
+type: module
+core: 8.x
