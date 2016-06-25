@@ -2,6 +2,9 @@
 private/backup_migrate/*.mysql
 private/backup_migrate/*.mysql.info
 
+# Drupal
+web/sites/default/settings.local.php
+
 # Version control
 .git
 
