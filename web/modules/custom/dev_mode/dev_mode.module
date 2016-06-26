@@ -3,7 +3,7 @@
  * Implementation of hook_link_alter()
  */
 function dev_mode_link_alter(&$variables) {
-  if (getenv('DEV_MODE')) {
+  if (isset($_GET['dev']) && getenv('DEV_MODE')) {
     $variables['options']['query']['dev'] = 'true';
   }
 }
