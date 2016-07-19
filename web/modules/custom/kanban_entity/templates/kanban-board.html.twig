@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a Kanban board of nodes.
+ *
+ * This template is used when viewing a Kanban block.
+ *
+ * Available variables:
+ * - states: A container of all of the rendered projects in each state
+ * - wips: A map of wip limits to states
+ *
+ * @see template_preprocess_kanban_board()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</article>

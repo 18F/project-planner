@@ -1,0 +1,16 @@
+entity.kanban_profile.list_form:
+  title: Kanban profiles
+  description: 'Administer Kanban profiles'
+  parent: system.admin_structure
+  route_name: entity.kanban_profile.list_form
+entity.kanban_board.collection:
+  title: 'Kanban boards'
+  route_name: entity.kanban_board.collection
+  description: 'List Kanban boards'
+  parent: system.admin_reports
+  weight: 100
+entity.kanban_board.settings:
+  title: Kanban
+  description: 'Configure Kanban boards'
+  route_name: entity.kanban_board.settings
+  parent: system.admin_config_workflow

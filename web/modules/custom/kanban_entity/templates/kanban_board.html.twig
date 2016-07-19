@@ -1,0 +1,22 @@
+{#
+/**
+ * @file kanban_board.html.twig
+ * Default theme implementation to present Kanban board data.
+ *
+ * This template is used when viewing Kanban board pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_kanban_board()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('kanban_board') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>
