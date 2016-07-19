@@ -43,7 +43,7 @@ services:
       DRUPAL_THEME: "bootstrap_18f"
       DRUPAL_DB: "bootstrap"
       DRUPAL_SALT: "true"
-      DRUPAL_INIT: "false"
+      DRUPAL_INIT: "true"
       DRUPAL_SYNC: "true"
     volumes:
       - .:/var/www
