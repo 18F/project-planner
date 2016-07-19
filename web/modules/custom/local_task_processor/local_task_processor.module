@@ -1,0 +1,14 @@
+<?php
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function local_task_processor_menu_local_tasks_alter(&$data, $route_name) {
+  $all_entity_types = \Drupal::getContainer()->get('entity.manager')->getDefinitions();
+  foreach($all_entity_types as $entity_machine_name => $entity) {
+    if (strpos($route_name, 'entity.'. $entity_machine_name. '.canonical') === 0 && $route_name != 'entity.'. $entity_machine_name. '.canonical') {
+      $manager = Drupal::service('plugin.manager.menu.local_task');
+      $data['tabs'][0] = $manager->getLocalTasks('entity.'. $entity_machine_name. '.canonical')['tabs'];
+    }
+  }
+}
+?>
