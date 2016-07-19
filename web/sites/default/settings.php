@@ -660,6 +660,7 @@ $settings['maintenance_theme'] = 'seven';
  * issues.
  */
 ini_set('memory_limit', '256M');
+ini_set ('max_execution_time', 1200);
 
 /**
  * If you encounter a situation where users post a large amount of text, and
