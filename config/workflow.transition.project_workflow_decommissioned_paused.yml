@@ -1,0 +1,27 @@
+uuid: 3bead5ab-e4ac-4ca7-995f-68a0dfc5c269
+langcode: en
+status: true
+dependencies: {  }
+id: project_workflow_decommissioned_paused
+label: Resurrect
+module: null
+from_sid: project_workflow_decommissioned
+to_sid: project_workflow_paused
+roles:
+  administrator: administrator
+  workflow_author: 0
+  staff: 0
+  partner: 0
+  executive: 0
+  program_management: 0
+  enterprise_architecture: 0
+  security: 0
+  operations: 0
+  configuration_and_installation: 0
+  help_desk: 0
+  instructor: 0
+  infrastructure: 0
+  database_management: 0
+  applications: 0
+  solutions: 0
+  e_filing_and_disclosure: 0

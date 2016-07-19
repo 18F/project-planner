@@ -1,0 +1,160 @@
+uuid: daa17fa7-abf0-471f-a5ce-989b00e8693c
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+    - views.view.team_projects
+  module:
+    - ctools
+    - ctools_block
+    - panels
+    - user
+    - views
+id: team
+label: Team
+variant: panels_variant
+variant_settings:
+  blocks:
+    115913d3-a4b2-4921-a987-7c59c67f9f5e:
+      id: 'entity_field:node:body'
+      label: Description
+      provider: ctools_block
+      label_display: visible
+      formatter:
+        label: hidden
+        type: text_default
+        settings: {  }
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_right
+      weight: -10
+      uuid: 115913d3-a4b2-4921-a987-7c59c67f9f5e
+      context_mapping:
+        entity: node
+    1595b10c-2428-42bd-a614-b8f3b5191f27:
+      id: 'entity_field:node:field_parent'
+      label: 'Division / Section'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: entity_reference_label
+        settings:
+          link: true
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -10
+      uuid: 1595b10c-2428-42bd-a614-b8f3b5191f27
+      context_mapping:
+        entity: node
+    0cd69cc9-5518-40dc-8893-228be0fe31d1:
+      id: 'entity_field:node:field_tags'
+      label: Tags
+      provider: ctools_block
+      label_display: visible
+      formatter:
+        label: hidden
+        type: entity_reference_label
+        settings:
+          link: false
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -6
+      uuid: 0cd69cc9-5518-40dc-8893-228be0fe31d1
+      context_mapping:
+        entity: node
+    6a324c97-e900-47dd-80ce-ea34153de00f:
+      id: 'entity_field:node:field_fec_email'
+      label: 'FEC email'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: email_mailto
+        settings: {  }
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -9
+      uuid: 6a324c97-e900-47dd-80ce-ea34153de00f
+      context_mapping:
+        entity: node
+    5f204cae-f72f-4bb7-b4e7-102b09757727:
+      id: 'entity_field:node:field_manager'
+      label: Manager
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: entity_reference_label
+        settings:
+          link: true
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -8
+      uuid: 5f204cae-f72f-4bb7-b4e7-102b09757727
+      context_mapping:
+        entity: node
+    d712d1b5-9271-46f8-8e85-8f8b3047b409:
+      id: 'entity_field:node:field_members'
+      label: Members
+      provider: ctools_block
+      label_display: visible
+      formatter:
+        label: hidden
+        type: entity_reference_label
+        settings:
+          link: true
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -7
+      uuid: d712d1b5-9271-46f8-8e85-8f8b3047b409
+      context_mapping:
+        entity: node
+    075cfd16-50c0-402a-ac1c-c1cd78f1f69a:
+      id: 'views_block:team_projects-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: '10'
+      region: sidebar_right
+      weight: -9
+      uuid: 075cfd16-50c0-402a-ac1c-c1cd78f1f69a
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 8a87abac-7634-4c61-939e-065e016c71f6
+  label: null
+  weight: 0
+  layout: booststrap-4-8
+  layout_settings: {  }
+  page_title: 'Team: [node:title]'
+  storage_type: page_manager
+  storage_id: team
+  builder: standard
+page: node_view
+weight: -8
+selection_criteria:
+  f254866e-7ef5-4fd3-860e-4a7b8cd19d29:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: f254866e-7ef5-4fd3-860e-4a7b8cd19d29
+  d856c555-6a83-41c2-a354-305751f13d48:
+    id: 'entity_bundle:node'
+    bundles:
+      team: team
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d856c555-6a83-41c2-a354-305751f13d48
+selection_logic: and
+static_context: {  }

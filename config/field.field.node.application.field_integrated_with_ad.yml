@@ -1,0 +1,23 @@
+uuid: 36fae0e0-350d-4033-985d-89bc0cdae240
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_integrated_with_ad
+    - node.type.application
+id: node.application.field_integrated_with_ad
+field_name: field_integrated_with_ad
+entity_type: node
+bundle: application
+label: 'Integrated with AD?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

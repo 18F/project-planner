@@ -1,0 +1,19 @@
+uuid: f2726a39-d7df-42f3-81cb-7e5c69f7a348
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access_information
+    - node.type.infrastructure
+id: node.infrastructure.field_access_information
+field_name: field_access_information
+entity_type: node
+bundle: infrastructure
+label: 'Access Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

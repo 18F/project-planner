@@ -1,0 +1,14 @@
+uuid: 131e71d3-e660-47e6-95eb-5376c18a0a09
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.acquisition
+  module:
+    - user
+id: user_remove_role_action.acquisition
+label: 'Remove the Acquisition role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: acquisition

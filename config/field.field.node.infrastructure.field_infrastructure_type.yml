@@ -1,0 +1,21 @@
+uuid: bcf36b68-1582-4342-bdca-67c1af08d34b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_infrastructure_type
+    - node.type.infrastructure
+  module:
+    - options
+id: node.infrastructure.field_infrastructure_type
+field_name: field_infrastructure_type
+entity_type: node
+bundle: infrastructure
+label: 'Infrastructure type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

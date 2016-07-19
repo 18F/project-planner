@@ -1,0 +1,19 @@
+uuid: ac9dbb09-ac76-413d-a3b3-d9ed794b10c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_supervisor
+field_name: field_supervisor
+entity_type: user
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

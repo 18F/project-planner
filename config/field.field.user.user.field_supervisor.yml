@@ -1,0 +1,30 @@
+uuid: 46d28ff7-f9d0-470c-af0d-e2cfb2c9a618
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_supervisor
+  module:
+    - user
+id: user.user.field_supervisor
+field_name: field_supervisor
+entity_type: user
+bundle: user
+label: Supervisor
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

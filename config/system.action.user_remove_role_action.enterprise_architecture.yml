@@ -1,0 +1,14 @@
+uuid: 4358680d-f1cc-46d2-9600-a1543c7b7b05
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.enterprise_architecture
+  module:
+    - user
+id: user_remove_role_action.enterprise_architecture
+label: 'Remove the Enterprise Architecture role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: enterprise_architecture

@@ -10,7 +10,7 @@ id: node.infrastructure.field_linked_services
 field_name: field_linked_services
 entity_type: node
 bundle: infrastructure
-label: 'Linked Services'
+label: Services
 description: ''
 required: false
 translatable: true

@@ -1,0 +1,14 @@
+uuid: 8a4dda25-3161-4e3e-a36e-501cda60cd7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.database_management
+  module:
+    - user
+id: user_add_role_action.database_management
+label: 'Add the Database Management role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: database_management

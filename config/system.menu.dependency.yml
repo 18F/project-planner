@@ -1,8 +1,0 @@
-uuid: b5f81960-4c92-48ab-a337-bbc7a52baa19
-langcode: en
-status: true
-dependencies: {  }
-id: dependency
-label: Dependency
-description: 'Dependency links'
-locked: false

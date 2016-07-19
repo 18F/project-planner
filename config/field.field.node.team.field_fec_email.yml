@@ -1,0 +1,19 @@
+uuid: a8c529e5-5c41-408c-b854-2468e5339fb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fec_email
+    - node.type.team
+id: node.team.field_fec_email
+field_name: field_fec_email
+entity_type: node
+bundle: team
+label: 'FEC email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

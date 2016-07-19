@@ -1,0 +1,12 @@
+uuid: 9e8cda13-deef-4400-9d7b-adc73cf9fa33
+langcode: en
+status: true
+dependencies:
+  config:
+    - workflow.workflow.project_workflow
+id: workflow_transition.project_workflow.default
+targetEntityType: workflow_transition
+bundle: project_workflow
+mode: default
+content: {  }
+hidden: {  }

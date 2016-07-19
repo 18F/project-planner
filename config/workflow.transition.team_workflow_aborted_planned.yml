@@ -1,0 +1,30 @@
+uuid: d3462cec-b4b3-4c07-bb3e-d6d0b3a6e73a
+langcode: en
+status: true
+dependencies: {  }
+id: team_workflow_aborted_planned
+label: Reactivate
+module: null
+from_sid: team_workflow_aborted
+to_sid: team_workflow_planned
+roles:
+  executive: executive
+  workflow_author: 0
+  anonymous: 0
+  authenticated: 0
+  administrator: 0
+  replicator: 0
+  staff: 0
+  partner: 0
+  program_management: 0
+  enterprise_architecture: 0
+  security: 0
+  operations: 0
+  configuration_and_installation: 0
+  help_desk: 0
+  instructor: 0
+  infrastructure: 0
+  database_management: 0
+  applications: 0
+  solutions: 0
+  e_filing_and_disclosure: 0

@@ -13,7 +13,7 @@ _core:
 id: bootstrap_18f_main_menu
 theme: bootstrap_18f
 region: navigation
-weight: -6
+weight: -5
 provider: null
 plugin: 'system_menu_block:main'
 settings:

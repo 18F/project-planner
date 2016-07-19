@@ -1,4 +1,4 @@
-uuid: 0c33ce1f-fe0c-42b8-8bad-5cd0cb08e38b
+uuid: 0c37ee75-6194-473e-8068-3fe74baaf30a
 langcode: en
 status: true
 dependencies:
@@ -13,8 +13,8 @@ entity_type: node
 bundle: application
 label: Architecture
 description: ''
-required: false
-translatable: false
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,19 @@
+uuid: 29bc5f68-5a60-4c1a-9861-4795fb6f614a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poc_name
+    - node.type.requirement
+id: node.requirement.field_poc_name
+field_name: field_poc_name
+entity_type: node
+bundle: requirement
+label: 'External POC Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

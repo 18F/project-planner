@@ -6,7 +6,7 @@ id: database_export
 label: 'Database export'
 enabled: true
 keep: null
-period: 3600
+period: 86400
 cron: null
 source_id: default_db
 destination_id: private_files

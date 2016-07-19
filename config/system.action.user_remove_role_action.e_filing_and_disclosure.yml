@@ -1,0 +1,14 @@
+uuid: c0a68a1c-7bfb-432d-a13e-9511c032cd58
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.e_filing_and_disclosure
+  module:
+    - user
+id: user_remove_role_action.e_filing_and_disclosure
+label: 'Remove the E-Filing and Disclosure role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: e_filing_and_disclosure

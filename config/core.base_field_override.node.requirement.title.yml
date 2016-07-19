@@ -1,0 +1,18 @@
+uuid: 10030c07-2be6-4608-9620-57ae49c552e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.requirement
+id: node.requirement.title
+field_name: title
+entity_type: node
+bundle: requirement
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

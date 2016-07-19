@@ -1,0 +1,10 @@
+uuid: eed23dcf-473a-4f15-88b6-2a6c111fb02e
+langcode: en
+status: true
+dependencies: {  }
+id: team_workflow_rejected_rejected
+label: Abandon
+module: null
+from_sid: team_workflow_rejected
+to_sid: team_workflow_rejected
+roles: {  }

@@ -1,8 +1,0 @@
-uuid: d9f6042a-4974-4db9-a01a-6967bc947b26
-langcode: en
-status: true
-dependencies: {  }
-id: service
-label: Service
-description: 'Service links'
-locked: false

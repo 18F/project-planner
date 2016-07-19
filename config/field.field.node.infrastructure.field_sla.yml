@@ -1,0 +1,19 @@
+uuid: 70128b2e-7a7d-42cb-afd3-d96edff18b7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sla
+    - node.type.infrastructure
+id: node.infrastructure.field_sla
+field_name: field_sla
+entity_type: node
+bundle: infrastructure
+label: SLA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

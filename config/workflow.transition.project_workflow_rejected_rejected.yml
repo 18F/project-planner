@@ -1,0 +1,10 @@
+uuid: fe52ef69-a8c1-4269-867e-4cf39c43cdaa
+langcode: en
+status: true
+dependencies: {  }
+id: project_workflow_rejected_rejected
+label: Abandon
+module: null
+from_sid: project_workflow_rejected
+to_sid: project_workflow_rejected
+roles: {  }

@@ -1,0 +1,23 @@
+uuid: db0598e1-f606-4727-a147-25034a6eb892
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_links
+    - node.type.policy
+  module:
+    - link
+id: node.policy.field_links
+field_name: field_links
+entity_type: node
+bundle: policy
+label: Links
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

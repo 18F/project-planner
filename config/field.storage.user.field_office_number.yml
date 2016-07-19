@@ -1,0 +1,20 @@
+uuid: d7de305a-3024-4215-9d6b-5c54ae7ada7e
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_office_number
+field_name: field_office_number
+entity_type: user
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 5922e872-f16f-4c87-bb2c-e6368c5ff28e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vendor_type
+    - node.type.vendor
+  module:
+    - options
+id: node.vendor.field_vendor_type
+field_name: field_vendor_type
+entity_type: node
+bundle: vendor
+label: 'Vendor type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Company
+default_value_callback: ''
+settings: {  }
+field_type: list_string

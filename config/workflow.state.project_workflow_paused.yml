@@ -1,0 +1,10 @@
+uuid: fc5fe9d0-29db-40a1-8687-7728853bfeda
+langcode: en
+status: '1'
+dependencies: {  }
+id: project_workflow_paused
+label: Paused
+module: null
+wid: project_workflow
+weight: '-2'
+sysid: 0

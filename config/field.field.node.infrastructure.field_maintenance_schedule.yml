@@ -1,0 +1,19 @@
+uuid: c6875faa-a6f3-41c4-97b9-4b66a80c2978
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_maintenance_schedule
+    - node.type.infrastructure
+id: node.infrastructure.field_maintenance_schedule
+field_name: field_maintenance_schedule
+entity_type: node
+bundle: infrastructure
+label: 'Maintenance Schedule'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

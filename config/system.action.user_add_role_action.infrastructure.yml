@@ -1,0 +1,14 @@
+uuid: 3c6fff42-54c5-4315-ab10-543a2f89d921
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.infrastructure
+  module:
+    - user
+id: user_add_role_action.infrastructure
+label: 'Add the Infrastructure role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: infrastructure

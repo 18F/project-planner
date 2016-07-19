@@ -3,7 +3,6 @@ module:
   automated_cron: 0
   backup_migrate: 0
   basic_auth: 0
-  big_pipe: 0
   block: 0
   block_content: 0
   bootstrap_layouts: 0
@@ -21,8 +20,10 @@ module:
   datetime: 0
   dblog: 0
   default_content: 0
-  deploy: 0
+  dev_mode: 0
   devel: 0
+  devel_generate: 0
+  ds_devel: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
@@ -31,6 +32,7 @@ module:
   field: 0
   field_group: 0
   field_group_migrate: 0
+  field_permissions: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -40,13 +42,15 @@ module:
   help: 0
   history: 0
   image: 0
+  kanban_entity: 0
   key_value: 0
   kint: 0
   layout_plugin: 0
   link: 0
+  local_task_processor: 0
   menu_link_config: 0
   menu_ui: 0
-  multiversion: 0
+  navigation: 0
   node: 0
   options: 0
   page_cache: 0
@@ -58,8 +62,6 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
-  relaxed: 0
-  replication: 0
   rest: 0
   restui: 0
   rules: 0
@@ -79,8 +81,15 @@ module:
   update: 0
   user: 0
   views_ui: 0
-  workspace: 0
+  workflow: 0
+  workflow_cleanup: 0
+  workflow_devel: 0
+  workflow_operations: 0
+  workflow_ui: 0
+  workflowfield: 0
+  ds: 1
   menu_link_content: 1
+  ds_extras: 2
   views: 10
   minimal: 1000
 theme:

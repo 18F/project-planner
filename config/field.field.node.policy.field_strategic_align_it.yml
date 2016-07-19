@@ -1,0 +1,22 @@
+uuid: 08c8bfb6-6cf3-4e43-9075-805388ae2be4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_strategic_align_it
+    - node.type.policy
+  module:
+    - text
+id: node.policy.field_strategic_align_it
+field_name: field_strategic_align_it
+entity_type: node
+bundle: policy
+label: 'Strategic IT Alignment'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

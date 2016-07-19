@@ -1,0 +1,19 @@
+uuid: b24703d2-d079-4ac3-ac42-88ff2a9e2d35
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_strategic_align_it
+field_name: field_strategic_align_it
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

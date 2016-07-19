@@ -1,0 +1,27 @@
+uuid: 3b1cea31-987c-4232-87c7-c3694f7b572c
+langcode: en
+status: true
+dependencies: {  }
+id: project_workflow_implementation_decommissioned
+label: Decommission
+module: null
+from_sid: project_workflow_implementation
+to_sid: project_workflow_decommissioned
+roles:
+  executive: executive
+  workflow_author: 0
+  administrator: 0
+  staff: 0
+  partner: 0
+  program_management: 0
+  enterprise_architecture: 0
+  security: 0
+  operations: 0
+  configuration_and_installation: 0
+  help_desk: 0
+  instructor: 0
+  infrastructure: 0
+  database_management: 0
+  applications: 0
+  solutions: 0
+  e_filing_and_disclosure: 0

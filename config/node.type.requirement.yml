@@ -1,0 +1,17 @@
+uuid: b5e8c74f-228f-4988-95be-6944320e6d63
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Requirement
+type: requirement
+description: 'A current or planned external relationship or technological consideration that is beyond control but affects operations'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

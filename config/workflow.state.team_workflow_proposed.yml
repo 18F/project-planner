@@ -1,0 +1,10 @@
+uuid: c40eec85-2061-404e-aced-bdd923fff057
+langcode: en
+status: '1'
+dependencies: {  }
+id: team_workflow_proposed
+label: Proposed
+module: null
+wid: team_workflow
+weight: '-8'
+sysid: 0

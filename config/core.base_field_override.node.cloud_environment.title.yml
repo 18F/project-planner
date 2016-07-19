@@ -1,0 +1,18 @@
+uuid: 32c20032-51bd-40e3-8c3a-1eb040680915
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.cloud_environment
+id: node.cloud_environment.title
+field_name: title
+entity_type: node
+bundle: cloud_environment
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -9,7 +9,7 @@ id: node.infrastructure.field_linked_infrastructure
 field_name: field_linked_infrastructure
 entity_type: node
 bundle: infrastructure
-label: 'Linked Infrastructure'
+label: Infrastructure
 description: ''
 required: false
 translatable: true

@@ -1,0 +1,14 @@
+uuid: d897957c-21a7-408a-8f07-49957903d6d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.configuration_and_installation
+  module:
+    - user
+id: user_remove_role_action.configuration_and_installation
+label: 'Remove the Configuration and Installation role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: configuration_and_installation

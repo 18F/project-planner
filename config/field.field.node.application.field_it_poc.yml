@@ -1,0 +1,29 @@
+uuid: 5701a3ff-7751-45aa-8807-3c807f15f77e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_it_poc
+    - node.type.application
+id: node.application.field_it_poc
+field_name: field_it_poc
+entity_type: node
+bundle: application
+label: 'IT POC'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'relaxed:user'
+  handler_settings:
+    include_anonymous: 0
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

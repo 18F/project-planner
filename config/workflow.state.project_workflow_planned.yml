@@ -1,0 +1,10 @@
+uuid: 6ee25f89-010b-4787-aeca-df197132abb2
+langcode: en
+status: '1'
+dependencies: {  }
+id: project_workflow_planned
+label: Planned
+module: null
+wid: project_workflow
+weight: '-6'
+sysid: 0

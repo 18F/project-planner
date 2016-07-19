@@ -1,0 +1,14 @@
+uuid: 96e64005-85a1-4d66-8729-9adf6c0088a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.solutions
+  module:
+    - user
+id: user_add_role_action.solutions
+label: 'Add the Solutions role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: solutions

@@ -1,0 +1,22 @@
+uuid: 9caf6f73-6801-4e22-bbc1-c316ddacad50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_strategic_align_commission
+    - node.type.service
+  module:
+    - text
+id: node.service.field_strategic_align_commission
+field_name: field_strategic_align_commission
+entity_type: node
+bundle: service
+label: 'Strategic Commission Alignment'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

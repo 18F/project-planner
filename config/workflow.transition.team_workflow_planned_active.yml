@@ -1,0 +1,30 @@
+uuid: c52769df-88f9-443b-90e3-8bfda2b95c09
+langcode: en
+status: true
+dependencies: {  }
+id: team_workflow_planned_active
+label: Initiate
+module: null
+from_sid: team_workflow_planned
+to_sid: team_workflow_active
+roles:
+  executive: executive
+  workflow_author: 0
+  anonymous: 0
+  authenticated: 0
+  administrator: 0
+  replicator: 0
+  staff: 0
+  partner: 0
+  program_management: 0
+  enterprise_architecture: 0
+  security: 0
+  operations: 0
+  configuration_and_installation: 0
+  help_desk: 0
+  instructor: 0
+  infrastructure: 0
+  database_management: 0
+  applications: 0
+  solutions: 0
+  e_filing_and_disclosure: 0

@@ -1,0 +1,29 @@
+uuid: 687d22dd-00ab-499a-91dc-02158dd5b774
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fec_poc
+    - node.type.vendor
+id: node.vendor.field_fec_poc
+field_name: field_fec_poc
+entity_type: node
+bundle: vendor
+label: 'FEC COR / POC'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,28 @@
+uuid: b17c7bf0-9984-420b-9ccf-ac8e6080e4a9
+langcode: en
+status: true
+dependencies: {  }
+id: vendor_workflow_aborted_active
+label: null
+module: null
+from_sid: vendor_workflow_aborted
+to_sid: vendor_workflow_active
+roles:
+  workflow_author: 0
+  administrator: 0
+  staff: 0
+  partner: 0
+  executive: 0
+  program_management: 0
+  enterprise_architecture: 0
+  security: 0
+  operations: 0
+  configuration_and_installation: 0
+  help_desk: 0
+  instructor: 0
+  infrastructure: 0
+  database_management: 0
+  applications: 0
+  solutions: 0
+  e_filing_and_disclosure: 0
+  acquisition: 0

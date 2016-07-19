@@ -1,8 +1,0 @@
-uuid: fe6846c6-f61a-4ab3-ae69-890ae086eb90
-langcode: en
-status: true
-dependencies: {  }
-id: tool
-label: Tool
-description: 'Tooling links'
-locked: false

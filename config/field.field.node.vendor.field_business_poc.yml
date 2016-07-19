@@ -1,0 +1,29 @@
+uuid: 9275946f-6cc9-46b5-ae2e-e5c7b9e721ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_business_poc
+    - node.type.vendor
+id: node.vendor.field_business_poc
+field_name: field_business_poc
+entity_type: node
+bundle: vendor
+label: 'Business POC'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

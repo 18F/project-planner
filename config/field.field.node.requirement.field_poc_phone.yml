@@ -1,0 +1,21 @@
+uuid: dd8edb82-6ad3-48cd-a8ba-fd5ff26126ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poc_phone
+    - node.type.requirement
+  module:
+    - telephone
+id: node.requirement.field_poc_phone
+field_name: field_poc_phone
+entity_type: node
+bundle: requirement
+label: 'External POC Phone'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

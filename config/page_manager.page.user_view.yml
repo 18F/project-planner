@@ -1,10 +1,10 @@
-uuid: dc048b47-4e0e-4e08-af36-a5e3f3e42f02
+uuid: b626870e-45ac-457a-a284-a501a67f6c30
 langcode: en
 status: true
 dependencies: {  }
 id: user_view
 label: 'User view'
-use_admin_theme: null
+use_admin_theme: false
 path: '/user/{user}'
 access_logic: and
 access_conditions: {  }

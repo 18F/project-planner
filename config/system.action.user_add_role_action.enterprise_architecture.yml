@@ -1,0 +1,14 @@
+uuid: 45ae9512-54a3-4c68-99c4-1e4fbc75b095
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.enterprise_architecture
+  module:
+    - user
+id: user_add_role_action.enterprise_architecture
+label: 'Add the Enterprise Architecture role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: enterprise_architecture

@@ -9,7 +9,7 @@ id: node.service.field_linked_services
 field_name: field_linked_services
 entity_type: node
 bundle: service
-label: 'Linked Services'
+label: Services
 description: ''
 required: false
 translatable: true

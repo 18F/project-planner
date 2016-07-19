@@ -11,7 +11,7 @@ id: node.service.body
 field_name: body
 entity_type: node
 bundle: service
-label: Description
+label: 'Overview (Purpose)'
 description: ''
 required: true
 translatable: true

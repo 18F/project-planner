@@ -1,0 +1,160 @@
+uuid: dc775dab-c06a-47b7-a1ab-e6df8bb445b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.policy.body
+    - field.field.node.policy.field_diagrams
+    - field.field.node.policy.field_files
+    - field.field.node.policy.field_it_poc
+    - field.field.node.policy.field_links
+    - field.field.node.policy.field_policy_type
+    - field.field.node.policy.field_strategic_align_commission
+    - field.field.node.policy.field_strategic_align_it
+    - field.field.node.policy.field_teams
+    - image.style.thumbnail
+    - node.type.policy
+  module:
+    - field_group
+    - file
+    - image
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_about:
+      children:
+        - title
+        - field_policy_type
+        - body
+        - group_strategic_alignment
+        - field_diagrams
+        - field_files
+        - field_links
+      parent_name: ''
+      weight: 16
+      label: About
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_people:
+      children:
+        - field_it_poc
+        - field_teams
+      parent_name: ''
+      weight: 17
+      label: People
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_workflow:
+      children:
+        - field_project_status
+      parent_name: ''
+      weight: 18
+      label: Workflow
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_strategic_alignment:
+      children:
+        - field_strategic_align_commission
+        - field_strategic_align_it
+      parent_name: group_about
+      weight: 3
+      label: 'Strategic Alignment'
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.policy.default
+targetEntityType: node
+bundle: policy
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_diagrams:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_files:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_it_poc:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_links:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_policy_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_strategic_align_commission:
+    weight: 11
+    settings:
+      rows: 4
+      placeholder: ''
+      summary_rows: 2
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+  field_strategic_align_it:
+    weight: 12
+    settings:
+      rows: 4
+      placeholder: ''
+      summary_rows: 2
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+  field_teams:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

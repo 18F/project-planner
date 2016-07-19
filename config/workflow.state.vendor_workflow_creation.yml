@@ -1,0 +1,10 @@
+uuid: 21f72726-8248-4d98-9630-176815bfb522
+langcode: en
+status: true
+dependencies: {  }
+id: vendor_workflow_creation
+label: (Creation)
+module: null
+wid: vendor_workflow
+weight: -11
+sysid: 1

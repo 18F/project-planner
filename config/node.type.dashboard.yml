@@ -10,8 +10,8 @@ third_party_settings:
     parent: ''
 name: Dashboard
 type: dashboard
-description: 'System dashboard'
+description: 'A user dashboard'
 help: ''
-new_revision: true
+new_revision: null
 preview_mode: 0
-display_submitted: true
+display_submitted: false

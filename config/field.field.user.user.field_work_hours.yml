@@ -1,0 +1,20 @@
+uuid: 1f936544-c4e4-48e9-8782-d0b24242b2a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_work_hours
+  module:
+    - user
+id: user.user.field_work_hours
+field_name: field_work_hours
+entity_type: user
+bundle: user
+label: 'Work hours'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.team.body
+    - field.field.node.team.field_fec_email
+    - field.field.node.team.field_manager
     - field.field.node.team.field_members
-    - field.field.node.team.field_status
+    - field.field.node.team.field_parent
     - field.field.node.team.field_tags
     - node.type.team
   module:
@@ -22,6 +24,19 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_fec_email:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_manager:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_members:
     weight: 102
     label: above
@@ -29,8 +44,8 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_status:
-    weight: 103
+  field_parent:
+    weight: 106
     label: above
     settings:
       link: true

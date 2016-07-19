@@ -1,0 +1,29 @@
+uuid: 129fcbfc-71cd-431c-95af-75b38d00da38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_it_poc
+    - node.type.policy
+id: node.policy.field_it_poc
+field_name: field_it_poc
+entity_type: node
+bundle: policy
+label: 'IT POC'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

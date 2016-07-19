@@ -1,0 +1,29 @@
+uuid: 649a1d76-0f29-4084-9c63-214c0cbbb4c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vendors
+    - node.type.service
+    - node.type.vendor
+id: node.service.field_vendors
+field_name: field_vendors
+entity_type: node
+bundle: service
+label: Vendors
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      vendor: vendor
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

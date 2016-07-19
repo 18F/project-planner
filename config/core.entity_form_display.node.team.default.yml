@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.team.body
+    - field.field.node.team.field_fec_email
+    - field.field.node.team.field_manager
     - field.field.node.team.field_members
-    - field.field.node.team.field_status
+    - field.field.node.team.field_parent
     - field.field.node.team.field_tags
     - node.type.team
   module:
@@ -13,27 +15,52 @@ dependencies:
     - text
 third_party_settings:
   field_group:
-    group_overview:
+    group_about:
       children:
         - title
-        - field_status
-        - field_tags
         - body
+        - field_parent
+        - field_tags
       parent_name: ''
       weight: 0
-      label: Overview
+      label: About
       format_type: fieldset
       format_settings:
         description: ''
         classes: ''
         id: ''
         required_fields: true
-    group_participants:
+    group_contact:
       children:
-        - field_members
+        - field_fec_email
       parent_name: ''
       weight: 1
-      label: Participants
+      label: Contact
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_people:
+      children:
+        - field_manager
+        - field_members
+      parent_name: ''
+      weight: 2
+      label: People
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_workflow:
+      children:
+        - field_team_status
+      parent_name: ''
+      weight: 4
+      label: Workflow
       format_type: fieldset
       format_settings:
         description: ''
@@ -47,21 +74,33 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 1
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+  field_fec_email:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+  field_manager:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_members:
-    weight: 2
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete_tags
-  field_status:
+  field_parent:
     weight: 2
     settings: {  }
     third_party_settings: {  }
@@ -76,7 +115,7 @@ content:
     type: entity_reference_autocomplete_tags
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     settings:
       size: 60
       placeholder: ''

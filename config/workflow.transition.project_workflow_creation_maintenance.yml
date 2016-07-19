@@ -1,0 +1,27 @@
+uuid: 21b24b4e-38f9-4773-b889-0b9b73c8b062
+langcode: en
+status: true
+dependencies: {  }
+id: project_workflow_creation_maintenance
+label: null
+module: null
+from_sid: project_workflow_creation
+to_sid: project_workflow_maintenance
+roles:
+  workflow_author: 0
+  administrator: 0
+  staff: 0
+  partner: 0
+  executive: 0
+  program_management: 0
+  enterprise_architecture: 0
+  security: 0
+  operations: 0
+  configuration_and_installation: 0
+  help_desk: 0
+  instructor: 0
+  infrastructure: 0
+  database_management: 0
+  applications: 0
+  solutions: 0
+  e_filing_and_disclosure: 0

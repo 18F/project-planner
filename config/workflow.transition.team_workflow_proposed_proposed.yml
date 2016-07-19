@@ -1,0 +1,10 @@
+uuid: 88c42c0d-54d5-4e40-af5e-2eb294586b7e
+langcode: en
+status: true
+dependencies: {  }
+id: team_workflow_proposed_proposed
+label: Wait
+module: null
+from_sid: team_workflow_proposed
+to_sid: team_workflow_proposed
+roles: {  }

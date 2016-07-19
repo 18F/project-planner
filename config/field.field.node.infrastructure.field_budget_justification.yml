@@ -1,0 +1,22 @@
+uuid: aa8fcef3-2fc8-42fc-9b5b-999e4abf36ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_budget_justification
+    - node.type.infrastructure
+  module:
+    - text
+id: node.infrastructure.field_budget_justification
+field_name: field_budget_justification
+entity_type: node
+bundle: infrastructure
+label: 'Budget justification'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

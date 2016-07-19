@@ -1,0 +1,39 @@
+uuid: f6547a27-b02b-4ea1-a321-35d520741096
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_policy_type
+field_name: field_policy_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: management
+      label: Management
+    -
+      value: deployment
+      label: Deployment
+    -
+      value: security
+      label: Security
+    -
+      value: communication
+      label: Communication
+    -
+      value: procurement
+      label: Procurement
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

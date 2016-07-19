@@ -9,7 +9,7 @@ id: node.application.field_linked_applications
 field_name: field_linked_applications
 entity_type: node
 bundle: application
-label: 'Linked Applications'
+label: Applications
 description: ''
 required: false
 translatable: false

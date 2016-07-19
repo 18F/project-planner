@@ -1,0 +1,23 @@
+uuid: cfbe4f32-e772-4e63-84e3-4d1f8a2201ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_budget
+    - node.type.infrastructure
+id: node.infrastructure.field_budget
+field_name: field_budget
+entity_type: node
+bundle: infrastructure
+label: Budget
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

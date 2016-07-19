@@ -1,0 +1,17 @@
+uuid: a1b6e5bd-d779-4746-a73b-ccddc5c1fe86
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Vendor
+type: vendor
+description: 'An external entity that provides goods and services to internal IT projects'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,16 +1,8 @@
 schema: '8000'
 cdn_jsdelivr_version: 3.3.6
 cdn_provider: ''
-breadcrumb_home: 1
 navbar_inverse: 1
 navbar_position: fixed-top
-region_wells:
-  navigation: ''
-  header: ''
-  highlighted: ''
-  help: ''
-  content: ''
-  footer: ''
 button_size: btn-lg
 fluid_container: 1
 image_shape: img-rounded
@@ -18,15 +10,16 @@ modal_size: modal-lg
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: assets/favicon.ico
-  url: 'http://project-planner.local:8080/assets/favicon.ico'
+  url: 'http://project-planner.local:8080/themes/custom/bootstrap_18f/favicon.ico'
   use_default: true
-features:
-  comment_user_picture: true
-  comment_user_verification: true
-  favicon: true
-  node_user_picture: true
 logo:
   path: assets/logo.png
   url: ''
   use_default: true
 breadcrumb_title: 0
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+breadcrumb_home: 1

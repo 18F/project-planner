@@ -1,0 +1,21 @@
+uuid: 4625e66e-ad82-4bba-b711-88508facd2a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_mobile_phone_number
+  module:
+    - telephone
+    - user
+id: user.user.field_mobile_phone_number
+field_name: field_mobile_phone_number
+entity_type: user
+bundle: user
+label: 'Mobile phone number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

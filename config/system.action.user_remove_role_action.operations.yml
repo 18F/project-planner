@@ -1,0 +1,14 @@
+uuid: 3a0c5782-529c-4297-a986-3eac5a89035b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.operations
+  module:
+    - user
+id: user_remove_role_action.operations
+label: 'Remove the Operations role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: operations

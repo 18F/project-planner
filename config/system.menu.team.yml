@@ -1,8 +1,0 @@
-uuid: 2c44cda2-566b-403d-af81-107a2cdcc297
-langcode: en
-status: true
-dependencies: {  }
-id: team
-label: Team
-description: 'Team links'
-locked: false

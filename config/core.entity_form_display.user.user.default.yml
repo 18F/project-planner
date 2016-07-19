@@ -3,11 +3,83 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_bio
+    - field.field.user.user.field_fec_phone_extension
+    - field.field.user.user.field_flex_cws_schedule
+    - field.field.user.user.field_full_name
+    - field.field.user.user.field_mobile_phone_number
+    - field.field.user.user.field_office_number
+    - field.field.user.user.field_supervisor
+    - field.field.user.user.field_team
+    - field.field.user.user.field_work_hours
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - field_group
     - image
+    - telephone
+    - text
     - user
+third_party_settings:
+  field_group:
+    group_about:
+      children:
+        - field_full_name
+        - user_picture
+        - field_team
+        - field_supervisor
+        - field_bio
+      parent_name: ''
+      weight: 1
+      label: About
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_system:
+      children:
+        - account
+        - timezone
+        - language
+        - contact
+      parent_name: ''
+      weight: 0
+      label: System
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_contact:
+      children:
+        - field_fec_phone_extension
+        - field_mobile_phone_number
+        - field_office_number
+      parent_name: ''
+      weight: 2
+      label: Contact
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_schedule:
+      children:
+        - field_work_hours
+        - field_flex_cws_schedule
+      parent_name: ''
+      weight: 3
+      label: Schedule
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
 _core:
   default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
 id: user.user.default
@@ -16,18 +88,83 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
-  language:
-    weight: 0
-  timezone:
+    settings: {  }
+    third_party_settings: {  }
+  field_bio:
+    weight: 10
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+  field_fec_phone_extension:
     weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_flex_cws_schedule:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_full_name:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_mobile_phone_number:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+  field_office_number:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_supervisor:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_team:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_work_hours:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  language:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image_image
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    weight: -1
+    weight: 7
 hidden: {  }

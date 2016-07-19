@@ -1,0 +1,29 @@
+uuid: 2cf61bc5-2b26-4b75-8c7a-64c9b522f5cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_requirements
+    - node.type.cloud_environment
+    - node.type.requirement
+id: node.cloud_environment.field_linked_requirements
+field_name: field_linked_requirements
+entity_type: node
+bundle: cloud_environment
+label: Requirements
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      requirement: requirement
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

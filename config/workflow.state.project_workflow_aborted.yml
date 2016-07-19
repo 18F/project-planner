@@ -1,0 +1,10 @@
+uuid: ecc8523c-a28d-4ea0-b4cd-d22c6d6c6bac
+langcode: en
+status: '1'
+dependencies: {  }
+id: project_workflow_aborted
+label: Aborted
+module: null
+wid: project_workflow
+weight: '-5'
+sysid: 0

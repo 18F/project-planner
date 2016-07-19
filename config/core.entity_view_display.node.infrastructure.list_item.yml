@@ -1,0 +1,76 @@
+uuid: a9fc2cf1-a9f9-4c9b-958c-b39615ae3cce
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list_item
+    - field.field.node.infrastructure.body
+    - field.field.node.infrastructure.field_access_information
+    - field.field.node.infrastructure.field_architecture
+    - field.field.node.infrastructure.field_budget
+    - field.field.node.infrastructure.field_budget_justification
+    - field.field.node.infrastructure.field_diagrams
+    - field.field.node.infrastructure.field_files
+    - field.field.node.infrastructure.field_infrastructure_type
+    - field.field.node.infrastructure.field_issue_tracker
+    - field.field.node.infrastructure.field_it_poc
+    - field.field.node.infrastructure.field_linked_applications
+    - field.field.node.infrastructure.field_linked_infrastructure
+    - field.field.node.infrastructure.field_linked_policy
+    - field.field.node.infrastructure.field_linked_requirements
+    - field.field.node.infrastructure.field_linked_services
+    - field.field.node.infrastructure.field_links
+    - field.field.node.infrastructure.field_maintenance_schedule
+    - field.field.node.infrastructure.field_sla
+    - field.field.node.infrastructure.field_strategic_align_commission
+    - field.field.node.infrastructure.field_strategic_align_it
+    - field.field.node.infrastructure.field_system
+    - field.field.node.infrastructure.field_tags
+    - field.field.node.infrastructure.field_team
+    - field.field.node.infrastructure.field_vendors
+    - node.type.infrastructure
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+id: node.infrastructure.list_item
+targetEntityType: node
+bundle: infrastructure
+mode: list_item
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 101
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+hidden:
+  field_access_information: true
+  field_architecture: true
+  field_budget: true
+  field_budget_justification: true
+  field_diagrams: true
+  field_files: true
+  field_infrastructure_type: true
+  field_issue_tracker: true
+  field_it_poc: true
+  field_linked_applications: true
+  field_linked_infrastructure: true
+  field_linked_policy: true
+  field_linked_requirements: true
+  field_linked_services: true
+  field_links: true
+  field_maintenance_schedule: true
+  field_sla: true
+  field_strategic_align_commission: true
+  field_strategic_align_it: true
+  field_system: true
+  field_tags: true
+  field_team: true
+  field_vendors: true
+  links: true

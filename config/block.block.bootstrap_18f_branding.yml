@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - facets
     - system
   theme:
     - bootstrap_18f
@@ -21,5 +22,11 @@ settings:
   label_display: '0'
   use_site_logo: true
   use_site_name: true
-  use_site_slogan: true
-visibility: {  }
+  use_site_slogan: false
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }

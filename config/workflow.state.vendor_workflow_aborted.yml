@@ -1,0 +1,10 @@
+uuid: 50240422-e7d8-45ba-818a-06c683f2fdab
+langcode: en
+status: '1'
+dependencies: {  }
+id: vendor_workflow_aborted
+label: Aborted
+module: null
+wid: vendor_workflow
+weight: '-7'
+sysid: 0

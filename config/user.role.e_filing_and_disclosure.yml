@@ -1,0 +1,85 @@
+uuid: 01d90a1f-5750-4c56-9744-a1a61ad4982d
+langcode: en
+status: true
+dependencies: {  }
+id: e_filing_and_disclosure
+label: 'E-Filing and Disclosure'
+weight: 8
+is_admin: null
+permissions:
+  - 'edit own project_workflow workflow_transition'
+  - 'revert own project_workflow workflow_transition'
+  - 'access any project_workflow workflow_transion overview'
+  - 'access own project_workflow workflow_transion overview'
+  - 'access project_workflow workflow_transition form'
+  - 'create project_workflow workflow_transition'
+  - 'schedule project_workflow workflow_transition'
+  - 'create team_workflow workflow_transition'
+  - 'create vendor_workflow workflow_transition'
+  - 'access any team_workflow workflow_transion overview'
+  - 'access own team_workflow workflow_transion overview'
+  - 'access team_workflow workflow_transition form'
+  - 'schedule team_workflow workflow_transition'
+  - 'access any vendor_workflow workflow_transion overview'
+  - 'access own vendor_workflow workflow_transion overview'
+  - 'access vendor_workflow workflow_transition form'
+  - 'schedule vendor_workflow workflow_transition'
+  - 'edit own team_workflow workflow_transition'
+  - 'revert own team_workflow workflow_transition'
+  - 'edit own vendor_workflow workflow_transition'
+  - 'revert own vendor_workflow workflow_transition'
+  - view_field_full_name
+  - view_user_picture
+  - view_field_team
+  - view_field_supervisor
+  - view_field_bio
+  - view_field_mobile_phone_number
+  - view_field_fec_phone_extension
+  - view_field_office_number
+  - view_field_work_hours
+  - view_field_flex_cws_schedule
+  - view_field_parent
+  - view_body
+  - view_field_fec_email
+  - view_field_manager
+  - view_field_membership
+  - view_field_projects
+  - view_field_linked_projects
+  - view_field_linked_dependencies
+  - view_field_linked_workflows
+  - view_field_linked_applications
+  - view_field_linked_services
+  - view_field_linked_infrastructure
+  - view_field_members
+  - view_field_vendor_type
+  - view_field_link
+  - view_field_fec_poc
+  - view_field_business_poc
+  - view_field_system
+  - view_field_strategic_align_commission
+  - view_field_strategic_align_it
+  - view_field_budget
+  - view_field_budget_justification
+  - view_field_architecture
+  - view_field_links
+  - view_field_critical_patch_period
+  - view_field_integrated_with_ad
+  - view_field_it_poc
+  - view_field_type
+  - view_field_access_information
+  - view_field_maintenance_schedule
+  - view_field_sla
+  - view_field_infrastructure_type
+  - view_field_requirement_type
+  - view_field_files
+  - view_field_diagrams
+  - view_field_poc_name
+  - view_field_poc_email
+  - view_field_poc_phone
+  - view_field_policy_type
+  - view_field_project_status
+  - view_field_teams
+  - view_field_linked_requirements
+  - view_field_linked_policy
+  - view_field_environment_type
+  - view_field_team_status

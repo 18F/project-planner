@@ -1,0 +1,10 @@
+uuid: 01a0f4f0-9ef3-4840-a445-97a4437c4358
+langcode: en
+status: '1'
+dependencies: {  }
+id: project_workflow_rejected
+label: Rejected
+module: null
+wid: project_workflow
+weight: '-7'
+sysid: 0

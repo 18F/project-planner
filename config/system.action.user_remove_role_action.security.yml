@@ -1,0 +1,14 @@
+uuid: c0f1ab86-ee43-4b46-b9d8-91f6887e7ee8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.security
+  module:
+    - user
+id: user_remove_role_action.security
+label: 'Remove the Security role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: security

@@ -1,0 +1,10 @@
+uuid: a2f1ae77-5a8f-4514-9974-4c0354532358
+langcode: en
+status: '1'
+dependencies: {  }
+id: vendor_workflow_preparation
+label: Preparation
+module: null
+wid: vendor_workflow
+weight: '-8'
+sysid: 0

@@ -1,0 +1,28 @@
+uuid: abf4e84e-5b84-4d47-9c52-df6e8e6d6b93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_system
+    - node.type.infrastructure
+    - taxonomy.vocabulary.systems
+id: node.infrastructure.field_system
+field_name: field_system
+entity_type: node
+bundle: infrastructure
+label: System
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      systems: systems
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

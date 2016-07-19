@@ -1,0 +1,115 @@
+uuid: 67dfb757-7de3-4f41-beef-da53a2f63a7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.vendor.body
+    - field.field.node.vendor.field_business_poc
+    - field.field.node.vendor.field_fec_poc
+    - field.field.node.vendor.field_link
+    - field.field.node.vendor.field_tags
+    - field.field.node.vendor.field_vendor_type
+    - node.type.vendor
+  module:
+    - field_group
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_about:
+      children:
+        - title
+        - field_vendor_type
+        - body
+        - field_link
+        - field_tags
+      parent_name: ''
+      weight: 5
+      label: About
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_people:
+      children:
+        - field_fec_poc
+        - field_business_poc
+      parent_name: ''
+      weight: 6
+      label: People
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_workflow:
+      children:
+        - field_vendor_status
+      parent_name: ''
+      weight: 110
+      label: Workflow
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.vendor.default
+targetEntityType: node
+bundle: vendor
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_business_poc:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_fec_poc:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_tags:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+  field_vendor_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

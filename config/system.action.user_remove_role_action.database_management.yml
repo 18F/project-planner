@@ -1,0 +1,14 @@
+uuid: 79f8cbde-2bea-452e-9cb1-5337dacf7e01
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.database_management
+  module:
+    - user
+id: user_remove_role_action.database_management
+label: 'Remove the Database Management role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: database_management

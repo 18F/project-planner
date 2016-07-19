@@ -1,0 +1,27 @@
+uuid: 88f4ef00-4648-4c59-add4-bd90bfb8e864
+langcode: en
+status: true
+dependencies: {  }
+id: project_workflow_maintenance_implementation
+label: 'Implementation Mode'
+module: null
+from_sid: project_workflow_maintenance
+to_sid: project_workflow_implementation
+roles:
+  executive: executive
+  program_management: program_management
+  workflow_author: 0
+  administrator: 0
+  staff: 0
+  partner: 0
+  enterprise_architecture: 0
+  security: 0
+  operations: 0
+  configuration_and_installation: 0
+  help_desk: 0
+  instructor: 0
+  infrastructure: 0
+  database_management: 0
+  applications: 0
+  solutions: 0
+  e_filing_and_disclosure: 0

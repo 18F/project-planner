@@ -1,0 +1,21 @@
+uuid: 4fc20f41-44ad-45a1-9b27-7c06172955d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_requirement_type
+    - node.type.requirement
+  module:
+    - options
+id: node.requirement.field_requirement_type
+field_name: field_requirement_type
+entity_type: node
+bundle: requirement
+label: 'Requirement type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

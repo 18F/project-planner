@@ -1,0 +1,14 @@
+uuid: ad5f6994-e2b7-4969-8b7f-6e39f48b0916
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.help_desk
+  module:
+    - user
+id: user_remove_role_action.help_desk
+label: 'Remove the Help Desk role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: help_desk

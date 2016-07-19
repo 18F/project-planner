@@ -5,6 +5,26 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.service.body
+    - field.field.node.service.field_architecture
+    - field.field.node.service.field_budget
+    - field.field.node.service.field_budget_justification
+    - field.field.node.service.field_business_poc
+    - field.field.node.service.field_diagrams
+    - field.field.node.service.field_files
+    - field.field.node.service.field_issue_tracker
+    - field.field.node.service.field_it_poc
+    - field.field.node.service.field_linked_applications
+    - field.field.node.service.field_linked_infrastructure
+    - field.field.node.service.field_linked_policy
+    - field.field.node.service.field_linked_requirements
+    - field.field.node.service.field_linked_services
+    - field.field.node.service.field_links
+    - field.field.node.service.field_strategic_align_commission
+    - field.field.node.service.field_strategic_align_it
+    - field.field.node.service.field_system
+    - field.field.node.service.field_tags
+    - field.field.node.service.field_team
+    - field.field.node.service.field_vendors
     - node.type.service
   module:
     - text
@@ -25,16 +45,23 @@ content:
     weight: 100
 hidden:
   field_architecture: true
+  field_budget: true
+  field_budget_justification: true
+  field_business_poc: true
   field_diagrams: true
   field_external_cots: true
   field_files: true
   field_issue_tracker: true
+  field_it_poc: true
   field_linked_applications: true
   field_linked_dependencies: true
   field_linked_infrastructure: true
+  field_linked_policy: true
+  field_linked_requirements: true
   field_linked_services: true
   field_linked_tools: true
   field_linked_workflows: true
+  field_links: true
   field_mission_critical: true
   field_poc_email: true
   field_poc_name: true
@@ -42,6 +69,10 @@ hidden:
   field_sensitive: true
   field_source_code: true
   field_status: true
+  field_strategic_align_commission: true
+  field_strategic_align_it: true
   field_suppliers: true
+  field_system: true
   field_tags: true
   field_team: true
+  field_vendors: true

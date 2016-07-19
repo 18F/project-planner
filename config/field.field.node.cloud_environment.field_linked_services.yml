@@ -1,0 +1,29 @@
+uuid: dbf7a12b-35f8-4eb8-ac36-7b1512983cb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_services
+    - node.type.cloud_environment
+    - node.type.service
+id: node.cloud_environment.field_linked_services
+field_name: field_linked_services
+entity_type: node
+bundle: cloud_environment
+label: Services
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      service: service
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

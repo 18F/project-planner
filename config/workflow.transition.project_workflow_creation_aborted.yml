@@ -1,0 +1,27 @@
+uuid: 229f34d0-5f6a-4924-a164-d0d4b09218c3
+langcode: en
+status: true
+dependencies: {  }
+id: project_workflow_creation_aborted
+label: null
+module: null
+from_sid: project_workflow_creation
+to_sid: project_workflow_aborted
+roles:
+  workflow_author: 0
+  administrator: 0
+  staff: 0
+  partner: 0
+  executive: 0
+  program_management: 0
+  enterprise_architecture: 0
+  security: 0
+  operations: 0
+  configuration_and_installation: 0
+  help_desk: 0
+  instructor: 0
+  infrastructure: 0
+  database_management: 0
+  applications: 0
+  solutions: 0
+  e_filing_and_disclosure: 0

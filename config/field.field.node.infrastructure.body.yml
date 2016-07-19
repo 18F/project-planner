@@ -11,7 +11,7 @@ id: node.infrastructure.body
 field_name: body
 entity_type: node
 bundle: infrastructure
-label: Description
+label: 'Purpose (Capabilities)'
 description: ''
 required: true
 translatable: true

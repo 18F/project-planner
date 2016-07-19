@@ -1,0 +1,19 @@
+uuid: a71450d3-cabe-4d47-980e-0fe94bcf5df1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_critical_patch_period
+    - node.type.application
+id: node.application.field_critical_patch_period
+field_name: field_critical_patch_period
+entity_type: node
+bundle: application
+label: 'Critical patch period'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

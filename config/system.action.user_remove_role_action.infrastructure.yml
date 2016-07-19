@@ -1,0 +1,14 @@
+uuid: 0ca7ee1d-6f5b-45e5-a5b8-3ca05614fc70
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.infrastructure
+  module:
+    - user
+id: user_remove_role_action.infrastructure
+label: 'Remove the Infrastructure role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: infrastructure

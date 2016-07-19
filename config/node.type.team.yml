@@ -10,8 +10,8 @@ third_party_settings:
     parent: ''
 name: Team
 type: team
-description: 'An internal group that manages projects and suppliers'
+description: 'An internal group that manages projects and vendors'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 0
-display_submitted: true
+display_submitted: false

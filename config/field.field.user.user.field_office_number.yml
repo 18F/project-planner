@@ -1,0 +1,24 @@
+uuid: 995c645e-abc6-415d-9d6f-3bed4913c2d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_office_number
+  module:
+    - user
+id: user.user.field_office_number
+field_name: field_office_number
+entity_type: user
+bundle: user
+label: 'Office number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

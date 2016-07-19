@@ -1,0 +1,128 @@
+uuid: 8c7d0384-f1cb-4e53-b3c9-bc8d3c4d537d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.server_environment.field_environment_type
+    - field.field.node.server_environment.field_link
+    - field.field.node.server_environment.field_linked_applications
+    - field.field.node.server_environment.field_linked_infrastructure
+    - field.field.node.server_environment.field_linked_policy
+    - field.field.node.server_environment.field_linked_requirements
+    - field.field.node.server_environment.field_linked_services
+    - field.field.node.server_environment.field_parent
+    - node.type.server_environment
+  module:
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_about:
+      children:
+        - title
+        - field_parent
+        - field_environment_type
+        - field_link
+      parent_name: ''
+      weight: 0
+      label: About
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_dependencies:
+      children:
+        - field_linked_applications
+        - field_linked_services
+        - field_linked_infrastructure
+        - field_linked_requirements
+        - field_linked_policy
+      parent_name: ''
+      weight: 1
+      label: Dependencies
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.server_environment.default
+targetEntityType: node
+bundle: server_environment
+mode: default
+content:
+  field_environment_type:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_linked_applications:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+  field_linked_infrastructure:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+  field_linked_policy:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+  field_linked_requirements:
+    weight: 29
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+  field_linked_services:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+  field_parent:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

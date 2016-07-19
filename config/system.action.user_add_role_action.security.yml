@@ -1,0 +1,14 @@
+uuid: 4f2dac2f-93b2-4900-a2b4-da82cf9ad97f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.security
+  module:
+    - user
+id: user_add_role_action.security
+label: 'Add the Security role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: security

@@ -5,33 +5,37 @@ dependencies:
   config:
     - field.field.node.service.body
     - field.field.node.service.field_architecture
+    - field.field.node.service.field_budget
+    - field.field.node.service.field_budget_justification
+    - field.field.node.service.field_business_poc
     - field.field.node.service.field_diagrams
-    - field.field.node.service.field_external_cots
     - field.field.node.service.field_files
     - field.field.node.service.field_issue_tracker
+    - field.field.node.service.field_it_poc
     - field.field.node.service.field_linked_applications
-    - field.field.node.service.field_linked_dependencies
     - field.field.node.service.field_linked_infrastructure
+    - field.field.node.service.field_linked_policy
+    - field.field.node.service.field_linked_requirements
     - field.field.node.service.field_linked_services
-    - field.field.node.service.field_linked_tools
-    - field.field.node.service.field_linked_workflows
-    - field.field.node.service.field_mission_critical
-    - field.field.node.service.field_poc_email
-    - field.field.node.service.field_poc_name
-    - field.field.node.service.field_poc_phone
-    - field.field.node.service.field_sensitive
-    - field.field.node.service.field_source_code
-    - field.field.node.service.field_status
-    - field.field.node.service.field_suppliers
+    - field.field.node.service.field_links
+    - field.field.node.service.field_strategic_align_commission
+    - field.field.node.service.field_strategic_align_it
+    - field.field.node.service.field_system
     - field.field.node.service.field_tags
     - field.field.node.service.field_team
+    - field.field.node.service.field_vendors
     - node.type.service
   module:
     - file
     - image
     - link
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -49,6 +53,29 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_budget:
+    weight: 130
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+  field_budget_justification:
+    weight: 131
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_business_poc:
+    weight: 125
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_diagrams:
     weight: 103
     label: above
@@ -57,15 +84,6 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
-  field_external_cots:
-    weight: 104
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
   field_files:
     weight: 105
     label: above
@@ -83,15 +101,15 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_linked_applications:
-    weight: 107
+  field_it_poc:
+    weight: 124
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_linked_dependencies:
-    weight: 108
+  field_linked_applications:
+    weight: 107
     label: above
     settings:
       link: true
@@ -104,6 +122,20 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_linked_policy:
+    weight: 134
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_linked_requirements:
+    weight: 133
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_linked_services:
     weight: 110
     label: above
@@ -111,59 +143,8 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_linked_tools:
-    weight: 111
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  field_linked_workflows:
-    weight: 112
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  field_mission_critical:
-    weight: 113
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-  field_poc_email:
-    weight: 116
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-  field_poc_name:
-    weight: 115
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-  field_poc_phone:
-    weight: 117
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-  field_sensitive:
-    weight: 114
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-  field_source_code:
-    weight: 120
+  field_links:
+    weight: 132
     label: above
     settings:
       trim_length: 80
@@ -173,15 +154,20 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_status:
-    weight: 121
+  field_strategic_align_commission:
+    weight: 128
     label: above
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_label
-  field_suppliers:
-    weight: 119
+    type: text_default
+  field_strategic_align_it:
+    weight: 129
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_system:
+    weight: 127
     label: above
     settings:
       link: true
@@ -201,6 +187,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_vendors:
+    weight: 126
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

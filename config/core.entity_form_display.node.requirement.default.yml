@@ -1,0 +1,153 @@
+uuid: 541f5988-c7f3-4ce9-a3e8-e7dabc5872a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.requirement.body
+    - field.field.node.requirement.field_diagrams
+    - field.field.node.requirement.field_fec_poc
+    - field.field.node.requirement.field_files
+    - field.field.node.requirement.field_links
+    - field.field.node.requirement.field_poc_email
+    - field.field.node.requirement.field_poc_name
+    - field.field.node.requirement.field_poc_phone
+    - field.field.node.requirement.field_requirement_type
+    - field.field.node.requirement.field_sla
+    - image.style.thumbnail
+    - node.type.requirement
+  module:
+    - field_group
+    - file
+    - image
+    - link
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_about:
+      children:
+        - title
+        - field_requirement_type
+        - body
+        - field_diagrams
+        - field_files
+        - field_links
+      parent_name: ''
+      weight: 11
+      label: About
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_technical:
+      children:
+        - field_sla
+      parent_name: ''
+      weight: 12
+      label: Technical
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_people:
+      children:
+        - field_fec_poc
+        - field_poc_name
+        - field_poc_email
+        - field_poc_phone
+      parent_name: ''
+      weight: 13
+      label: People
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.requirement.default
+targetEntityType: node
+bundle: requirement
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_diagrams:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_fec_poc:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_files:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_links:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_poc_email:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+  field_poc_name:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_poc_phone:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+  field_requirement_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_sla:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

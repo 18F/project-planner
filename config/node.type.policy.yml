@@ -1,0 +1,17 @@
+uuid: b3afaa0a-59fa-44d9-a75a-db31c2c31d44
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Policy and Process'
+type: policy
+description: 'A current or planned policy or process that is deployed across projects'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

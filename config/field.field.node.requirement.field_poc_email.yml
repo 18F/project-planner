@@ -1,0 +1,19 @@
+uuid: 3c85291e-8439-4c20-b387-48c0a075068a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_poc_email
+    - node.type.requirement
+id: node.requirement.field_poc_email
+field_name: field_poc_email
+entity_type: node
+bundle: requirement
+label: 'External POC Email'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

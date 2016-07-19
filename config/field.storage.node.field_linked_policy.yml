@@ -1,0 +1,19 @@
+uuid: d7119f46-8f9a-4e4e-8832-7d32ce796698
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_linked_policy
+field_name: field_linked_policy
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

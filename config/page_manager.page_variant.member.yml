@@ -1,10 +1,10 @@
-uuid: 29e56cd8-7a9f-470f-a93c-87e95865d6cf
+uuid: af832770-1e13-40cb-961a-42deb34b09fb
 langcode: en
 status: true
 dependencies:
   config:
     - page_manager.page.user_view
-    - views.view.who_s_online
+    - views.view.user_dashboards
   module:
     - ctools_block
     - panels
@@ -15,72 +15,296 @@ label: Member
 variant: panels_variant
 variant_settings:
   blocks:
-    2d9e241d-7d98-4266-bb59-cd5a9582d9ec:
-      id: local_tasks_block
-      label: Tabs
-      provider: core
+    2a7062b3-76f1-414b-a56b-a389cf5f7e90:
+      id: 'entity_field:user:user_picture'
+      label: Picture
+      provider: ctools_block
       label_display: '0'
-      primary: true
-      secondary: true
-      region: sidebar_right
-      weight: 0
-      uuid: 2d9e241d-7d98-4266-bb59-cd5a9582d9ec
-      context_mapping: {  }
-    0d643e71-cf9c-4aed-a32c-a8965d2259e3:
-      id: 'views_block:who_s_online-who_s_online_block'
-      label: ''
-      provider: views
-      label_display: visible
-      views_label: ''
-      items_per_page: none
+      formatter:
+        label: hidden
+        type: image
+        settings:
+          image_style: medium
+          image_link: ''
+        third_party_settings: {  }
+        weight: 0
       region: sidebar_left
-      weight: 0
-      uuid: 0d643e71-cf9c-4aed-a32c-a8965d2259e3
-      context_mapping: {  }
-    cc53cdf9-465f-460f-8f7b-0f05993adcd7:
-      id: local_actions_block
-      label: 'Primary admin actions'
-      provider: core
-      label_display: '0'
-      region: sidebar_right
-      uuid: cc53cdf9-465f-460f-8f7b-0f05993adcd7
-      context_mapping: {  }
-    359b7794-7df4-445b-b484-7553cf0326bb:
-      id: 'entity_field:user:name'
-      label: 'Name: '
+      weight: -10
+      uuid: 2a7062b3-76f1-414b-a56b-a389cf5f7e90
+      context_mapping:
+        entity: user
+    42566846-25ae-4f6d-a964-61fe192fd43e:
+      id: 'entity_field:user:mail'
+      label: Email
       provider: ctools_block
       label_display: '0'
       formatter:
         label: inline
-        type: user_name
+        type: email_mailto
+        settings: {  }
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -5
+      uuid: 42566846-25ae-4f6d-a964-61fe192fd43e
+      context_mapping:
+        entity: user
+    b9df9a75-29b8-44f6-b843-5a1ff5b65526:
+      id: 'entity_field:user:timezone'
+      label: Timezone
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: string
         settings:
           link_to_entity: false
         third_party_settings: {  }
         weight: 0
+      region: sidebar_left
+      weight: 1
+      uuid: b9df9a75-29b8-44f6-b843-5a1ff5b65526
+      context_mapping:
+        entity: user
+    43355f9d-3dd2-4562-896e-a82e459eee5c:
+      id: 'views_block:user_dashboards-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: '25'
       region: sidebar_right
-      uuid: 359b7794-7df4-445b-b484-7553cf0326bb
+      weight: -8
+      uuid: 43355f9d-3dd2-4562-896e-a82e459eee5c
+      fields:
+        title:
+          weight: '0'
+      context_mapping: {  }
+    d725635d-e6ba-4016-8fab-b3317e5069dc:
+      id: 'entity_field:user:roles'
+      label: Roles
+      provider: ctools_block
+      label_display: visible
+      formatter:
+        label: hidden
+        type: entity_reference_label
+        settings:
+          link: false
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_right
+      weight: -10
+      uuid: d725635d-e6ba-4016-8fab-b3317e5069dc
+      context_mapping:
+        entity: user
+    9edcdbe0-9a88-4b0e-93c4-e18ef885d56b:
+      id: 'entity_field:user:created'
+      label: 'Member for'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: timestamp_ago
+        settings:
+          granularity: 2
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: 2
+      uuid: 9edcdbe0-9a88-4b0e-93c4-e18ef885d56b
+      context_mapping:
+        entity: user
+    8e33a6e4-0923-43e6-93bb-ecc3de94fe48:
+      id: 'entity_field:user:access'
+      label: 'Last access'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: timestamp_ago
+        settings:
+          granularity: 2
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: 3
+      uuid: 8e33a6e4-0923-43e6-93bb-ecc3de94fe48
+      context_mapping:
+        entity: user
+    dc8b9a5e-1a8a-48a9-a537-51267e53f55c:
+      id: 'entity_field:user:field_full_name'
+      label: 'Full name'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: string
+        settings:
+          link_to_entity: false
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -9
+      uuid: dc8b9a5e-1a8a-48a9-a537-51267e53f55c
+      context_mapping:
+        entity: user
+    c3501ec6-ed1b-42cc-b6ce-722020406b4b:
+      id: 'entity_field:user:field_team'
+      label: Team
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: entity_reference_label
+        settings:
+          link: true
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -6
+      uuid: c3501ec6-ed1b-42cc-b6ce-722020406b4b
+      context_mapping:
+        entity: user
+    a5bf75a2-a0c5-4c1d-a33b-0bc6b21544e3:
+      id: 'entity_field:user:field_supervisor'
+      label: Supervisor
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: entity_reference_label
+        settings:
+          link: true
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -7
+      uuid: a5bf75a2-a0c5-4c1d-a33b-0bc6b21544e3
+      context_mapping:
+        entity: user
+    4ead6942-44e6-4b9f-b6d0-72afe21db138:
+      id: 'entity_field:user:field_bio'
+      label: Bio
+      provider: ctools_block
+      label_display: visible
+      formatter:
+        label: hidden
+        type: text_default
+        settings: {  }
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_right
+      weight: -9
+      uuid: 4ead6942-44e6-4b9f-b6d0-72afe21db138
+      context_mapping:
+        entity: user
+    69b9cd2e-8be6-4e16-8031-46905729ad09:
+      id: 'entity_field:user:field_fec_phone_extension'
+      label: 'FEC phone extension'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: number_integer
+        settings:
+          thousand_separator: ''
+          prefix_suffix: true
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -4
+      uuid: 69b9cd2e-8be6-4e16-8031-46905729ad09
+      context_mapping:
+        entity: user
+    ca852cef-bb01-4bc9-b730-44d67c8c681e:
+      id: 'entity_field:user:field_mobile_phone_number'
+      label: 'Mobile phone number'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: telephone_link
+        settings:
+          title: ''
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -3
+      uuid: ca852cef-bb01-4bc9-b730-44d67c8c681e
+      context_mapping:
+        entity: user
+    1334925a-6553-4d87-825a-65da2bb560ea:
+      id: 'entity_field:user:field_office_number'
+      label: 'Office number'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: number_integer
+        settings:
+          thousand_separator: ''
+          prefix_suffix: true
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -2
+      uuid: 1334925a-6553-4d87-825a-65da2bb560ea
+      context_mapping:
+        entity: user
+    f10427e7-350f-4a8b-bed3-406f2120cccb:
+      id: 'entity_field:user:field_work_hours'
+      label: 'Work hours'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: string
+        settings:
+          link_to_entity: false
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: -1
+      uuid: f10427e7-350f-4a8b-bed3-406f2120cccb
+      context_mapping:
+        entity: user
+    77707944-dda9-42d4-b28b-5eb9c219f2e6:
+      id: 'entity_field:user:field_flex_cws_schedule'
+      label: 'FLEX CWS schedule'
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: inline
+        type: string
+        settings:
+          link_to_entity: false
+        third_party_settings: {  }
+        weight: 0
+      region: sidebar_left
+      weight: 0
+      uuid: 77707944-dda9-42d4-b28b-5eb9c219f2e6
       context_mapping:
         entity: user
   id: panels_variant
-  uuid: 305d35ac-e2df-4fb9-aa71-21e4184f4792
+  uuid: ff225ba0-7622-4e6f-9933-ca635013d6c3
   label: null
   weight: 0
   layout: booststrap-4-8
   layout_settings: {  }
-  page_title: ''
+  page_title: 'User: [user:name]'
   storage_type: page_manager
   storage_id: member
   builder: standard
 page: user_view
-weight: 0
+weight: -10
 selection_criteria:
-  5a54849e-c84a-4017-8dde-f40ade458e56:
+  80508426-cac6-4fa8-a95c-a80ec9fe7437:
     id: user_role
     roles:
       authenticated: authenticated
     negate: false
     context_mapping:
       user: current_user
-    uuid: 5a54849e-c84a-4017-8dde-f40ade458e56
+    uuid: 80508426-cac6-4fa8-a95c-a80ec9fe7437
 selection_logic: and
 static_context: {  }

@@ -1,0 +1,19 @@
+uuid: 5a82c86e-e283-4e45-b3be-3164bf03516d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_linked_requirements
+field_name: field_linked_requirements
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

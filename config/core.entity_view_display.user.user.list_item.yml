@@ -1,0 +1,56 @@
+uuid: 5b7dfb28-d1dd-4914-9fdf-7c3f94b8ef00
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.list_item
+    - field.field.user.user.field_bio
+    - field.field.user.user.field_fec_phone_extension
+    - field.field.user.user.field_flex_cws_schedule
+    - field.field.user.user.field_full_name
+    - field.field.user.user.field_mobile_phone_number
+    - field.field.user.user.field_office_number
+    - field.field.user.user.field_supervisor
+    - field.field.user.user.field_team
+    - field.field.user.user.field_work_hours
+    - field.field.user.user.user_picture
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: booststrap-4-8
+      path: modules/contrib/bootstrap_layouts/templates/two-columns/bootstrap-4-8
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      sidebar_right:
+        - field_full_name
+_core:
+  default_config_hash: L2mtwGWH_7wDRCMIR4r_Iu_jmvQ10DV1L8ht8iNZ5qY
+id: user.user.list_item
+targetEntityType: user
+bundle: user
+mode: list_item
+content:
+  field_full_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  field_bio: true
+  field_fec_phone_extension: true
+  field_flex_cws_schedule: true
+  field_mobile_phone_number: true
+  field_office_number: true
+  field_supervisor: true
+  field_team: true
+  field_work_hours: true
+  member_for: true
+  user_picture: true

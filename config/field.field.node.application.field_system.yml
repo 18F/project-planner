@@ -1,0 +1,28 @@
+uuid: 5429e222-028c-47a1-a4a7-8492e870a637
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_system
+    - node.type.application
+    - taxonomy.vocabulary.systems
+id: node.application.field_system
+field_name: field_system
+entity_type: node
+bundle: application
+label: System
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      systems: systems
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: f23b5808-8b04-4480-97ef-1f34f0c3debe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_links
+    - node.type.requirement
+  module:
+    - link
+id: node.requirement.field_links
+field_name: field_links
+entity_type: node
+bundle: requirement
+label: Links
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

@@ -1,0 +1,29 @@
+uuid: 55272de4-dcfb-49d2-93af-3cdc141ad8b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_requirements
+    - node.type.infrastructure
+    - node.type.requirement
+id: node.infrastructure.field_linked_requirements
+field_name: field_linked_requirements
+entity_type: node
+bundle: infrastructure
+label: Requirements
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      requirement: requirement
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,8 +1,0 @@
-uuid: 2d125a79-c3a9-4f19-9815-6a3e73d7f1c1
-langcode: en
-status: true
-dependencies: {  }
-id: workflow
-label: Workflow
-description: 'Workflow links'
-locked: false

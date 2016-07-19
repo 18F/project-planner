@@ -1,0 +1,19 @@
+uuid: cc4c6176-873e-48ea-b4a4-6f76b3fb9ee6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sla
+    - node.type.requirement
+id: node.requirement.field_sla
+field_name: field_sla
+entity_type: node
+bundle: requirement
+label: SLA
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

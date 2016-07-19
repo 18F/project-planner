@@ -1,0 +1,46 @@
+uuid: 7242dc99-869b-4fc5-a62e-257663266a3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+  module:
+    - ctools
+    - panels
+    - user
+id: cloud_environment
+label: 'Cloud Environment'
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  uuid: d100f974-505d-424b-8a27-51d52dfc0baa
+  label: null
+  weight: 0
+  layout: booststrap-4-8
+  layout_settings: {  }
+  page_title: '[node:title]'
+  storage_type: page_manager
+  storage_id: cloud_environment
+  builder: standard
+page: node_view
+weight: -4
+selection_criteria:
+  83ee7b58-3798-4f08-9bdb-acb48b4afc85:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: 83ee7b58-3798-4f08-9bdb-acb48b4afc85
+  50b09285-0f04-4b36-b7e4-2c381fdba56f:
+    id: 'entity_bundle:node'
+    bundles:
+      cloud_environment: cloud_environment
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 50b09285-0f04-4b36-b7e4-2c381fdba56f
+selection_logic: and
+static_context: {  }

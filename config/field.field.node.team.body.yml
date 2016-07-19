@@ -11,9 +11,9 @@ id: node.team.body
 field_name: body
 entity_type: node
 bundle: team
-label: 'Description (Purpose)'
+label: Description
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

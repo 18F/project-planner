@@ -1,0 +1,21 @@
+uuid: 361cb9cd-e83a-4630-9406-8d93f9ac1286
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_policy_type
+    - node.type.policy
+  module:
+    - options
+id: node.policy.field_policy_type
+field_name: field_policy_type
+entity_type: node
+bundle: policy
+label: 'Policy type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

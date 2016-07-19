@@ -1,0 +1,10 @@
+uuid: b41a3291-9ca9-4a62-ac3a-7e8395ad98df
+langcode: en
+status: true
+dependencies: {  }
+id: project_workflow_paused_paused
+label: Maintain
+module: null
+from_sid: project_workflow_paused
+to_sid: project_workflow_paused
+roles: {  }

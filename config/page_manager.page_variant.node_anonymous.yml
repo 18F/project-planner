@@ -32,7 +32,15 @@ variant_settings:
   storage_id: node_anonymous
   builder: ipe
 page: node_view
-weight: 0
-selection_criteria: {  }
+weight: -1
+selection_criteria:
+  546c5552-5206-4383-a5fb-f86df18c2727:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: 546c5552-5206-4383-a5fb-f86df18c2727
 selection_logic: and
 static_context: {  }

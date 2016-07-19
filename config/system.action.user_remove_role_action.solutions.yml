@@ -1,0 +1,14 @@
+uuid: dbd2fffa-ad82-4342-8d5d-5510c1072677
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.solutions
+  module:
+    - user
+id: user_remove_role_action.solutions
+label: 'Remove the Solutions role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: solutions

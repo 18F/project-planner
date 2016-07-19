@@ -5,7 +5,7 @@ slogan: 'Learn, Share, and Collaborate'
 page:
   403: ''
   404: ''
-  front: /home
+  front: /user
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

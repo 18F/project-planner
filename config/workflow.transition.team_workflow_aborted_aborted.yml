@@ -1,0 +1,10 @@
+uuid: 3291f4c6-a452-4d3e-afd7-5a818bd6034a
+langcode: en
+status: true
+dependencies: {  }
+id: team_workflow_aborted_aborted
+label: Maintain
+module: null
+from_sid: team_workflow_aborted
+to_sid: team_workflow_aborted
+roles: {  }

@@ -1,0 +1,33 @@
+uuid: ceb7c7e2-e494-4eb4-8544-0ce4a1fff66f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_requirement_type
+field_name: field_requirement_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: partner
+      label: 'External partner'
+    -
+      value: regulation
+      label: Regulation
+    -
+      value: standard
+      label: Standard
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

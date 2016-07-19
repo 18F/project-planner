@@ -6,50 +6,70 @@ _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
 label: 'Authenticated user'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
-  0: 'access content'
   2: 'access comments'
   3: 'post comments'
-  4: 'skip comment approval'
   5: 'access site-wide contact form'
-  6: 'access shortcuts'
   7: 'search content'
   8: 'access user contact forms'
-  9: 'access contextual links'
   10: 'use text format restricted_html'
-  11: 'view own unpublished content'
-  12: 'create application content'
-  13: 'delete own application content'
-  14: 'edit own application content'
-  15: 'create dashboard content'
-  16: 'delete own dashboard content'
-  17: 'edit own dashboard content'
-  18: 'create dependency content'
-  19: 'delete own dependency content'
-  20: 'edit own dependency content'
-  21: 'create infrastructure content'
-  22: 'delete own infrastructure content'
-  23: 'edit own infrastructure content'
-  24: 'create service content'
-  25: 'delete own service content'
-  26: 'edit own service content'
-  27: 'create supplier content'
-  28: 'delete own supplier content'
-  29: 'edit own supplier content'
-  30: 'create team content'
-  31: 'delete own team content'
-  32: 'edit own team content'
-  33: 'create tool content'
-  34: 'delete own tool content'
-  35: 'edit own tool content'
-  36: 'create workflow content'
-  37: 'delete own workflow content'
-  38: 'edit own workflow content'
-  39: 'access in-place editing'
-  40: 'restful delete entity:node'
-  41: 'restful get entity:node'
-  42: 'restful patch entity:node'
-  43: 'restful post entity:node'
-  48: 'edit terms in tags'
+  49: 'create state workflow_transition'
+  50: 'create application_state workflow_transition'
+  52: 'edit own comments'
+  53: view_field_full_name
+  54: view_user_picture
+  55: view_field_team
+  56: view_field_supervisor
+  57: view_field_bio
+  58: view_field_mobile_phone_number
+  59: view_field_fec_phone_extension
+  60: view_field_office_number
+  61: view_field_work_hours
+  62: view_field_flex_cws_schedule
+  63: view_field_parent
+  64: view_body
+  65: view_field_fec_email
+  66: view_field_manager
+  67: view_field_membership
+  68: view_field_projects
+  69: view_field_linked_projects
+  70: view_field_linked_dependencies
+  71: view_field_linked_workflows
+  72: view_field_linked_applications
+  73: view_field_linked_services
+  74: view_field_linked_infrastructure
+  75: view_field_members
+  76: view_field_vendor_type
+  77: view_field_link
+  78: view_field_fec_poc
+  79: view_field_business_poc
+  80: view_field_system
+  81: view_field_strategic_align_commission
+  82: view_field_strategic_align_it
+  83: view_field_budget
+  84: view_field_budget_justification
+  85: view_field_architecture
+  86: view_field_links
+  87: view_field_critical_patch_period
+  88: view_field_integrated_with_ad
+  89: view_field_it_poc
+  90: view_field_type
+  91: view_field_access_information
+  92: view_field_maintenance_schedule
+  93: view_field_sla
+  94: view_field_infrastructure_type
+  95: view_field_requirement_type
+  96: view_field_files
+  97: view_field_diagrams
+  98: view_field_poc_name
+  99: view_field_poc_email
+  100: view_field_poc_phone
+  101: view_field_policy_type
+  102: view_field_project_status
+  103: view_field_teams
+  104: view_field_linked_requirements
+  105: view_field_linked_policy
+  106: view_field_environment_type
+  107: view_field_team_status

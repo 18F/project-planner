@@ -1,0 +1,17 @@
+uuid: d08240bc-5a34-4aaf-9ef4-fb043a991147
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Cloud Environment'
+type: cloud_environment
+description: 'A remote cloud environment for applications and services'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

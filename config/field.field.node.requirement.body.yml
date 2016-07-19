@@ -1,0 +1,22 @@
+uuid: 696f1f61-accd-457c-abc1-de38850db4b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.requirement
+  module:
+    - text
+id: node.requirement.body
+field_name: body
+entity_type: node
+bundle: requirement
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

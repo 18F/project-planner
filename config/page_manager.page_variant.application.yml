@@ -1,0 +1,46 @@
+uuid: 93e2caf7-8f4d-45d2-be69-0b689af66ac9
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+  module:
+    - ctools
+    - panels
+    - user
+id: application
+label: Application
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  uuid: be9fa623-5d14-4974-b265-56b7aed35fa9
+  label: null
+  weight: 0
+  layout: booststrap-4-8
+  layout_settings: {  }
+  page_title: '[node:title]'
+  storage_type: page_manager
+  storage_id: application
+  builder: standard
+page: node_view
+weight: -2
+selection_criteria:
+  b7d6c0fd-59ae-4865-ad61-50853c14eb9e:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
+    uuid: b7d6c0fd-59ae-4865-ad61-50853c14eb9e
+  b0ccd330-ed63-439e-9a43-a86e34a524df:
+    id: 'entity_bundle:node'
+    bundles:
+      application: application
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b0ccd330-ed63-439e-9a43-a86e34a524df
+selection_logic: and
+static_context: {  }

@@ -1,0 +1,14 @@
+uuid: 45fafd4d-2ee9-4322-b1f9-af3386a483e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.help_desk
+  module:
+    - user
+id: user_add_role_action.help_desk
+label: 'Add the Help Desk role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: help_desk

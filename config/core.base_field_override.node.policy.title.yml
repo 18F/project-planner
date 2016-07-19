@@ -1,0 +1,18 @@
+uuid: 4b410908-01db-4546-a2ad-2f5ff3df5228
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.policy
+id: node.policy.title
+field_name: title
+entity_type: node
+bundle: policy
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

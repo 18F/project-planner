@@ -6,8 +6,8 @@ id: private_files_export
 label: 'Private files export'
 enabled: true
 keep: null
-period: 3600
+period: 86400
 cron: null
-source_id: private_files
+source_id: default_db
 destination_id: private_files
-settings_profile_id: files_export
+settings_profile_id: clean_database_export

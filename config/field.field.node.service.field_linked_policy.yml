@@ -1,0 +1,29 @@
+uuid: 4dc70dea-dc69-4867-99c5-05ff6ff92dc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_policy
+    - node.type.policy
+    - node.type.service
+id: node.service.field_linked_policy
+field_name: field_linked_policy
+entity_type: node
+bundle: service
+label: 'Policy and Processes'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      policy: policy
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

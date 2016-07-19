@@ -1,0 +1,22 @@
+uuid: 0a916ecc-e0a9-4af5-936d-c612aa0bd144
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.policy
+  module:
+    - text
+id: node.policy.body
+field_name: body
+entity_type: node
+bundle: policy
+label: 'Purpose (Process)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

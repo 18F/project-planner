@@ -1,0 +1,14 @@
+uuid: 23ba44cd-c70b-4f58-b886-cbd7f661d0e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.e_filing_and_disclosure
+  module:
+    - user
+id: user_add_role_action.e_filing_and_disclosure
+label: 'Add the E-Filing and Disclosure role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: e_filing_and_disclosure

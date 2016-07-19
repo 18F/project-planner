@@ -1,0 +1,10 @@
+uuid: caa19eae-70a7-4bf9-92eb-e69ed0ea09aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.list_item
+label: 'List item'
+targetEntityType: node
+cache: true

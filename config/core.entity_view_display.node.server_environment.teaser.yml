@@ -1,0 +1,23 @@
+uuid: cd8bf44b-8107-4d7b-b0a3-856a9dbafaa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.server_environment.field_environment_type
+    - field.field.node.server_environment.field_link
+    - field.field.node.server_environment.field_parent
+    - node.type.server_environment
+  module:
+    - user
+id: node.server_environment.teaser
+targetEntityType: node
+bundle: server_environment
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_environment_type: true
+  field_link: true
+  field_parent: true

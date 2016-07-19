@@ -1,0 +1,10 @@
+uuid: 76f86458-1cb9-44d1-8b9d-0cab6e90fa57
+langcode: en
+status: '1'
+dependencies: {  }
+id: vendor_workflow_active
+label: Active
+module: null
+wid: vendor_workflow
+weight: '-6'
+sysid: 0

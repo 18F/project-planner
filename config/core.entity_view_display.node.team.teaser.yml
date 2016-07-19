@@ -27,3 +27,4 @@ hidden:
   field_members: true
   field_status: true
   field_tags: true
+  field_team_status: true

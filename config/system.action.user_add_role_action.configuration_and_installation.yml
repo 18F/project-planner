@@ -1,0 +1,14 @@
+uuid: d2add71e-ad1e-4568-b1f3-496e20cc3162
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.configuration_and_installation
+  module:
+    - user
+id: user_add_role_action.configuration_and_installation
+label: 'Add the Configuration and Installation role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: configuration_and_installation
