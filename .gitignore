@@ -16,6 +16,9 @@ web/sites/*/files
 web/sites/default/settings.local.php
 
 # Cloud Foundry files
+manifest.yml
+manifest-variables.dev.yml
+manifest-variables.prod.yml
 cf-ssh.yml
 
 # Vagrant files
