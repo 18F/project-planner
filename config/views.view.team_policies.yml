@@ -1,17 +1,15 @@
-uuid: dba85921-89ab-49da-92c7-c498e0589fec
+uuid: fcaf60c6-3048-4dd7-98b8-0e2a6040be23
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.list_item
-    - node.type.application
-    - node.type.infrastructure
-    - node.type.service
+    - node.type.policy
   module:
     - node
     - user
-id: team_projects
-label: 'Team projects'
+id: team_policies
+label: 'Team policies'
 module: views
 description: ''
 tag: ''
@@ -142,9 +140,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            application: application
-            infrastructure: infrastructure
-            service: service
+            policy: policy
           group: 1
           exposed: false
           expose:
@@ -228,18 +224,18 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Team projects'
+      title: 'Team policies and processes'
       header: {  }
       footer: {  }
       empty: {  }
       relationships:
-        field_team:
-          id: field_team
-          table: node__field_team
-          field: field_team
+        field_teams:
+          id: field_teams
+          table: node__field_teams
+          field: field_teams
           relationship: none
           group_type: group
-          admin_label: 'field_team: Content'
+          admin_label: 'field_teams: Content'
           required: true
           plugin_id: standard
       arguments:
@@ -247,7 +243,7 @@ display:
           id: nid
           table: node_field_data
           field: nid
-          relationship: field_team
+          relationship: field_teams
           group_type: group
           admin_label: ''
           default_action: default
@@ -274,7 +270,7 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
-          break_phrase: false
+          break_phrase: true
           not: false
           entity_type: node
           entity_field: nid

@@ -1,9 +1,9 @@
-uuid: 5058b398-bd09-46cc-9681-8b4336c59399
+uuid: 0988a8ea-a79d-4d65-96f3-6f119f3a8c6d
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.list_item
     - field.field.node.policy.body
     - field.field.node.policy.field_diagrams
     - field.field.node.policy.field_files
@@ -15,28 +15,38 @@ dependencies:
     - field.field.node.policy.field_teams
     - node.type.policy
   module:
+    - options
+    - panelizer
     - text
     - user
-id: node.policy.teaser
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+id: node.policy.list_item
 targetEntityType: node
 bundle: policy
-mode: teaser
+mode: list_item
 content:
   body:
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
+    type: text_trimmed
+    weight: 1
     settings:
-      trim_length: 600
+      trim_length: 300
     third_party_settings: {  }
-  links:
-    weight: 100
+  field_policy_type:
+    weight: 0
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
 hidden:
   field_diagrams: true
   field_files: true
   field_it_poc: true
   field_links: true
-  field_policy_type: true
   field_strategic_align_commission: true
   field_strategic_align_it: true
   field_teams: true
+  links: true

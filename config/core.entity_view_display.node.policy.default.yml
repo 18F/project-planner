@@ -18,8 +18,13 @@ dependencies:
     - image
     - link
     - options
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
 id: node.policy.default
 targetEntityType: node
 bundle: policy
@@ -90,4 +95,6 @@ content:
     type: entity_reference_label
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

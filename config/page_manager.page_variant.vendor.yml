@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - page_manager.page.node_view
+    - views.view.vendor_projects
   module:
     - ctools
     - ctools_block
     - panels
     - user
+    - views
 id: vendor
 label: Vendor
 variant: panels_variant
@@ -118,6 +120,17 @@ variant_settings:
       uuid: 15532e81-b29a-460a-afbe-62f8bab783c0
       context_mapping:
         entity: node
+    0dea2ec2-6d6d-418f-a8e4-a2b5dd70c277:
+      id: 'views_block:vendor_projects-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: sidebar_right
+      weight: 0
+      uuid: 0dea2ec2-6d6d-418f-a8e4-a2b5dd70c277
+      context_mapping: {  }
   id: panels_variant
   uuid: bda78ff6-2cdb-4d14-98ec-8e5cedd4de7c
   label: null

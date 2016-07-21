@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - page_manager.page.node_view
+    - views.view.team_policies
     - views.view.team_projects
   module:
     - ctools
@@ -126,6 +127,17 @@ variant_settings:
       region: sidebar_right
       weight: -9
       uuid: 075cfd16-50c0-402a-ac1c-c1cd78f1f69a
+      context_mapping: {  }
+    79c36c7d-f6ee-4d07-94a1-eaa9ed92f08b:
+      id: 'views_block:team_policies-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: sidebar_right
+      weight: 0
+      uuid: 79c36c7d-f6ee-4d07-94a1-eaa9ed92f08b
       context_mapping: {  }
   id: panels_variant
   uuid: 8a87abac-7634-4c61-939e-065e016c71f6

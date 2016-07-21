@@ -1,4 +1,4 @@
-uuid: dba85921-89ab-49da-92c7-c498e0589fec
+uuid: 9e61777e-daea-42c9-89c5-6814a9692d80
 langcode: en
 status: true
 dependencies:
@@ -10,8 +10,8 @@ dependencies:
   module:
     - node
     - user
-id: team_projects
-label: 'Team projects'
+id: vendor_projects
+label: 'Vendor projects'
 module: views
 description: ''
 tag: ''
@@ -228,18 +228,18 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Team projects'
+      title: 'Vendor projects'
       header: {  }
       footer: {  }
       empty: {  }
       relationships:
-        field_team:
-          id: field_team
-          table: node__field_team
-          field: field_team
+        field_vendors:
+          id: field_vendors
+          table: node__field_vendors
+          field: field_vendors
           relationship: none
           group_type: group
-          admin_label: 'field_team: Content'
+          admin_label: 'field_vendors: Content'
           required: true
           plugin_id: standard
       arguments:
@@ -247,7 +247,7 @@ display:
           id: nid
           table: node_field_data
           field: nid
-          relationship: field_team
+          relationship: field_vendors
           group_type: group
           admin_label: ''
           default_action: default
@@ -274,7 +274,7 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
-          break_phrase: false
+          break_phrase: true
           not: false
           entity_type: node
           entity_field: nid
