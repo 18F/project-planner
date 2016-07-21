@@ -1,0 +1,17 @@
+---
+applications:
+- name: "{{APP_NAME}}"
+  instances: "{{INSTANCES}}"
+  memory: "{{MEMORY}}"
+  host: "{{HOST}}"
+  domain: "{{DOMAIN}}"
+  buildpack: "https://github.com/ddollar/heroku-buildpack-multi.git"
+  env:
+    APP_LOG_LEVEL: "{{LOG_LEVEL}}"
+    APP_FILES_REGION: "{{FILES_REGION}}"
+    DRUPAL_THEME: "bootstrap_18f"
+    DRUPAL_BUILD_THEME: "{{DRUPAL_BUILD_THEME}}"
+    DRUPAL_DB: "{{DRUPAL_DB}}"
+    DRUPAL_SALT: "{{DRUPAL_SALT}}"
+    DRUPAL_INIT: "{{DRUPAL_INIT}}"
+    DRUPAL_SYNC: "{{DRUPAL_SYNC}}"
