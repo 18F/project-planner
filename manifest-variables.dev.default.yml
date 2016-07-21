@@ -1,0 +1,12 @@
+APP_NAME: "project-planner-dev"
+INSTANCES: 1
+MEMORY: "512M"
+HOST: "project-planner-dev"
+DOMAIN: "apps.cloud.gov"
+LOG_LEVEL: "INFO"
+FILES_REGION: "us-east-1"
+DRUPAL_BUILD_THEME: "false"
+DRUPAL_DB: "bootstrap"
+DRUPAL_SALT: "true"
+DRUPAL_INIT: "true"
+DRUPAL_SYNC: "true"
