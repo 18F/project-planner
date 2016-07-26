@@ -98,12 +98,12 @@ $mysql_services = array();
 foreach($cf_service_data as $service_provider => $service_list) {
   foreach ($service_list as $service) {
     // looks for tags of 'mysql'
-    if (in_array('mysql', $service['tags'], true)) {
+    if (in_array('pgsql', $service['tags'], true)) {
       $mysql_services[] = $service;
       continue;
     }
     // look for a service where the name includes 'mysql'
-    if (strpos($service['name'], 'mysql') !== false) {
+    if (strpos($service['name'], 'pgsql') !== false) {
       $mysql_services[] = $service;
     }
   }
@@ -117,8 +117,8 @@ $databases['default']['default'] = array(
   'prefix' => '',
   'host' => $mysql_services[0]['credentials']['host'],
   'port' => $mysql_services[0]['credentials']['port'],
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
+  'driver' => 'pgsql',
 );
 
 /**
