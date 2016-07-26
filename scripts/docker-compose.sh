@@ -32,49 +32,15 @@ do
   shift
 done
 
+#---
+
+ENVIRONMENT="$key"
+
 #-------------------------------------------------------------------------------
 # Begin
 
 # Generate completed Docker compose file (with PHP Symfony components)
 cd "$TOP_DIR"
 
-php -r '
-require_once "web/autoload.php";
-  
-use Symfony\Component\Yaml\Yaml;
-
-$public_config = Yaml::parse(file_get_contents("docker-compose.public.yml"));
-$variables = Yaml::parse(file_get_contents("docker-variables.default.yml"));
-
-if (file_exists("docker-variables.yml")) {
-  $variables_overrides = Yaml::parse(file_get_contents("docker-variables.yml"));
-  $variables = array_merge($variables, $variables_overrides);  
-}
-
-# Recursive interpolation goodness
-
-function interpolate($config, $variables) {
-  foreach ($config as $name => $data) {
-    switch (gettype($data)) {
-      case "array":
-        $config[$name] = interpolate($data, $variables);
-        break;
-      case "string":
-        foreach ($variables as $key => $value) {
-          $data = str_replace("{{{$key}}}", $value, $data);
-        }
-        $config[$name] = $data;
-        break;
-      default:
-        # We only care about arrays and strings
-    }
-  }
-  return $config;
-}
-
-#---
-
-$config = interpolate($public_config, $variables);
-file_put_contents("docker-compose.yml", Yaml::dump($config, 5, 2));
-'
+php -f "$SCRIPT_DIR/shared/interpolate.php" docker-compose docker-variables "$ENVIRONMENT"
 echo "Successfully generated the Docker Compose configuration file: docker-compose.yml"
