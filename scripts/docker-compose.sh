@@ -32,15 +32,11 @@ do
   shift
 done
 
-#---
-
-ENVIRONMENT="$key"
-
 #-------------------------------------------------------------------------------
 # Begin
 
 # Generate completed Docker compose file (with PHP Symfony components)
 cd "$TOP_DIR"
 
-php -f "$SCRIPT_DIR/shared/interpolate.php" docker-compose docker-variables "$ENVIRONMENT"
+php -f "$SCRIPT_DIR/shared/interpolate.php" docker-compose docker-variables
 echo "Successfully generated the Docker Compose configuration file: docker-compose.yml"
