@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "./.vagrant", "#{project_directory}/.vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775"]
   
   config.vm.network "forwarded_port", guest: 8080, host: 8080
-  config.vm.network "forwarded_port", guest: 3306, host: 3306
+  config.vm.network "forwarded_port", guest: 5432, host: 5432
   
   if ENV["windir"]
     config.vm.synced_folder File.expand_path("system32/drivers/", ENV["windir"]), "/winhost"
@@ -39,6 +39,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |s|
     s.name = "Create swap space"
     s.inline = <<-SHELL
+      set -e
+
       memory_size="${1}"
       swap_size=$((${memory_size}*2))
       
@@ -65,7 +67,16 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |s|
     s.name = "Initialize Docker and Docker Compose"
     s.inline = <<-SHELL
+      set -e
+      
+      apt-get update
+      
       if [ "`which docker`" == "" ]; then
+        echo "Preparing Docker environment"
+        apt-get install -y lxc wget bsdtar curl
+        apt-get install -y linux-image-extra-$(uname -r)
+        modprobe aufs
+      
         echo "Installing Docker"
         wget -qO- https://get.docker.com/ | sh
         sed -i "s/^start on (local-filesystems and net-device-up IFACE!=lo)/start on vagrant-ready/" /etc/init/docker.conf
@@ -75,7 +86,7 @@ Vagrant.configure("2") do |config|
       
       if [ "`which docker-compose`" == "" ]; then
         echo "Installing Docker Compose"
-        curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-Linux-x86_64 > /usr/local/bin/docker-compose
+        curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-Linux-x86_64 > /usr/local/bin/docker-compose
         chmod +x /usr/local/bin/docker-compose
         echo "Docker Compose installed successfully"
       fi
@@ -85,22 +96,25 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |s|
     s.name = "Initialize CLI tools"
     s.inline = <<-SHELL
+      set -e
+    
       project_dir="${1}"
       script_dir="${2}"
       
       echo "Adding vendor bin directory to the execution path"
-      echo "PATH='$project_dir/vendor/bin:$PATH'" > /etc/profile.d/composer-vendor.sh
+      echo "PATH='$project_dir/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'" > /etc/profile.d/composer-vendor.sh
+      source /etc/profile.d/composer-vendor.sh
       
-      echo "Installing CLI dependencies and workflow utilities"
+      echo "Installing PHP CLI dependencies"
       apt-get install -y build-essential libpng12-dev libjpeg-dev libpq-dev \
-        php5-cli php5-dev php5-curl php5-gd php5-mysql \
-        mysql-client-5.5 git
+        php5-cli php5-dev php5-curl php5-gd php5-pgsql \
+        postgresql-client git
         
       echo "date.timezone = America/New_York" > /etc/php5/mods-available/timezone.ini
       php5enmod timezone
       
-      drupal init -n -y
-      echo "source \\"\\$HOME/.console/console.rc\\" 2>/dev/null" > /etc/profile.d/drupal-console.sh
+      echo "variables_order = 'EGPCS'" > /etc/php5/mods-available/variables.ini
+      php5enmod variables
      
       echo "Installing Composer"
       "$script_dir/composer-init.sh" -b /usr/local/bin
@@ -108,17 +122,26 @@ Vagrant.configure("2") do |config|
       echo "Running composer install on the project directory"
       #"$script_dir/clean.sh"
       composer install -d "$project_dir"
+    
+      echo "Configuring Drupal Console utility"
+      drupal init -n -y
+      echo "source \\"\\$HOME/.console/console.rc\\" 2>/dev/null" > /etc/profile.d/drupal-console.sh
     SHELL
     
     s.args = [
       project_directory,
       "#{project_directory}/scripts",
-    ]  
+    ]
+    s.env = {
+      'HOME' => '/home/vagrant'
+    }
   end
   
   config.vm.provision "shell" do |s|
     s.name = "Spin up Dockerized web environment"
     s.inline = <<-SHELL
+      set -e
+      
       project_dir="${1}"
       script_dir="${2}"
     
