@@ -108,6 +108,9 @@ class DrupalHandler {
       if (!is_null($db_conn)) {
         $event->getIO()->write(" * Bootstrapping Drupal");
 
+        # Install PostgreSQL executable
+        static::_runCommand("curl 'https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz' | tar -xvz -C '$home'");
+
         # Setup Postgres password file
         $pass_entry = $db_conn['host'] . ':' . $db_conn['port'] . ':' . $db_conn['db_name'] . ':' . $db_conn['username'] . ':' . $db_conn['password'];
         static::_runCommand("echo '$pass_entry' > '$pg_pass'");
@@ -115,7 +118,7 @@ class DrupalHandler {
 
         # Try to install an initial Drupal site
         $event->getIO()->write(static::_runCommand(
-          "psql --host=" . $db_conn['host'] .
+          "'$home/psql/bin/psql' --host=" . $db_conn['host'] .
           " --port=" . $db_conn['port'] .
           " --username=" . $db_conn['username'] .
           " --dbname=" . $db_conn['db_name'] .
