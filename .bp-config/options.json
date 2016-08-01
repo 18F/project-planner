@@ -3,7 +3,7 @@
   "LIBDIR": "lib",
   "WEBDIR": "web",
   "WEB_SERVER": "httpd",
-  "HTTPD_VERSION": "2.4.20",
+  "HTTPD_VERSION": "2.4.23",
   "HTTPD_PACKAGE": "httpd-{HTTPD_VERSION}.tar.gz",
   "HTTPD_DOWNLOAD_URL": "/httpd/{HTTPD_VERSION}/{HTTPD_PACKAGE}",
   "HTTPD_STRIP": true,
@@ -16,6 +16,6 @@
   "PHP_MODULES_PATTERN": "/php/{PHP_VERSION}/php-{MODULE_NAME}-{PHP_VERSION}.tar.gz",
   "PHP_MODULES_STRIP": true,
   "PHP_MODULES": [],
-  "PHP_EXTENSIONS": ["curl", "gd", "mbstring", "pdo", "pdo_mysql", "mysqli", "zip", "twig"],
+  "PHP_EXTENSIONS": ["curl", "gd", "mbstring", "pdo", "pdo_pgsql", "zip", "twig"],
   "ZEND_EXTENSIONS": ["opcache"]
 }
