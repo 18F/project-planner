@@ -69,10 +69,9 @@ Vagrant.configure("2") do |config|
     s.inline = <<-SHELL
       set -e
       
-      apt-get update
-      
       if [ "`which docker`" == "" ]; then
         echo "Preparing Docker environment"
+        apt-get update
         apt-get install -y lxc wget bsdtar curl
         apt-get install -y linux-image-extra-$(uname -r)
         modprobe aufs
