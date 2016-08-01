@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 
 $config_base = $argv[1]; // docker-compose
 $variable_base = $argv[2]; // docker-variables
-$variable_environment = (is_null($argv[3]) || empty($argv[3])) ? $variable_base : "${variable_base}.${argv[3]}"; // production
+$variable_environment = (count($argv) < 3 || empty($argv[3])) ? $variable_base : "${variable_base}.${argv[3]}"; // production
 
 $public_config = Yaml::parse(file_get_contents("${config_base}.public.yml"));
 $variables = Yaml::parse(file_get_contents("${variable_environment}.default.yml"));
