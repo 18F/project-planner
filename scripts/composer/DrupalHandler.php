@@ -94,26 +94,33 @@ class DrupalHandler {
   public static function initializeSite(Event $event) {
     $fs = new Filesystem();
     $cwd = getcwd();
+    $home = (getenv('HOME') === FALSE ? '/root' : getenv('HOME'));
     $vendor = static::_getDrupalVendor($cwd);
     $root = static::_getDrupalRoot($cwd);
+
     $db = static::_getDrupalBootstrapDB($cwd);
+    $pg_pass = "${home}/.pgpass";
 
     if (static::_check('DRUPAL_INIT') && !static::_siteExists($vendor, $root)) {
-      # Get MySQL database connection
-      $mysql_conn = static::_getDrupalMySQL();
+      # Get primary database connection
+      $db_conn = static::_getDrupalDBInfo();
 
-      if (!is_null($mysql_conn)) {
+      if (!is_null($db_conn)) {
         $event->getIO()->write(" * Bootstrapping Drupal");
+
+        # Setup Postgres password file
+        $pass_entry = $db_conn['host'] . ':' . $db_conn['port'] . ':' . $db_conn['db_name'] . ':' . $db_conn['username'] . ':' . $db_conn['password'];
+        static::_runCommand("echo '$pass_entry' > '$pg_pass'");
+        static::_runCommand("chmod 600 '$pg_pass'");
 
         # Try to install an initial Drupal site
         $event->getIO()->write(static::_runCommand(
-          "mysql --host=" . $mysql_conn['host'] .
-          " --port=" . $mysql_conn['port'] .
-          " --user=" . $mysql_conn['username'] .
-          " --password=" . $mysql_conn['password'] .
-          " --database=" . $mysql_conn['db_name'] .
-          " < $db"
-        ), 7200, TRUE);
+          "psql --host=" . $db_conn['host'] .
+          " --port=" . $db_conn['port'] .
+          " --username=" . $db_conn['username'] .
+          " --dbname=" . $db_conn['db_name'] .
+          " < $db", 7200, TRUE)
+        );
       }
     }
   }
@@ -189,37 +196,34 @@ class DrupalHandler {
    */
   protected static function _services() {
     $data = array();
+    $vcap_services = getenv('VCAP_SERVICES');
 
-    if (isset($_ENV['VCAP_SERVICES'])) {
-      $data = json_decode($_ENV['VCAP_SERVICES'], true);
+    if ($vcap_services !== FALSE) {
+      $data = json_decode($vcap_services, true);
     }
     return $data;
   }
 
   /**
-   * Return the primary MySQL database connection information
+   * Return the primary database connection information
    */
-  protected static function _getDrupalMySQL() {
-    $mysql_services = array();
+  protected static function _getDrupalDBInfo() {
+    $db_services = array();
 
     foreach(static::_services() as $service_provider => $service_list) {
       foreach ($service_list as $service) {
-        // looks for tags of 'mysql'
-        if (in_array('mysql', $service['tags'], true)) {
-          $mysql_services[] = $service;
+        // looks for tags of 'Postgres'
+        if (in_array('postgresql', $service['tags'], true)) {
+          $db_services[] = $service;
           continue;
-        }
-        // look for a service where the name includes 'mysql'
-        if (strpos($service['name'], 'mysql') !== false) {
-          $mysql_services[] = $service;
         }
       }
     }
 
-    if (empty($mysql_services)) {
+    if (empty($db_services)) {
       return NULL;
     }
-    return $mysql_services[0]['credentials'];
+    return $db_services[0]['credentials'];
   }
 
   /**
@@ -261,7 +265,7 @@ class DrupalHandler {
    * Return the Root Drupal theme directory
    */
   protected static function _getDrupalTheme($drupal_root) {
-    $theme_name = (isset($_ENV['DRUPAL_THEME']) ? trim($_ENV['DRUPAL_THEME']) : 'bootstrap_18f');
+    $theme_name = (getenv('DRUPAL_THEME') !== FALSE ? trim(getenv('DRUPAL_THEME')) : 'bootstrap_18f');
     return $drupal_root .  '/themes/custom/' . $theme_name;
   }
 
@@ -269,7 +273,7 @@ class DrupalHandler {
    * Return the Root Drupal configuration directory
    */
   protected static function _getDrupalBootstrapDB($project_root) {
-    $db_name = (isset($_ENV['DRUPAL_DB']) ? trim($_ENV['DRUPAL_DB']) : 'bootstrap');
+    $db_name = (getenv('DRUPAL_DB') !== FALSE ? trim(getenv('DRUPAL_DB')) : 'bootstrap');
     return $project_root .  '/db/' . preg_replace('/\.sql$/i', '', $db_name) . '.sql';
   }
 
@@ -302,7 +306,7 @@ class DrupalHandler {
   }
 
   /**
-   * Generate a random string of a specified length
+   * Generate a imperfect somewhat randomistic string of a specified length
    */
   protected static function _generateRandomString($length = 100) {
     return substr(str_repeat(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), ceil($length / 60)), 0, $length);
@@ -312,15 +316,16 @@ class DrupalHandler {
    * Check an environment variable and return corresponding boolean value
    */
   protected static function _check($variable, $default = TRUE) {
-    $value = FALSE;
+    $check = FALSE;
+    $value = getenv($variable);
 
-    if (!isset($_ENV[$variable])) {
-      $value = $default;
-    } elseif (!is_null($_ENV[$variable]) && strlen($_ENV[$variable]) > 0) {
-      if (preg_match('/^\s*(true|yes|1)\s*$/i', $_ENV[$variable])) {
-        $value = TRUE;
+    if ($value === FALSE) {
+      $check = $default;
+    } elseif (strlen($value) > 0) {
+      if (preg_match('/^\s*(true|yes|1)\s*$/i', $value)) {
+        $check = TRUE;
       }
     }
-    return $value;
+    return $check;
   }
 }
