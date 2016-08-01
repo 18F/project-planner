@@ -57,13 +57,6 @@
  */
 
 /**
- * Collect external service information from environment.
- *
- * Cloud Foundry places all service credentials in VCAP_SERVICES
- */
-$cf_service_data = json_decode($_ENV['VCAP_SERVICES'], true);
-
-/**
  * Database settings:
  *
  * The $databases array specifies the database connection or
@@ -93,29 +86,7 @@ $cf_service_data = json_decode($_ENV['VCAP_SERVICES'], true);
  * );
  * @endcode
  */
-$db_services = array();
-
-foreach($cf_service_data as $service_provider => $service_list) {
-  foreach ($service_list as $service) {
-    // looks for tags of 'Postgres'
-    if (in_array('postgresql', $service['tags'], true)) {
-      $db_services[] = $service;
-      continue;
-    }
-  }
-}
-
-// Configure Drupal, using the first database found
-$databases['default']['default'] = array(
-  'database' => $db_services[0]['credentials']['db_name'],
-  'username' => $db_services[0]['credentials']['username'],
-  'password' => $db_services[0]['credentials']['password'],
-  'prefix' => '',
-  'host' => $db_services[0]['credentials']['host'],
-  'port' => $db_services[0]['credentials']['port'],
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
-  'driver' => 'pgsql',
-);
+ $databases = array();
 
 /**
  * Customizing database settings.
@@ -273,50 +244,7 @@ $databases['default']['default'] = array(
  *   );
  * @endcode
  */
-$config_directories['sync'] = __DIR__ . '/../../../config';
-
-/**
- * Flysystem.
- *
- * The settings below are for configuring flysystem backends
- */
-$s3_services = array();
-
-foreach($cf_service_data as $service_provider => $service_list) {
-  foreach ($service_list as $service) {
-    // looks for tags of 's3'
-    if (in_array('s3', $service['tags'], true)) {
-      $s3_services[] = $service;
-      continue;
-    }
-    // look for a service where the name includes 's3'
-    if (strpos($service['name'], 's3') !== false) {
-      $s3_services[] = $service;
-    }
-  }
-}
-
-$s3_region = (isset($_ENV['APP_FILES_REGION']) ? $_ENV['APP_FILES_REGION'] : 'us-east-1');
-
-$settings['flysystem']['s3'] = array(
-  'driver' => 's3',
-  'config' => array(
-    'key'    => $s3_services[0]['credentials']['access_key_id'],
-    'secret' => $s3_services[0]['credentials']['secret_access_key'],
-    'region' => $s3_region,
-    'bucket' => $s3_services[0]['credentials']['bucket'],
-
-    // Optional configuration settings.
-    'options' => array(
-      'ACL' => 'public-read',
-      'StorageClass' => 'REDUCED_REDUNDANCY',
-    ),
-    'protocol' => 'https',      // Will be autodetected based on the current request.
-    'prefix' => 'flysystem-s3', // Directory prefix for all uploaded/viewed files.
-    'cname' => 's3.amazonaws.com'
-  ),
-  'cache' => TRUE, // Creates a metadata cache to speed up lookups.
-);
+$config_directories = array();
 
 /**
  * Settings:
@@ -338,7 +266,7 @@ $settings['flysystem']['s3'] = array(
  *
  * @see install_select_profile()
  */
-$settings['install_profile'] = 'minimal';
+# $settings['install_profile'] = '';
 
 /**
  * Salt for one-time login links, cancel links, form tokens, etc.
@@ -357,7 +285,7 @@ $settings['install_profile'] = 'minimal';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = file_get_contents(__DIR__ . '/../../../private/hash_salt.txt');
+$settings['hash_salt'] = '';
 
 /**
  * Deployment identifier.
@@ -367,7 +295,7 @@ $settings['hash_salt'] = file_get_contents(__DIR__ . '/../../../private/hash_sal
  * custom code that changes the container, changing this identifier will also
  * allow the container to be invalidated as soon as code is deployed.
  */
-$settings['deployment_identifier'] = \Drupal::VERSION;
+# $settings['deployment_identifier'] = \Drupal::VERSION;
 
 /**
  * Access control for update.php script.
@@ -397,9 +325,6 @@ $settings['update_free_access'] = FALSE;
  *
  * You can also define an array of host names that can be accessed directly,
  * bypassing the proxy, in $settings['http_client_config']['proxy']['no'].
- *
- * If these settings are not configured, the system environment variables
- * HTTP_PROXY, HTTPS_PROXY, and NO_PROXY on the web server will be used instead.
  */
 # $settings['http_client_config']['proxy']['http'] = 'http://proxy_user:proxy_pass@example.com:8080';
 # $settings['http_client_config']['proxy']['https'] = 'http://proxy_user:proxy_pass@example.com:8080';
@@ -492,20 +417,6 @@ $settings['update_free_access'] = FALSE;
  */
 # $settings['omit_vary_cookie'] = TRUE;
 
-
-/**
- * Cache TTL for client error (4xx) responses.
- *
- * Items cached per-URL tend to result in a large number of cache items, and
- * this can be problematic on 404 pages which by their nature are unbounded. A
- * fixed TTL can be set for these items, defaulting to one hour, so that cache
- * backends which do not support LRU can purge older entries. To disable caching
- * of client error responses set the value to 0. Currently applies only to
- * page_cache module.
- */
-# $settings['cache_ttl_4xx'] = 3600;
-
-
 /**
  * Class Loader.
  *
@@ -560,15 +471,15 @@ if ($settings['hash_salt']) {
  *
  * Remove the leading hash signs to disable.
  */
-$settings['allow_authorize_operations'] = FALSE;
+# $settings['allow_authorize_operations'] = FALSE;
 
 /**
  * Default mode for directories and files written by Drupal.
  *
  * Value should be in PHP Octal Notation, with leading zero.
  */
-$settings['file_chmod_directory'] = 0775;
-$settings['file_chmod_file'] = 0664;
+# $settings['file_chmod_directory'] = 0775;
+# $settings['file_chmod_file'] = 0664;
 
 /**
  * Public file base URL:
@@ -590,7 +501,7 @@ $settings['file_chmod_file'] = 0664;
  * must exist and be writable by Drupal. This directory must be relative to
  * the Drupal installation directory and be accessible over the web.
  */
-$settings['file_public_path'] = 'sites/default/files';
+# $settings['file_public_path'] = 'sites/default/files';
 
 /**
  * Private file path:
@@ -605,7 +516,7 @@ $settings['file_public_path'] = 'sites/default/files';
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
-$settings['file_private_path'] = '../private';
+# $settings['file_private_path'] = '';
 
 /**
  * Session write interval:
@@ -642,7 +553,7 @@ $settings['file_private_path'] = '../private';
  *
  * Note: This setting does not apply to installation and update pages.
  */
-$settings['maintenance_theme'] = 'seven';
+# $settings['maintenance_theme'] = 'bartik';
 
 /**
  * PHP settings:
@@ -655,10 +566,6 @@ $settings['maintenance_theme'] = 'seven';
  * Settings defined there should not be duplicated here so as to avoid conflict
  * issues.
  */
-ini_set('memory_limit', '256M');
-ini_set ('max_execution_time', 1200);
-
-ini_set('date.timezone', 'America/New_York');
 
 /**
  * If you encounter a situation where users post a large amount of text, and
@@ -793,11 +700,6 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
-$settings['trusted_host_patterns'] = array(
- '^.+\.apps\.cloud\.gov$',
- '^.+\.local$',
- '^localhost$'
-);
 
 /**
  * Load local development override configuration, if available.
@@ -809,6 +711,6 @@ $settings['trusted_host_patterns'] = array(
  *
  * Keep this code block at the end of this file to take full effect.
  */
-if (file_exists(__DIR__ . '/settings.local.php')) {
-  include __DIR__ . '/settings.local.php';
-}
+# if (file_exists(__DIR__ . '/settings.local.php')) {
+#   include __DIR__ . '/settings.local.php';
+# }
