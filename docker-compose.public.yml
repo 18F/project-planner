@@ -11,20 +11,20 @@ services:
     ports:
       - "8080:80"
     depends_on:
-      - drupal-mysql
+      - drupal-postgres
     links:
-      - drupal-mysql:mysql
+      - drupal-postgres:postgres
     environment:
       DOCKER_IMAGE: "apache-php"
       APP_FILES_REGION: "{{AWS_FILES_REGION}}"
       VCAP_SERVICES: >-
         {
-          "docker-mysql": [{
-            "name": "mysql",
-            "tags": ["mysql"],
+          "docker-postgres": [{
+            "name": "pgsql",
+            "tags": ["postgresql"],
             "credentials": {
-              "host": "mysql",
-              "port": 3306,
+              "host": "postgres",
+              "port": 5432,
               "username": "drupal",
               "password": "drupal",
               "db_name": "drupal"
@@ -45,23 +45,23 @@ services:
       DRUPAL_SALT: "true"
       DRUPAL_INIT: "true"
       DRUPAL_SYNC: "true"
+      HOME: "/root"
     volumes:
       - .:/var/www
-  drupal-mysql:
-    hostname: drupal-mysql
-    image: mysql:latest
+  drupal-postgres:
+    hostname: drupal-postgres
+    image: postgres:latest
     restart: always
     expose:
-      - "3306"
+      - "5432"
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: drupal
-      MYSQL_PASSWORD: drupal
-      MYSQL_DATABASE: drupal
+      POSTGRES_USER: drupal
+      POSTGRES_PASSWORD: drupal
+      POSTGRES_DB: drupal
     volumes:
-      - drupal-data:/var/lib/mysql
+      - drupal-data:/var/lib/postgresql
 volumes:
   drupal-data:
     external: false

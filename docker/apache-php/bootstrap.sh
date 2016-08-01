@@ -57,6 +57,17 @@ export DOCKER_IMAGE="apache-php"
 # Build project and fetch dependencies
 composer install -n -d "$PROJECT_DIR"
 
+# Initialize Apache environment
+: "${APACHE_CONFDIR:=/etc/apache2}"
+: "${APACHE_ENVVARS:=$APACHE_CONFDIR/envvars}"
+if test -f "$APACHE_ENVVARS"; then
+  . "$APACHE_ENVVARS"
+fi
+
+# Apache gets grumpy about PID files pre-existing
+: "${APACHE_PID_FILE:=${APACHE_RUN_DIR:=/var/run/apache2}/apache2.pid}"
+rm -f "$APACHE_PID_FILE"
+
 # Execute Apache web server in the foreground
-rm -f /var/run/apache2/apache2.pid
+cd "$PROJECT_DIR"
 exec apache2 -DFOREGROUND

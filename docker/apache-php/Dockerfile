@@ -8,13 +8,14 @@ VOLUME /var/www
 
 # tweak Apache
 RUN a2enmod rewrite
+RUN a2dissite 000-default
 COPY ./docker/apache-php/apache2.conf /etc/apache2/apache2.conf
 
 # install the PHP extensions we need
-RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev libpq-dev mysql-client-5.5 node-less git \
+RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev libpq-dev postgresql-client node-less git \
   && rm -rf /var/lib/apt/lists/* \
   && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-  && docker-php-ext-install gd mbstring opcache pdo pdo_mysql mysqli zip
+  && docker-php-ext-install gd mbstring opcache pdo pdo_pgsql zip
 
 # set recommended PHP.ini settings
 ENV PHP_CONF_DIR /usr/local/etc/php/conf.d
