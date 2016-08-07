@@ -15,3 +15,5 @@ applications:
     DRUPAL_SALT: "{{DRUPAL_SALT}}"
     DRUPAL_INIT: "{{DRUPAL_INIT}}"
     DRUPAL_SYNC: "{{DRUPAL_SYNC}}"
+    HOME: "/home/vcap/app"
+    PATH: "/bin:/usr/bin:/home/vcap/app/php/bin:/home/vcap/app/php/sbin:/home/vcap/app/psql/bin"
