@@ -101,29 +101,35 @@ class DrupalHandler {
     $db = static::_getDrupalBootstrapDB($cwd);
     $pg_pass = "${home}/.pgpass";
 
-    if (static::_check('DRUPAL_INIT') && !static::_siteExists($vendor, $root)) {
-      # Get primary database connection
-      $db_conn = static::_getDrupalDBInfo();
+    if (static::_check('DRUPAL_INIT')) {
+      $event->getIO()->write(" * Bootstrapping Drupal");
 
-      if (!is_null($db_conn)) {
-        $event->getIO()->write(" * Bootstrapping Drupal");
-
+      if (empty(static::_runCommand("which psql", 1800, NULL, FALSE))) {
         # Install PostgreSQL executable
-        static::_runCommand("curl 'https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz' | tar -xvz -C '$home'");
+        static::_runCommand("cd '$home'; curl 'https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz' | tar -xvz");
+      }
 
-        # Setup Postgres password file
-        $pass_entry = $db_conn['host'] . ':' . $db_conn['port'] . ':' . $db_conn['db_name'] . ':' . $db_conn['username'] . ':' . $db_conn['password'];
-        static::_runCommand("echo '$pass_entry' > '$pg_pass'");
-        static::_runCommand("chmod 600 '$pg_pass'");
+      if (!static::_siteExists($vendor, $root)) {
+        # Get primary database connection
+        $db_conn = static::_getDrupalDBInfo();
 
-        # Try to install an initial Drupal site
-        $event->getIO()->write(static::_runCommand(
-          "'$home/psql/bin/psql' --host=" . $db_conn['host'] .
-          " --port=" . $db_conn['port'] .
-          " --username=" . $db_conn['username'] .
-          " --dbname=" . $db_conn['db_name'] .
-          " < $db", 7200, TRUE)
-        );
+        if (!is_null($db_conn)) {
+          $event->getIO()->write(" * Initializing Drupal database");
+
+          # Setup Postgres password file
+          $pass_entry = $db_conn['host'] . ':' . $db_conn['port'] . ':' . $db_conn['db_name'] . ':' . $db_conn['username'] . ':' . $db_conn['password'];
+          static::_runCommand("echo '$pass_entry' > '$pg_pass'");
+          static::_runCommand("chmod 600 '$pg_pass'");
+
+          # Try to install an initial Drupal site
+          $event->getIO()->write(static::_runCommand(
+            "'$home/psql/bin/psql' --host=" . $db_conn['host'] .
+            " --port=" . $db_conn['port'] .
+            " --username=" . $db_conn['username'] .
+            " --dbname=" . $db_conn['db_name'] .
+            " < $db", 7200, TRUE)
+          );
+        }
       }
     }
   }
