@@ -124,7 +124,7 @@ cd "$TOP_DIR"
 
 # Push application to cloud.gov 
 # (but do not start it until we create and attach the services)
-cf push --no-start
+cf push --no-start "$APP_NAME"
 
 # Create a database service and attach to application
 APP_DB_NAME="$APP_NAME-db"

@@ -72,9 +72,9 @@ cd "$TOP_DIR"
 # (but do not start it until we create and attach the services)
 if [ "$APP_START" == "start" ]; then
   # Start application
-  cf push
+  cf push "$APP_NAME"
 else 
-  cf push --no-start
+  cf push --no-start "$APP_NAME"
 fi
 
 echo "Successfully pushed $APP_NAME application"

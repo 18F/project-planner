@@ -1,7 +1,6 @@
 ---
 applications:
-- name: "{{APP_NAME}}"
-  instances: "{{INSTANCES}}"
+- instances: "{{INSTANCES}}"
   memory: "{{MEMORY}}"
   host: "{{HOST}}"
   domain: "{{DOMAIN}}"
