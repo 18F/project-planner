@@ -16,3 +16,4 @@ applications:
     DRUPAL_SYNC: "{{DRUPAL_SYNC}}"
     HOME: "/home/vcap/app"
     PATH: "/bin:/usr/bin:/home/vcap/app/php/bin:/home/vcap/app/php/sbin:/home/vcap/app/psql/bin"
+    PGPASSFILE: "/home/vcap/app/.pgpass"

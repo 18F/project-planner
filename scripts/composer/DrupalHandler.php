@@ -99,7 +99,7 @@ class DrupalHandler {
     $root = static::_getDrupalRoot($cwd);
 
     $db = static::_getDrupalBootstrapDB($cwd);
-    $pg_pass = "${home}/.pgpass";
+    $pg_pass = "$home/.pgpass";
 
     if (static::_check('DRUPAL_INIT')) {
       $event->getIO()->write(" * Bootstrapping Drupal");
