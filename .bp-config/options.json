@@ -3,7 +3,7 @@
   "LIBDIR": "lib",
   "WEBDIR": "web",
   "WEB_SERVER": "httpd",
-  "HTTPD_VERSION": "2.4.23",
+  "HTTPD_VERSION": "2.4.25",
   "HTTPD_PACKAGE": "httpd-{HTTPD_VERSION}.tar.gz",
   "HTTPD_DOWNLOAD_URL": "/httpd/{HTTPD_VERSION}/{HTTPD_PACKAGE}",
   "HTTPD_STRIP": true,
