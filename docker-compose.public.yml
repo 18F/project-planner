@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/apache-php/Dockerfile
-    restart: always
+    #restart: always
     expose:
       - "8080"
     ports:
@@ -32,11 +32,12 @@ services:
           }],
           "docker-s3": [{
             "name": "s3",
-            "tags": ["s3"],
+            "tags": ["S3"],
             "credentials": {
               "access_key_id": "{{AWS_ACCESS_KEY_ID}}",
               "secret_access_key": "{{AWS_SECRET_ACCESS_KEY}}",
-              "bucket": "{{AWS_FILES_BUCKET}}"
+              "bucket": "{{AWS_FILES_BUCKET}}",
+              "region": "{{AWS_FILES_REGION}}"
             }
           }]
         }
