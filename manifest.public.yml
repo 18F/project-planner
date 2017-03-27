@@ -4,7 +4,7 @@ applications:
   memory: "{{MEMORY}}"
   host: "{{HOST}}"
   domain: "{{DOMAIN}}"
-  buildpack: "https://github.com/cloudfoundry/php-buildpack.git"
+  buildpack: "https://bitbucket.org/cf-utilities/cf-buildpack-multi.git"
   env:
     APP_LOG_LEVEL: "{{LOG_LEVEL}}"
     APP_FILES_REGION: "{{FILES_REGION}}"
@@ -15,5 +15,5 @@ applications:
     DRUPAL_INIT: "{{DRUPAL_INIT}}"
     DRUPAL_SYNC: "{{DRUPAL_SYNC}}"
     HOME: "/home/vcap/app"
-    PATH: "/bin:/usr/bin:/home/vcap/app/php/bin:/home/vcap/app/php/sbin:/home/vcap/app/psql/bin"
+    PATH: "/bin:/usr/bin:/home/vcap/app/php/bin:/home/vcap/app/php/sbin:/home/vcap/app/psql/bin:/home/vcap/app/.apt/usr/bin"
     PGPASSFILE: "/home/vcap/app/.pgpass"
