@@ -2,7 +2,7 @@ APP_NAME: "project-planner"
 INSTANCES: 1
 MEMORY: "512M"
 HOST: "project-planner"
-DOMAIN: "apps.cloud.gov"
+DOMAIN: "app.cloud.gov"
 LOG_LEVEL: "WARN"
 FILES_REGION: "us-east-1"
 DRUPAL_BUILD_THEME: "false"
