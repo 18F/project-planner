@@ -12,7 +12,6 @@ module:
   config: 0
   contact: 0
   contextual: 0
-  csv_serialization: 0
   ctools: 0
   ctools_block: 0
   ctools_views: 0
@@ -25,12 +24,9 @@ module:
   ds_devel: 0
   dynamic_page_cache: 0
   editor: 0
-  entity_reference_revisions: 0
-  entity_storage_migrate: 0
   facets: 0
   field: 0
   field_group: 0
-  field_group_migrate: 0
   field_permissions: 0
   field_ui: 0
   file: 0
@@ -41,15 +37,12 @@ module:
   help: 0
   history: 0
   image: 0
-  kanban_entity: 0
-  key_value: 0
   kint: 0
   layout_plugin: 0
   link: 0
   local_task_processor: 0
   menu_link_config: 0
   menu_ui: 0
-  navigation: 0
   node: 0
   options: 0
   page_cache: 0
@@ -63,7 +56,6 @@ module:
   rdf: 0
   rest: 0
   restui: 0
-  rules: 0
   search_api: 0
   search_api_db: 0
   serialization: 0
@@ -75,17 +67,10 @@ module:
   telephone: 0
   text: 0
   toolbar: 0
-  tour: 0
   tracker: 0
   update: 0
   user: 0
   views_ui: 0
-  workflow: 0
-  workflow_cleanup: 0
-  workflow_devel: 0
-  workflow_operations: 0
-  workflow_ui: 0
-  workflowfield: 0
   ds: 1
   menu_link_content: 1
   ds_extras: 2

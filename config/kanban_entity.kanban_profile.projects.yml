@@ -1,9 +1,0 @@
-uuid: 88bd1981-2a3c-496b-8a72-4d43c4eaf12e
-langcode: en
-status: true
-dependencies: {  }
-id: projects
-label: Projects
-weight: null
-workflow: project_workflow
-views: null

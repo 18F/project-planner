@@ -1,9 +1,0 @@
-uuid: bf85e407-fa7b-436f-b871-1799c7d46d7b
-langcode: en
-status: true
-dependencies: {  }
-id: teams
-label: Teams
-weight: null
-workflow: team_workflow
-views: null

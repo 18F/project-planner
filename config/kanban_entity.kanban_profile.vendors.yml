@@ -1,9 +1,0 @@
-uuid: 788c01d2-3be6-4c0c-a303-321cdbb92b71
-langcode: en
-status: true
-dependencies: {  }
-id: vendors
-label: Vendors
-weight: null
-workflow: vendor_workflow
-views: null
