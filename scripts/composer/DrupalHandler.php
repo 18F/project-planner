@@ -104,12 +104,12 @@ class DrupalHandler {
     if (static::_check('DRUPAL_INIT')) {
       $event->getIO()->write(" * Bootstrapping Drupal");
 
-      if (empty(static::_runCommand("which psql", 1800, NULL, FALSE))) {
+      if (empty(static::_runCommand("if test -f '$home/psql/bin/psql'; then echo 'Exists';fi", 1800, NULL, FALSE))) {
         # Install PostgreSQL executable
         static::_runCommand("cd '$home'; curl 'https://s3.amazonaws.com/18f-cf-cli/psql-9.4.4-ubuntu-14.04.tar.gz' | tar -xvz");
       }
 
-      if (!static::_siteExists($vendor, $root)) {
+      if (!static::_siteExists($event, $vendor, $root)) {
         # Get primary database connection
         $db_conn = static::_getDrupalDBInfo();
 
@@ -144,7 +144,7 @@ class DrupalHandler {
     $vendor = static::_getDrupalVendor($cwd);
     $root = static::_getDrupalRoot($cwd);
 
-    if (static::_check('DRUPAL_SYNC') && static::_siteExists($vendor, $root, TRUE)) {
+    if (static::_check('DRUPAL_SYNC') && static::_siteExists($event, $vendor, $root, TRUE)) {
       # Ensuring that the config module is enabled
       $event->getIO()->write(" * Ensuring config module is enabled");
       static::_runCommand("$vendor/drush/drush/drush -y --root='$root' pm-enable 'config'", 1800, FALSE);
@@ -182,19 +182,20 @@ class DrupalHandler {
   /**
    * Check if site exists and return boolean to indicate if so
    */
-  protected static function _siteExists($vendor, $root, $force = FALSE) {
+  protected static function _siteExists($event, $vendor, $root, $force = FALSE) {
     if ($force || is_null(static::$site_exists)) {
       static::$site_exists = FALSE;
 
       try {
         # Command to check for existence of Drupal site
-        $message = static::_runCommand("$vendor/drush/drush/drush --root='$root' status", 3600, NULL);
+        $message = static::_runCommand("$vendor/drush/drush/drush --root='$root' status --debug", 3600, NULL);
 
         if (preg_match('/Drupal\sbootstrap\s+\:\s+Successful\s/i', $message)) {
           static::$site_exists = TRUE;
         }
       }
       catch (ProcessFailedException $error) {
+        $event->getIO()->write(" * Site check error: " . $error->getMessage());
       }
     }
     return static::$site_exists;
