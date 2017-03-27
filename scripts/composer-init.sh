@@ -74,4 +74,8 @@ curl -sS https://getcomposer.org/installer | php
 mkdir -p "$BIN_DIR"
 mv composer.phar "$BIN_DIR/composer"
 
+if [ -f "$HOME/.profile" ]; then
+  source "$HOME/.profile"
+fi
+
 echo "Successfully installed Composer"
