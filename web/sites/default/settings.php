@@ -285,25 +285,23 @@ $s3_services = array();
 foreach($cf_service_data as $service_provider => $service_list) {
   foreach ($service_list as $service) {
     // looks for tags of 's3'
-    if (in_array('s3', $service['tags'], true)) {
+    if (in_array('S3', $service['tags'], true)) {
       $s3_services[] = $service;
       continue;
     }
     // look for a service where the name includes 's3'
-    if (strpos($service['name'], 's3') !== false) {
+    if (strpos($service['name'], 'S3') !== false) {
       $s3_services[] = $service;
     }
   }
 }
-
-$s3_region = (isset($_ENV['APP_FILES_REGION']) ? $_ENV['APP_FILES_REGION'] : 'us-east-1');
 
 $settings['flysystem']['s3'] = array(
   'driver' => 's3',
   'config' => array(
     'key'    => $s3_services[0]['credentials']['access_key_id'],
     'secret' => $s3_services[0]['credentials']['secret_access_key'],
-    'region' => $s3_region,
+    'region' => $s3_services[0]['credentials']['region'],
     'bucket' => $s3_services[0]['credentials']['bucket'],
 
     // Optional configuration settings.
@@ -794,7 +792,7 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  * example.org, with all subdomains included.
  */
 $settings['trusted_host_patterns'] = array(
- '^.+\.apps\.cloud\.gov$',
+ '^.+\.app\.cloud\.gov$',
  '^.+\.local$',
  '^localhost$'
 );
