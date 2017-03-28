@@ -1,6 +1,6 @@
 uuid: 5b7dfb28-d1dd-4914-9fdf-7c3f94b8ef00
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.user.list_item
@@ -15,20 +15,7 @@ dependencies:
     - field.field.user.user.field_work_hours
     - field.field.user.user.user_picture
   module:
-    - ds
     - user
-third_party_settings:
-  ds:
-    layout:
-      id: booststrap-4-8
-      path: modules/contrib/bootstrap_layouts/templates/two-columns/bootstrap-4-8
-      library: ''
-      disable_css: false
-      entity_classes: all_classes
-      settings: {  }
-    regions:
-      sidebar_right:
-        - field_full_name
 _core:
   default_config_hash: L2mtwGWH_7wDRCMIR4r_Iu_jmvQ10DV1L8ht8iNZ5qY
 id: user.user.list_item

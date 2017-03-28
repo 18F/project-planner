@@ -1,0 +1,73 @@
+uuid: 64fc901e-b4b6-4431-afb9-ff4233e96662
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.team.body
+    - field.field.node.team.field_fec_email
+    - field.field.node.team.field_manager
+    - field.field.node.team.field_members
+    - field.field.node.team.field_parent
+    - field.field.node.team.field_tags
+    - node.type.team
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.team.full
+targetEntityType: node
+bundle: team
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  field_fec_email:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_manager:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_members:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_parent:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_tags:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

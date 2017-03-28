@@ -10,16 +10,19 @@ modal_size: modal-lg
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: assets/favicon.ico
-  url: 'http://project-planner.local:8080/themes/custom/bootstrap_18f/favicon.ico'
+  url: 'http://localhost:8080/themes/custom/bootstrap_18f/favicon.ico'
   use_default: true
 logo:
   path: assets/logo.png
   url: ''
   use_default: true
 breadcrumb_title: 0
+breadcrumb_home: 1
 features:
   comment_user_picture: true
   comment_user_verification: true
   favicon: true
   node_user_picture: true
-breadcrumb_home: 1
+schemas:
+  bootstrap: 8000
+  bootstrap_18f: 8000

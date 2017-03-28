@@ -24,5 +24,9 @@ content:
   links:
     weight: 100
 hidden:
+  field_business_poc: true
+  field_fec_poc: true
+  field_link: true
   field_tags: true
   field_vendor_status: true
+  field_vendor_type: true

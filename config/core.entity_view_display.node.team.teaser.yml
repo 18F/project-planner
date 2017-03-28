@@ -1,10 +1,15 @@
 uuid: 6d7d2bcf-92d4-4c86-a901-d5b3fe9c9781
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.team.body
+    - field.field.node.team.field_fec_email
+    - field.field.node.team.field_manager
+    - field.field.node.team.field_members
+    - field.field.node.team.field_parent
+    - field.field.node.team.field_tags
     - node.type.team
   module:
     - text
@@ -24,7 +29,10 @@ content:
   links:
     weight: 100
 hidden:
+  field_fec_email: true
+  field_manager: true
   field_members: true
+  field_parent: true
   field_status: true
   field_tags: true
   field_team_status: true

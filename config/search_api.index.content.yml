@@ -40,6 +40,16 @@ field_settings:
     property_path: rendered_item
     type: text
     indexed_locked: true
+datasource_settings:
+  'entity:node':
+    plugin_id: 'entity:node'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+      languages:
+        default: true
+        selected: {  }
 processor_settings:
   add_url:
     plugin_id: add_url
@@ -205,21 +215,11 @@ processor_settings:
       weights:
         preprocess_index: -10
         preprocess_query: -10
-options:
-  index_directly: true
-  cron_limit: 50
-datasource_settings:
-  'entity:node':
-    plugin_id: 'entity:node'
-    settings:
-      bundles:
-        default: true
-        selected: {  }
-      languages:
-        default: true
-        selected: {  }
 tracker_settings:
   default:
     plugin_id: default
     settings: {  }
+options:
+  index_directly: true
+  cron_limit: 50
 server: database

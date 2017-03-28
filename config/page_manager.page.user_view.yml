@@ -1,9 +1,10 @@
 uuid: b626870e-45ac-457a-a284-a501a67f6c30
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: user_view
 label: 'User view'
+description: null
 use_admin_theme: false
 path: '/user/{user}'
 access_logic: and

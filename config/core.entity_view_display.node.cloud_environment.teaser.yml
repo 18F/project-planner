@@ -18,4 +18,10 @@ content:
     weight: 100
 hidden:
   field_environment_type: true
+  field_link: true
+  field_linked_applications: true
+  field_linked_infrastructure: true
+  field_linked_policy: true
+  field_linked_requirements: true
+  field_linked_services: true
   field_parent: true

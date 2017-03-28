@@ -23,4 +23,13 @@ content:
     third_party_settings: {  }
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_diagrams: true
+  field_fec_poc: true
+  field_files: true
+  field_links: true
+  field_poc_email: true
+  field_poc_name: true
+  field_poc_phone: true
+  field_requirement_type: true
+  field_sla: true

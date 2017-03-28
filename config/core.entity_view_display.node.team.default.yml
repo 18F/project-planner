@@ -11,8 +11,130 @@ dependencies:
     - field.field.node.team.field_tags
     - node.type.team
   module:
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        blocks:
+          a3df78da-3457-4ecf-9476-50691e21fe85:
+            id: 'entity_field:node:body'
+            label: Description
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 1
+            uuid: a3df78da-3457-4ecf-9476-50691e21fe85
+          f363c8b1-4e71-414d-894a-389b3b8b558f:
+            id: 'entity_field:node:field_fec_email'
+            label: 'FEC email'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: basic_string
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 2
+            uuid: f363c8b1-4e71-414d-894a-389b3b8b558f
+          bb2f3722-e025-470b-bd8d-2740008af4a4:
+            id: 'entity_field:node:field_manager'
+            label: Manager
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 1
+            uuid: bb2f3722-e025-470b-bd8d-2740008af4a4
+          e47f4b48-051d-4902-9776-1b0ccc0af520:
+            id: 'entity_field:node:field_members'
+            label: Members
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 2
+            uuid: e47f4b48-051d-4902-9776-1b0ccc0af520
+          221f9451-d675-4253-b79b-02cc0d87d8ff:
+            id: 'entity_field:node:field_parent'
+            label: 'Division / Section'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 1
+            uuid: 221f9451-d675-4253-b79b-02cc0d87d8ff
+          1f917944-95bc-4918-b6bf-67787059abcc:
+            id: 'entity_field:node:field_tags'
+            label: Tags
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 3
+            uuid: 1f917944-95bc-4918-b6bf-67787059abcc
+        id: panels_variant
+        label: Default
+        uuid: 27b48d67-bcb5-4702-8c9c-d14aa76a4d2e
+        weight: 0
+        layout: twocol_stacked
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:team:full:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
 id: node.team.default
 targetEntityType: node
 bundle: team
@@ -60,4 +182,6 @@ content:
     type: entity_reference_label
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

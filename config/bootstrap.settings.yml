@@ -1,8 +1,9 @@
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: assets/favicon.ico
-  url: ''
+  url: 'http://localhost:8080/assets/favicon.ico'
   use_default: false
+schema: 8000
 features:
   comment_user_picture: true
   comment_user_verification: true
@@ -12,4 +13,5 @@ logo:
   path: assets/logo.png
   url: ''
   use_default: false
-schema: 8000
+schemas:
+  bootstrap: 8000

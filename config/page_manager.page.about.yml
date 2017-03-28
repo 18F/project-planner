@@ -4,6 +4,7 @@ status: true
 dependencies: {  }
 id: about
 label: About
+description: null
 use_admin_theme: false
 path: /about
 access_logic: and

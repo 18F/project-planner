@@ -21,7 +21,6 @@ module:
   dev_mode: 0
   devel: 0
   devel_generate: 0
-  ds_devel: 0
   dynamic_page_cache: 0
   editor: 0
   facets: 0
@@ -71,9 +70,7 @@ module:
   update: 0
   user: 0
   views_ui: 0
-  ds: 1
   menu_link_content: 1
-  ds_extras: 2
   views: 10
   minimal: 1000
 theme:
