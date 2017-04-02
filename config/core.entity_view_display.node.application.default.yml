@@ -251,7 +251,7 @@ third_party_settings:
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             region: bottom
-            weight: 4
+            weight: 3
             uuid: c7b82adf-0ccf-4cb7-9836-f43d2192864e
           bead1eb2-9e68-41d0-9953-1917e966afb3:
             id: 'entity_field:node:field_linked_infrastructure'
@@ -268,7 +268,7 @@ third_party_settings:
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             region: bottom
-            weight: 3
+            weight: 5
             uuid: bead1eb2-9e68-41d0-9953-1917e966afb3
           8ca7311b-b1f7-44c3-ad7b-7d04e0532ccd:
             id: 'entity_field:node:field_linked_policy'
@@ -319,7 +319,7 @@ third_party_settings:
             context_mapping:
               entity: '@panelizer.entity_context:entity'
             region: bottom
-            weight: 5
+            weight: 4
             uuid: 9f50c9a3-25e9-4e20-a4cb-adde22f9a012
           c31a3f59-6f11-4cdd-a3c3-db14a92b0fae:
             id: 'entity_field:node:field_links'

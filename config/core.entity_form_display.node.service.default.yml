@@ -111,8 +111,7 @@ third_party_settings:
         id: ''
         required_fields: true
     group_workflow:
-      children:
-        - field_project_status
+      children: {  }
       parent_name: ''
       weight: 22
       label: Workflow
@@ -172,9 +171,12 @@ content:
     type: text_textarea_with_summary
   field_business_poc:
     weight: 15
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_diagrams:
     weight: 8
     settings:
@@ -197,9 +199,12 @@ content:
     type: link_default
   field_it_poc:
     weight: 16
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_linked_applications:
     weight: 6
     settings:
@@ -281,9 +286,12 @@ content:
     type: entity_reference_autocomplete_tags
   field_team:
     weight: 17
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_vendors:
     weight: 18
     settings:
