@@ -1,16 +1,16 @@
-uuid: 187bd002-82f4-4dbc-83b0-22d0388d7c9f
+uuid: 85ce758f-7255-4d8e-b4fa-8ec4a9928239
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_teams
+    - field.storage.node.field_team
     - node.type.policy
     - node.type.team
-id: node.policy.field_teams
-field_name: field_teams
+id: node.policy.field_team
+field_name: field_team
 entity_type: node
 bundle: policy
-label: Teams
+label: Team
 description: ''
 required: false
 translatable: true

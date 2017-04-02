@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.policy.field_policy_type
     - field.field.node.policy.field_strategic_align_commission
     - field.field.node.policy.field_strategic_align_it
-    - field.field.node.policy.field_teams
+    - field.field.node.policy.field_team
     - node.type.policy
   module:
     - text
@@ -39,4 +39,4 @@ hidden:
   field_policy_type: true
   field_strategic_align_commission: true
   field_strategic_align_it: true
-  field_teams: true
+  field_team: true
