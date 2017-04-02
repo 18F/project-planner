@@ -1,0 +1,39 @@
+uuid: 73f2da1b-4593-4b9e-9b7f-f9ace3ae3f60
+langcode: en
+status: true
+dependencies:
+  module:
+    - hal
+    - serialization
+    - simple_oauth
+    - taxonomy
+    - user
+id: entity.taxonomy_term
+plugin_id: 'entity:taxonomy_term'
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
+      - cookie
+  POST:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
+  DELETE:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
+  PATCH:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer

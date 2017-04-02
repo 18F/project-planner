@@ -1,0 +1,39 @@
+uuid: 2430aeea-e15b-4507-a34a-2541e967d006
+langcode: en
+status: true
+dependencies:
+  module:
+    - hal
+    - node
+    - serialization
+    - simple_oauth
+    - user
+id: entity.node
+plugin_id: 'entity:node'
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
+      - cookie
+  POST:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
+  DELETE:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
+  PATCH:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer

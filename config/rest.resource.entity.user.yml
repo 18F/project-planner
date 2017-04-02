@@ -1,0 +1,38 @@
+uuid: 36cb795a-d26e-42da-a01c-c1178d71ab6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - hal
+    - serialization
+    - simple_oauth
+    - user
+id: entity.user
+plugin_id: 'entity:user'
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
+      - cookie
+  POST:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
+  DELETE:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
+  PATCH:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - token_bearer
