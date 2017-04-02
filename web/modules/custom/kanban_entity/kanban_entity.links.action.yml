@@ -1,5 +1,0 @@
-entity.kanban_profile.add_form:
-  route_name: 'entity.kanban_profile.add_form'
-  title: 'Add a new Kanban profile'
-  appears_on:
-    - entity.kanban_profile.list_form

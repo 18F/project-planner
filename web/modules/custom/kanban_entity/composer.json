@@ -1,6 +1,0 @@
-{
-    "name": "drupal/kanban_block",
-    "description": "Creates a block displaying a Kanban board of nodes from a view.",
-    "type": "drupal-module",
-    "license": "CC0-1.0"
-}
