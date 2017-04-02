@@ -254,6 +254,28 @@ third_party_settings:
             region: bottom
             uuid: 55e1df54-88d5-44c2-a337-022cca79f01d
             weight: 2
+          6c2719a0-bc22-4bda-9ec1-09e1dff60cb7:
+            id: 'views_block:user_it_poc-block_1'
+            label: ''
+            provider: views
+            label_display: '0'
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+            region: bottom
+            uuid: 6c2719a0-bc22-4bda-9ec1-09e1dff60cb7
+            weight: 3
+          6ff2f07f-956d-498a-b322-38807da58caf:
+            id: 'views_block:user_business_poc-block_1'
+            label: ''
+            provider: views
+            label_display: '0'
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+            region: bottom
+            uuid: 6ff2f07f-956d-498a-b322-38807da58caf
+            weight: 4
         id: panels_variant
         label: Default
         uuid: f162f717-777a-4f6c-90fd-aeee6f88bc75

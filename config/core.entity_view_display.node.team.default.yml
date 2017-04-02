@@ -123,6 +123,17 @@ third_party_settings:
             region: left
             weight: 3
             uuid: 1f917944-95bc-4918-b6bf-67787059abcc
+          6f920862-c8c6-4424-b819-2bf6bf11b598:
+            id: 'views_block:team_projects-block_1'
+            label: ''
+            provider: views
+            label_display: '0'
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+            region: bottom
+            uuid: 6f920862-c8c6-4424-b819-2bf6bf11b598
+            weight: 1
         id: panels_variant
         label: Default
         uuid: 27b48d67-bcb5-4702-8c9c-d14aa76a4d2e
