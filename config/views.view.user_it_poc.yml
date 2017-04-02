@@ -4,11 +4,9 @@ status: true
 dependencies:
   config:
     - node.type.application
-    - node.type.cloud_environment
     - node.type.infrastructure
     - node.type.policy
     - node.type.requirement
-    - node.type.server_environment
     - node.type.service
   module:
     - node
@@ -262,11 +260,9 @@ display:
           operator: in
           value:
             application: application
-            cloud_environment: cloud_environment
             infrastructure: infrastructure
             policy: policy
             requirement: requirement
-            server_environment: server_environment
             service: service
           group: 1
           exposed: false
