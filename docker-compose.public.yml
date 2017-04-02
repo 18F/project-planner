@@ -47,6 +47,7 @@ services:
       DRUPAL_INIT: "true"
       DRUPAL_SYNC: "true"
       HOME: "/root"
+      AWS_S3_ENDPOINT: "{{AWS_S3_ENDPOINT}}"
     volumes:
       - .:/var/www
   drupal-postgres:

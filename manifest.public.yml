@@ -17,3 +17,4 @@ applications:
     HOME: "/home/vcap/app"
     PATH: "/bin:/usr/bin:/home/vcap/app/php/bin:/home/vcap/app/php/sbin:/home/vcap/app/psql/bin:/home/vcap/app/.apt/usr/bin"
     PGPASSFILE: "/home/vcap/app/.pgpass"
+    AWS_S3_ENDPOINT: "{{AWS_S3_ENDPOINT}}"
