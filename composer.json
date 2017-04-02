@@ -28,12 +28,12 @@
     "drupal/console": "1.0.0-rc16",
     "drupal/core": "8.2.7",
     "drupal/field_group": "1.0.0-rc6",
-    "drupal/ctools": "3.0.0-alpha27",
+    "drupal/ctools": "3.0.0-beta1",
     "drupal/page_manager": "1.0.0-alpha24",
     "drupal/panelizer": "3.0.0-beta1",
     "drupal/flysystem": "1.0.0-alpha4",
     "drupal/flysystem_s3": "1.0.0-alpha2",
-    "drupal/search_api": "1.0.0-beta4",
+    "drupal/search_api": "1.0.0-beta5",
     "drupal/facets": "1.0.0-alpha8",
     "drupal/menu_link_config": "1.x-dev",
     "drupal/bootstrap": "3.2",
@@ -42,8 +42,7 @@
     "drupal/default_content": "1.0.0-alpha4",
     "drupal/restui": "1.13.0",
     "drupal/simple_oauth": "1.0.0-beta5",
-    "drupal/field_permissions": "1.0.0-beta1",
-    "drupal/ds": "2.6.0"
+    "drupal/field_permissions": "1.0.0-beta1"
   },
   "require-dev": {
     "phpunit/phpunit": "4.8.35",
