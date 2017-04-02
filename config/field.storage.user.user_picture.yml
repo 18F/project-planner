@@ -13,9 +13,9 @@ field_name: user_picture
 entity_type: user
 type: image
 settings:
-  uri_scheme: public
+  uri_scheme: s3
   default_image:
-    uuid: null
+    uuid: ''
     alt: ''
     title: ''
     width: null
