@@ -10,7 +10,6 @@ dependencies:
     - field.field.user.user.field_mobile_phone_number
     - field.field.user.user.field_office_number
     - field.field.user.user.field_supervisor
-    - field.field.user.user.field_team
     - field.field.user.user.field_work_hours
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -26,7 +25,6 @@ third_party_settings:
       children:
         - field_full_name
         - user_picture
-        - field_team
         - field_supervisor
         - field_bio
       parent_name: ''
@@ -137,14 +135,12 @@ content:
     type: number
   field_supervisor:
     weight: 9
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
-  field_team:
-    weight: 8
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_work_hours:
     weight: 4
     settings:

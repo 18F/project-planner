@@ -46,8 +46,7 @@ third_party_settings:
         id: ''
         required_fields: true
     group_workflow:
-      children:
-        - field_vendor_status
+      children: {  }
       parent_name: ''
       weight: 110
       label: Workflow
@@ -72,14 +71,20 @@ content:
     third_party_settings: {  }
   field_business_poc:
     weight: 29
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_fec_poc:
     weight: 28
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_link:
     weight: 3
     settings:

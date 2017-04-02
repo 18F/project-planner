@@ -10,7 +10,6 @@ dependencies:
     - field.field.user.user.field_mobile_phone_number
     - field.field.user.user.field_office_number
     - field.field.user.user.field_supervisor
-    - field.field.user.user.field_team
     - field.field.user.user.field_work_hours
     - field.field.user.user.user_picture
   module:
@@ -75,23 +74,6 @@ third_party_settings:
             region: left
             weight: 2
             uuid: 2ea699b4-fa05-4378-a5fe-6e0fd80080c4
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
-          6d69e3b1-cc18-4769-9874-9206fa5ce255:
-            id: 'entity_field:user:field_team'
-            label: Team
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: above
-              type: entity_reference_label
-              settings:
-                link: true
-              third_party_settings: {  }
-              weight: 0
-            region: bottom
-            weight: 2
-            uuid: 6d69e3b1-cc18-4769-9874-9206fa5ce255
             context_mapping:
               entity: '@panelizer.entity_context:entity'
           53bd523d-b13a-4089-9a44-f0d18cbf5cf5:
@@ -177,7 +159,7 @@ third_party_settings:
               third_party_settings: {  }
               weight: 0
             region: right
-            weight: 2
+            weight: 3
             uuid: ab861242-b867-4955-a575-da613dc46705
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -185,16 +167,16 @@ third_party_settings:
             id: 'entity_field:user:field_supervisor'
             label: Supervisor
             provider: ctools_block
-            label_display: '0'
+            label_display: visible
             formatter:
-              label: above
+              label: hidden
               type: entity_reference_label
               settings:
                 link: true
               third_party_settings: {  }
               weight: 0
-            region: bottom
-            weight: 1
+            region: right
+            weight: 2
             uuid: 040bab46-e130-42d6-9d85-0c570a012599
             context_mapping:
               entity: '@panelizer.entity_context:entity'
@@ -250,6 +232,28 @@ third_party_settings:
             uuid: bc4d2055-5ac3-433a-a14e-038fde7b3fa8
             context_mapping:
               entity: '@panelizer.entity_context:entity'
+          218c79e6-0a1c-47cd-8a6d-9a9656c4ad11:
+            id: 'views_block:user_teams-block_1'
+            label: ''
+            provider: views
+            label_display: visible
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+            region: bottom
+            uuid: 218c79e6-0a1c-47cd-8a6d-9a9656c4ad11
+            weight: 1
+          55e1df54-88d5-44c2-a337-022cca79f01d:
+            id: 'views_block:user_cor_assignments-block_1'
+            label: ''
+            provider: views
+            label_display: visible
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+            region: bottom
+            uuid: 55e1df54-88d5-44c2-a337-022cca79f01d
+            weight: 2
         id: panels_variant
         label: Default
         uuid: f162f717-777a-4f6c-90fd-aeee6f88bc75
@@ -314,14 +318,6 @@ content:
     weight: 8
     label: above
     settings: {  }
-    third_party_settings: {  }
-  field_team:
-    type: entity_reference_entity_view
-    weight: 9
-    label: above
-    settings:
-      view_mode: default
-      link: false
     third_party_settings: {  }
   field_work_hours:
     type: string

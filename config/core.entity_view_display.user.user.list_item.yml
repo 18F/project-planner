@@ -11,7 +11,6 @@ dependencies:
     - field.field.user.user.field_mobile_phone_number
     - field.field.user.user.field_office_number
     - field.field.user.user.field_supervisor
-    - field.field.user.user.field_team
     - field.field.user.user.field_work_hours
     - field.field.user.user.user_picture
   module:
@@ -37,7 +36,6 @@ hidden:
   field_mobile_phone_number: true
   field_office_number: true
   field_supervisor: true
-  field_team: true
   field_work_hours: true
   member_for: true
   user_picture: true

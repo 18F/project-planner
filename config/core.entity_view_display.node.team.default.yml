@@ -69,8 +69,8 @@ third_party_settings:
               weight: 0
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-            region: bottom
-            weight: 1
+            region: left
+            weight: 4
             uuid: bb2f3722-e025-470b-bd8d-2740008af4a4
           e47f4b48-051d-4902-9776-1b0ccc0af520:
             id: 'entity_field:node:field_members'
@@ -86,8 +86,8 @@ third_party_settings:
               weight: 0
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-            region: bottom
-            weight: 2
+            region: left
+            weight: 5
             uuid: e47f4b48-051d-4902-9776-1b0ccc0af520
           221f9451-d675-4253-b79b-02cc0d87d8ff:
             id: 'entity_field:node:field_parent'

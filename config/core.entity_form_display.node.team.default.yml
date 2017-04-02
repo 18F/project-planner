@@ -56,8 +56,7 @@ third_party_settings:
         id: ''
         required_fields: true
     group_workflow:
-      children:
-        - field_team_status
+      children: {  }
       parent_name: ''
       weight: 4
       label: Workflow
@@ -89,9 +88,12 @@ content:
     type: email_default
   field_manager:
     weight: 6
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_members:
     weight: 7
     settings:
@@ -102,9 +104,12 @@ content:
     type: entity_reference_autocomplete_tags
   field_parent:
     weight: 2
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_tags:
     weight: 3
     settings:

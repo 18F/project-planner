@@ -13,8 +13,134 @@ dependencies:
   module:
     - link
     - options
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        blocks:
+          fd027a76-55a8-4a0d-bd9e-5eac0301d9d9:
+            id: 'entity_field:node:body'
+            label: Description
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 1
+            uuid: fd027a76-55a8-4a0d-bd9e-5eac0301d9d9
+          b55d2e2e-7bac-4513-9489-4753716d7fef:
+            id: 'entity_field:node:field_business_poc'
+            label: 'Business POC'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 5
+            uuid: b55d2e2e-7bac-4513-9489-4753716d7fef
+          05a3fb9f-b5bb-475a-bafc-630dee79f257:
+            id: 'entity_field:node:field_fec_poc'
+            label: 'FEC COR / POC'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 4
+            uuid: 05a3fb9f-b5bb-475a-bafc-630dee79f257
+          ef70f8e4-3b0f-4076-90aa-bd5518bd6224:
+            id: 'entity_field:node:field_link'
+            label: Link
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: link
+              settings:
+                trim_length: 80
+                url_only: false
+                url_plain: false
+                rel: ''
+                target: ''
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 2
+            uuid: ef70f8e4-3b0f-4076-90aa-bd5518bd6224
+          538f7eb5-a249-4704-a75e-c69807077756:
+            id: 'entity_field:node:field_tags'
+            label: Tags
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 3
+            uuid: 538f7eb5-a249-4704-a75e-c69807077756
+          7f0c299c-bd03-4d70-8ea8-91b2aad24b47:
+            id: 'entity_field:node:field_vendor_type'
+            label: 'Vendor type'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: list_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 1
+            uuid: 7f0c299c-bd03-4d70-8ea8-91b2aad24b47
+        id: panels_variant
+        label: Default
+        uuid: 7d777273-f505-432a-8b76-03fadc36edb2
+        weight: 0
+        layout: twocol_stacked
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:vendor:full:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
 id: node.vendor.default
 targetEntityType: node
 bundle: vendor
@@ -66,4 +192,6 @@ content:
     type: list_default
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
