@@ -16,9 +16,9 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'relaxed:user'
+  handler: 'default:user'
   handler_settings:
-    include_anonymous: 0
+    include_anonymous: false
     filter:
       type: _none
     target_bundles: null

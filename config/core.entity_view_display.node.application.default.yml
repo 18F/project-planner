@@ -36,8 +36,423 @@ dependencies:
     - user
 third_party_settings:
   panelizer:
-    enable: false
+    enable: true
     custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        blocks:
+          20b0575b-3206-41a1-8962-ec3ec00dca7d:
+            id: 'entity_field:node:body'
+            label: 'Description (Purpose)'
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 1
+            uuid: 20b0575b-3206-41a1-8962-ec3ec00dca7d
+          1a81dc78-baa6-40b3-a3a8-348ef9690a57:
+            id: 'entity_field:node:field_architecture'
+            label: Architecture
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 5
+            uuid: 1a81dc78-baa6-40b3-a3a8-348ef9690a57
+          82a3dfd0-46a8-4b03-92a7-dd501fd6c90b:
+            id: 'entity_field:node:field_budget'
+            label: Budget
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: number_decimal
+              settings:
+                thousand_separator: ','
+                prefix_suffix: true
+                decimal_separator: .
+                scale: 2
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 2
+            uuid: 82a3dfd0-46a8-4b03-92a7-dd501fd6c90b
+          cfcc1855-6025-4615-94aa-59a946bb2a8f:
+            id: 'entity_field:node:field_budget_justification'
+            label: 'Budget justification'
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 2
+            uuid: cfcc1855-6025-4615-94aa-59a946bb2a8f
+          decbde0b-a9ab-4f7e-9a3f-b555351f898a:
+            id: 'entity_field:node:field_business_poc'
+            label: 'Business POC'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 4
+            uuid: decbde0b-a9ab-4f7e-9a3f-b555351f898a
+          c81daf01-1cd4-43a7-9789-999690fe3e36:
+            id: 'entity_field:node:field_critical_patch_period'
+            label: 'Critical patch period'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 9
+            uuid: c81daf01-1cd4-43a7-9789-999690fe3e36
+          516ef284-0eea-4b76-b5e5-15f7bd2f72ac:
+            id: 'entity_field:node:field_diagrams'
+            label: Diagrams
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: image
+              settings:
+                image_style: ''
+                image_link: ''
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 1
+            uuid: 516ef284-0eea-4b76-b5e5-15f7bd2f72ac
+          2734a1ce-5ba4-4b25-94e3-bceac2bd461c:
+            id: 'entity_field:node:field_files'
+            label: Files
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: file_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 2
+            uuid: 2734a1ce-5ba4-4b25-94e3-bceac2bd461c
+          e98b9988-ac12-42b2-a541-013e3991c928:
+            id: 'entity_field:node:field_integrated_with_ad'
+            label: 'Integrated with AD?'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: boolean
+              settings:
+                format: default
+                format_custom_false: ''
+                format_custom_true: ''
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 10
+            uuid: e98b9988-ac12-42b2-a541-013e3991c928
+          dd0cdea8-ba2f-4738-bf6c-598c054f6b4c:
+            id: 'entity_field:node:field_issue_tracker'
+            label: 'Issue Tracker'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: link
+              settings:
+                trim_length: 80
+                url_only: false
+                url_plain: false
+                rel: ''
+                target: ''
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 3
+            uuid: dd0cdea8-ba2f-4738-bf6c-598c054f6b4c
+          97aa2d1a-1d7f-4153-8bd4-3aa669539fd9:
+            id: 'entity_field:node:field_it_poc'
+            label: 'IT POC'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 5
+            uuid: 97aa2d1a-1d7f-4153-8bd4-3aa669539fd9
+          c7b82adf-0ccf-4cb7-9836-f43d2192864e:
+            id: 'entity_field:node:field_linked_applications'
+            label: Applications
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 4
+            uuid: c7b82adf-0ccf-4cb7-9836-f43d2192864e
+          bead1eb2-9e68-41d0-9953-1917e966afb3:
+            id: 'entity_field:node:field_linked_infrastructure'
+            label: Infrastructure
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 3
+            uuid: bead1eb2-9e68-41d0-9953-1917e966afb3
+          8ca7311b-b1f7-44c3-ad7b-7d04e0532ccd:
+            id: 'entity_field:node:field_linked_policy'
+            label: 'Policy and Processes'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 6
+            uuid: 8ca7311b-b1f7-44c3-ad7b-7d04e0532ccd
+          5ad597e5-72b5-4b21-8252-4870258b6b26:
+            id: 'entity_field:node:field_linked_requirements'
+            label: Requirements
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 7
+            uuid: 5ad597e5-72b5-4b21-8252-4870258b6b26
+          9f50c9a3-25e9-4e20-a4cb-adde22f9a012:
+            id: 'entity_field:node:field_linked_services'
+            label: Services
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 5
+            uuid: 9f50c9a3-25e9-4e20-a4cb-adde22f9a012
+          c31a3f59-6f11-4cdd-a3c3-db14a92b0fae:
+            id: 'entity_field:node:field_links'
+            label: Links
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: link
+              settings:
+                trim_length: 80
+                url_only: false
+                url_plain: false
+                rel: nofollow
+                target: _blank
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 6
+            uuid: c31a3f59-6f11-4cdd-a3c3-db14a92b0fae
+          ea67c216-2e91-4d81-ac47-51b481fd612a:
+            id: 'entity_field:node:field_strategic_align_commission'
+            label: 'Strategic Commission Alignment'
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 3
+            uuid: ea67c216-2e91-4d81-ac47-51b481fd612a
+          5b877cc8-0867-4924-9ab2-5a122689d009:
+            id: 'entity_field:node:field_strategic_align_it'
+            label: 'Strategic IT Alignment'
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 4
+            uuid: 5b877cc8-0867-4924-9ab2-5a122689d009
+          72f20f54-d562-4f75-8ec3-564bb9e18601:
+            id: 'entity_field:node:field_system'
+            label: System
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 1
+            uuid: 72f20f54-d562-4f75-8ec3-564bb9e18601
+          07886133-b59a-49b2-984e-57a2f6120502:
+            id: 'entity_field:node:field_tags'
+            label: Tags
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 8
+            uuid: 07886133-b59a-49b2-984e-57a2f6120502
+          d3d34067-48c0-4f17-b721-ff42e988551f:
+            id: 'entity_field:node:field_team'
+            label: Team
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 6
+            uuid: d3d34067-48c0-4f17-b721-ff42e988551f
+          7309f9ea-433c-4527-8b45-99aeab9730c0:
+            id: 'entity_field:node:field_vendors'
+            label: Vendors
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 7
+            uuid: 7309f9ea-433c-4527-8b45-99aeab9730c0
+        id: panels_variant
+        label: Default
+        uuid: b7ab2f00-74a2-4793-bb8e-35b0e278ed34
+        weight: 0
+        layout: twocol_stacked
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:application:full:default'
+        builder: ipe
+        pattern: panelizer
 id: node.application.default
 targetEntityType: node
 bundle: application
