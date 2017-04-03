@@ -1,6 +1,6 @@
 uuid: a2552cf2-d71e-4241-bb1b-b6f4492cace1
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: about
 label: About

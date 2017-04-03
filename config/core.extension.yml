@@ -41,6 +41,7 @@ module:
   panelizer: 0
   panels: 0
   panels_ipe: 0
+  path: 0
   rdf: 0
   rest: 0
   restui: 0
