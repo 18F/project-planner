@@ -8,7 +8,7 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'Policy and Process'
+name: Policy
 type: policy
 description: 'A current or planned policy or process that is deployed across projects'
 help: ''

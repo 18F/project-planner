@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.requirement.field_poc_name
     - field.field.node.requirement.field_poc_phone
     - field.field.node.requirement.field_requirement_type
-    - field.field.node.requirement.field_sla
     - image.style.thumbnail
     - node.type.requirement
   module:
@@ -90,9 +89,12 @@ content:
     type: image_image
   field_fec_poc:
     weight: 7
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_files:
     weight: 4
     settings:
@@ -131,13 +133,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_sla:
-    weight: 6
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
   title:
     type: string_textfield
     weight: 0

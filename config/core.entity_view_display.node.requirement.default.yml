@@ -12,15 +12,189 @@ dependencies:
     - field.field.node.requirement.field_poc_name
     - field.field.node.requirement.field_poc_phone
     - field.field.node.requirement.field_requirement_type
-    - field.field.node.requirement.field_sla
     - node.type.requirement
   module:
     - file
     - image
     - link
     - options
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        blocks:
+          b918d7c3-31bd-4b71-89b0-cdcd3232b9d4:
+            id: 'entity_field:node:body'
+            label: Description
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 1
+            uuid: b918d7c3-31bd-4b71-89b0-cdcd3232b9d4
+          4f6bad37-3a86-4932-a467-42e68694b507:
+            id: 'entity_field:node:field_diagrams'
+            label: Diagrams
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: image
+              settings:
+                image_style: ''
+                image_link: ''
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 1
+            uuid: 4f6bad37-3a86-4932-a467-42e68694b507
+          8801d07a-ef06-4e1d-b410-8585b3ab51de:
+            id: 'entity_field:node:field_fec_poc'
+            label: 'FEC POC'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 2
+            uuid: 8801d07a-ef06-4e1d-b410-8585b3ab51de
+          126109fc-38b2-4646-9c26-4daa9306c340:
+            id: 'entity_field:node:field_files'
+            label: Files
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: file_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: bottom
+            weight: 2
+            uuid: 126109fc-38b2-4646-9c26-4daa9306c340
+          b4919a58-1ec5-4c09-b311-51ed70e2a838:
+            id: 'entity_field:node:field_links'
+            label: Links
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: hidden
+              type: link
+              settings:
+                trim_length: 80
+                url_only: false
+                url_plain: false
+                rel: nofollow
+                target: _blank
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: right
+            weight: 2
+            uuid: b4919a58-1ec5-4c09-b311-51ed70e2a838
+          855087b9-6392-4a90-8c3d-b95a56a08020:
+            id: 'entity_field:node:field_poc_email'
+            label: 'External POC Email'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: basic_string
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 4
+            uuid: 855087b9-6392-4a90-8c3d-b95a56a08020
+          9023da31-cd7b-43d1-a637-73d1a1874f83:
+            id: 'entity_field:node:field_poc_name'
+            label: 'External POC Name'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 3
+            uuid: 9023da31-cd7b-43d1-a637-73d1a1874f83
+          1431733b-1407-4e64-8722-7ebd4a1d0e08:
+            id: 'entity_field:node:field_poc_phone'
+            label: 'External POC Phone'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 5
+            uuid: 1431733b-1407-4e64-8722-7ebd4a1d0e08
+          a0fac6d7-7341-443b-a4ed-c09d0d4a0f25:
+            id: 'entity_field:node:field_requirement_type'
+            label: 'Requirement type'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: above
+              type: list_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: left
+            weight: 1
+            uuid: a0fac6d7-7341-443b-a4ed-c09d0d4a0f25
+        id: panels_variant
+        label: Default
+        uuid: 5006b866-0afa-4982-b08e-c4133e4b49c5
+        weight: 0
+        layout: twocol_stacked
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:requirement:full:default'
+        builder: ipe
+        pattern: panelizer
 id: node.requirement.default
 targetEntityType: node
 bundle: requirement
@@ -80,22 +254,18 @@ content:
   field_poc_phone:
     weight: 110
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: basic_string
+    type: string
   field_requirement_type:
     weight: 102
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
-  field_sla:
-    weight: 106
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
