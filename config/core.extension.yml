@@ -4,8 +4,10 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor: 0
+  comment: 0
   config: 0
   contact: 0
+  core_search_facets: 0
   ctools: 0
   ctools_block: 0
   ctools_views: 0
@@ -16,6 +18,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   facets: 0
+  facets_range_widget: 0
   field: 0
   field_group: 0
   field_permissions: 0
@@ -30,7 +33,6 @@ module:
   image: 0
   layout_plugin: 0
   link: 0
-  local_task_processor: 0
   menu_link_config: 0
   menu_ui: 0
   node: 0
@@ -42,9 +44,12 @@ module:
   path: 0
   rdf: 0
   rest: 0
+  rest_facets: 0
   restui: 0
+  search: 0
   search_api: 0
   search_api_db: 0
+  search_api_views_taxonomy: 0
   serialization: 0
   simple_oauth: 0
   syslog: 0
@@ -53,6 +58,7 @@ module:
   telephone: 0
   text: 0
   toolbar: 0
+  tracker: 0
   update: 0
   user: 0
   views_ui: 0

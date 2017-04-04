@@ -7,6 +7,7 @@ dependencies:
   module:
     - search_api
     - node
+    - user
 id: content
 name: Content
 description: ''
@@ -28,7 +29,6 @@ field_settings:
     type_locked: true
   search_api_node_grants:
     label: 'Node access information'
-    datasource_id: null
     property_path: search_api_node_grants
     type: string
     indexed_locked: true
@@ -36,20 +36,21 @@ field_settings:
     hidden: true
   rendered_item:
     label: 'Rendered HTML output'
-    datasource_id: null
     property_path: rendered_item
     type: text
-    indexed_locked: true
 datasource_settings:
   'entity:node':
-    plugin_id: 'entity:node'
-    settings:
-      bundles:
-        default: true
-        selected: {  }
-      languages:
-        default: true
-        selected: {  }
+    bundles:
+      default: true
+      selected:
+        - page
+    languages:
+      default: true
+      selected: {  }
+  'entity:user':
+    languages:
+      default: true
+      selected: {  }
 processor_settings:
   add_url:
     plugin_id: add_url
@@ -68,75 +69,70 @@ processor_settings:
       weights:
         preprocess_index: -10
         preprocess_query: -10
+    weights:
+      preprocess_query: -30
   highlight:
-    plugin_id: highlight
-    settings:
-      highlight: always
-      excerpt: true
-      excerpt_length: 256
-      prefix: '<strong>'
-      suffix: '</strong>'
-      weights:
-        postprocess_query: 0
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
   html_filter:
-    plugin_id: html_filter
-    settings:
-      fields: {  }
-      title: true
-      alt: true
-      tags:
-        h1: 5
-        h2: 3
-        h3: 2
-        strong: 2
-        b: 2
-        em: 1
-        u: 1
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
+    fields:
+      - search_api_node_grants
+      - rendered_item
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
   ignorecase:
-    plugin_id: ignorecase
-    settings:
-      fields: {  }
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
+    fields:
+      - search_api_node_grants
+      - rendered_item
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
   ignore_character:
-    plugin_id: ignore_character
-    settings:
-      fields: {  }
-      ignorable: '[''¿¡!?,.:;]'
-      strip:
-        character_sets:
-          Pc: Pc
-          Pd: Pd
-          Pe: Pe
-          Pf: Pf
-          Pi: Pi
-          Po: Po
-          Ps: Ps
-          Cc: 0
-          Cf: 0
-          Co: 0
-          Mc: 0
-          Me: 0
-          Mn: 0
-          Sc: 0
-          Sk: 0
-          Sm: 0
-          So: 0
-          Zl: 0
-          Zp: 0
-          Zs: 0
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
-  node_status:
-    plugin_id: node_status
-    settings:
-      weights:
-        preprocess_index: -10
+    fields:
+      - search_api_node_grants
+      - rendered_item
+    ignorable: '[''¿¡!?,.:;]'
+    strip:
+      character_sets:
+        Pc: Pc
+        Pd: Pd
+        Pe: Pe
+        Pf: Pf
+        Pi: Pi
+        Po: Po
+        Ps: Ps
+        Cc: 0
+        Cf: 0
+        Co: 0
+        Mc: 0
+        Me: 0
+        Mn: 0
+        Sc: 0
+        Sk: 0
+        Sm: 0
+        So: 0
+        Zl: 0
+        Zp: 0
+        Zs: 0
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   rendered_item:
     plugin_id: rendered_item
     settings:
@@ -155,70 +151,74 @@ processor_settings:
       weights:
         preprocess_index: -10
   stopwords:
-    plugin_id: stopwords
-    settings:
-      fields: {  }
-      stopwords:
-        - a
-        - an
-        - and
-        - are
-        - as
-        - at
-        - be
-        - but
-        - by
-        - for
-        - if
-        - in
-        - into
-        - is
-        - it
-        - 'no'
-        - not
-        - of
-        - 'on'
-        - or
-        - s
-        - such
-        - t
-        - that
-        - the
-        - their
-        - then
-        - there
-        - these
-        - they
-        - this
-        - to
-        - was
-        - will
-        - with
-      weights:
-        preprocess_index: -5
-        preprocess_query: -2
-        postprocess_query: -2
+    fields:
+      - rendered_item
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
   tokenizer:
-    plugin_id: tokenizer
-    settings:
-      fields: {  }
-      spaces: ''
-      overlap_cjk: 1
-      minimum_word_size: '3'
-      weights:
-        preprocess_index: -6
-        preprocess_query: -6
+    fields:
+      - rendered_item
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
   transliteration:
-    plugin_id: transliteration
-    settings:
-      fields: {  }
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
+    fields:
+      - search_api_node_grants
+      - rendered_item
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  stemmer:
+    fields:
+      - rendered_item
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
 tracker_settings:
-  default:
-    plugin_id: default
-    settings: {  }
+  default: {  }
 options:
   index_directly: true
   cron_limit: 50
