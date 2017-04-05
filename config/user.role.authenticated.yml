@@ -13,7 +13,6 @@ permissions:
   3: 'post comments'
   5: 'access site-wide contact form'
   7: 'search content'
-  8: 'access user contact forms'
   10: 'use text format restricted_html'
   49: 'create state workflow_transition'
   50: 'create application_state workflow_transition'

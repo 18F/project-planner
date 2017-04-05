@@ -93,3 +93,5 @@ permissions:
   - 'edit terms in tags'
   - 'access toolbar'
   - 'administer views'
+  - 'access contextual links'
+  - 'access in-place editing'
