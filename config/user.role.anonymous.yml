@@ -6,68 +6,63 @@ _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
 label: 'Anonymous user'
-weight: -10
+weight: -11
 is_admin: false
 permissions:
-  - 'access content'
-  - 'use text format restricted_html'
-  - 'access comments'
-  - 'access site-wide contact form'
-  - 'search content'
-  - 'create state workflow_transition'
-  - 'create application_state workflow_transition'
-  - view_field_full_name
-  - view_user_picture
-  - view_field_team
-  - view_field_supervisor
-  - view_field_bio
-  - view_field_mobile_phone_number
-  - view_field_fec_phone_extension
-  - view_field_office_number
-  - view_field_work_hours
-  - view_field_flex_cws_schedule
-  - view_field_parent
-  - view_body
-  - view_field_fec_email
-  - view_field_manager
-  - view_field_membership
-  - view_field_projects
-  - view_field_linked_projects
-  - view_field_linked_dependencies
-  - view_field_linked_workflows
-  - view_field_linked_applications
-  - view_field_linked_services
-  - view_field_linked_infrastructure
-  - view_field_members
-  - view_field_vendor_type
-  - view_field_link
-  - view_field_fec_poc
-  - view_field_business_poc
-  - view_field_system
-  - view_field_strategic_align_commission
-  - view_field_strategic_align_it
-  - view_field_budget
-  - view_field_budget_justification
-  - view_field_architecture
-  - view_field_links
-  - view_field_critical_patch_period
-  - view_field_integrated_with_ad
-  - view_field_it_poc
-  - view_field_type
-  - view_field_access_information
-  - view_field_maintenance_schedule
-  - view_field_sla
-  - view_field_infrastructure_type
-  - view_field_requirement_type
-  - view_field_files
-  - view_field_diagrams
-  - view_field_poc_name
-  - view_field_poc_email
-  - view_field_poc_phone
-  - view_field_policy_type
-  - view_field_project_status
-  - view_field_teams
-  - view_field_linked_requirements
-  - view_field_linked_policy
-  - view_field_environment_type
-  - view_field_team_status
+  5: 'create state workflow_transition'
+  6: 'create application_state workflow_transition'
+  7: view_field_full_name
+  8: view_user_picture
+  9: view_field_team
+  10: view_field_supervisor
+  11: view_field_bio
+  12: view_field_mobile_phone_number
+  13: view_field_fec_phone_extension
+  14: view_field_office_number
+  15: view_field_work_hours
+  16: view_field_flex_cws_schedule
+  17: view_field_parent
+  18: view_body
+  19: view_field_fec_email
+  20: view_field_manager
+  21: view_field_membership
+  22: view_field_projects
+  23: view_field_linked_projects
+  24: view_field_linked_dependencies
+  25: view_field_linked_workflows
+  26: view_field_linked_applications
+  27: view_field_linked_services
+  28: view_field_linked_infrastructure
+  29: view_field_members
+  30: view_field_vendor_type
+  31: view_field_link
+  32: view_field_fec_poc
+  33: view_field_business_poc
+  34: view_field_system
+  35: view_field_strategic_align_commission
+  36: view_field_strategic_align_it
+  37: view_field_budget
+  38: view_field_budget_justification
+  39: view_field_architecture
+  40: view_field_links
+  41: view_field_critical_patch_period
+  42: view_field_integrated_with_ad
+  43: view_field_it_poc
+  44: view_field_type
+  45: view_field_access_information
+  46: view_field_maintenance_schedule
+  47: view_field_sla
+  48: view_field_infrastructure_type
+  49: view_field_requirement_type
+  50: view_field_files
+  51: view_field_diagrams
+  52: view_field_poc_name
+  53: view_field_poc_email
+  54: view_field_poc_phone
+  55: view_field_policy_type
+  56: view_field_project_status
+  57: view_field_teams
+  58: view_field_linked_requirements
+  59: view_field_linked_policy
+  60: view_field_environment_type
+  61: view_field_team_status

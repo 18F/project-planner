@@ -1,0 +1,14 @@
+uuid: eddffaa9-6a39-4bf7-b802-dfc27a115c0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.maintainer
+  module:
+    - user
+id: user_remove_role_action.maintainer
+label: 'Remove the Maintainer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: maintainer

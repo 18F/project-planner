@@ -6,7 +6,7 @@ _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
 label: 'Authenticated user'
-weight: -9
+weight: -10
 is_admin: false
 permissions:
   2: 'access comments'
@@ -73,3 +73,38 @@ permissions:
   105: view_field_linked_policy
   106: view_field_environment_type
   107: view_field_team_status
+  108: 'view all revisions'
+  109: 'view own unpublished content'
+  110: 'access content'
+  111: 'create application content'
+  112: 'delete own application content'
+  113: 'edit own application content'
+  114: 'view application revisions'
+  115: 'create infrastructure content'
+  116: 'delete own infrastructure content'
+  117: 'edit own infrastructure content'
+  118: 'view infrastructure revisions'
+  119: 'create policy content'
+  120: 'delete own policy content'
+  121: 'edit own policy content'
+  122: 'view policy revisions'
+  123: 'create requirement content'
+  124: 'delete own requirement content'
+  125: 'edit own requirement content'
+  126: 'view requirement revisions'
+  127: 'create service content'
+  128: 'delete own service content'
+  129: 'edit own service content'
+  130: 'view service revisions'
+  131: 'create team content'
+  132: 'delete own team content'
+  133: 'edit own team content'
+  134: 'view team revisions'
+  135: 'create vendor content'
+  136: 'delete own vendor content'
+  137: 'edit own vendor content'
+  138: 'view vendor revisions'
+  139: 'use advanced search'
+  140: 'view the administration theme'
+  141: 'change own username'
+  142: 'access user profiles'

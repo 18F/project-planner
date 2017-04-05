@@ -1,0 +1,14 @@
+uuid: 664a506e-ed2b-4368-bde6-7a2e2083ce77
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.maintainer
+  module:
+    - user
+id: user_add_role_action.maintainer
+label: 'Add the Maintainer role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: maintainer
