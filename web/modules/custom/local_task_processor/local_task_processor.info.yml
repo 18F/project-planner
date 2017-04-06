@@ -1,6 +1,0 @@
-name: Local Task Processor
-description: Run some extra pre render processing on tabs to fix Page manager issue referenced here: https://www.drupal.org/node/2649702#comment-10857540
-package: Custom
-
-type: module
-core: 8.x
