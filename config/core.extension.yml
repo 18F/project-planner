@@ -16,6 +16,7 @@ module:
   dblog: 0
   default_content: 0
   dev_mode: 0
+  diff: 0
   dynamic_page_cache: 0
   editor: 0
   facets: 0
