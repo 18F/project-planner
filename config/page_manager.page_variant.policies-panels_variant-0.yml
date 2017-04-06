@@ -1,0 +1,41 @@
+uuid: 47df6c84-f550-4bae-a919-fe50e4b70c26
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.policies
+    - views.view.policy_list
+  module:
+    - panels
+    - views
+id: policies-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    149e30f3-438e-45f8-91b2-eece37143c9f:
+      id: 'views_block:policy_list-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: middle
+      weight: 0
+      uuid: 149e30f3-438e-45f8-91b2-eece37143c9f
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 4c95e579-ae06-4d1c-ba2c-8dc07fc67741
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: Policies
+  storage_type: page_manager
+  storage_id: policies-panels_variant-0
+  builder: ipe
+page: policies
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

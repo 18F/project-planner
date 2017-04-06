@@ -1,0 +1,12 @@
+uuid: d7aad1fc-a1f2-4b96-9afe-0ed29ffa7ec4
+langcode: en
+status: true
+dependencies: {  }
+id: policies
+label: Policies
+description: 'Display a list of policies on the site.'
+use_admin_theme: false
+path: /list/policy
+access_logic: and
+access_conditions: {  }
+parameters: {  }

@@ -1,0 +1,12 @@
+uuid: a9d502ff-cdd6-4bf0-9d8a-bc89a6fca8a4
+langcode: en
+status: true
+dependencies: {  }
+id: users
+label: Users
+description: 'List users on the site'
+use_admin_theme: false
+path: /list/user
+access_logic: and
+access_conditions: {  }
+parameters: {  }

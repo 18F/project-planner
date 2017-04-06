@@ -1,0 +1,41 @@
+uuid: 1d79990a-9a8a-45ae-8155-ce4a677e1123
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.services
+    - views.view.service_list
+  module:
+    - panels
+    - views
+id: services-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    0d840199-0788-4430-aa11-8a627d1056eb:
+      id: 'views_block:service_list-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: middle
+      weight: 0
+      uuid: 0d840199-0788-4430-aa11-8a627d1056eb
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 5c658cf1-d4e9-402d-a80a-844b8800c980
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: Services
+  storage_type: page_manager
+  storage_id: services-panels_variant-0
+  builder: ipe
+page: services
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

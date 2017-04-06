@@ -1,0 +1,12 @@
+uuid: 99b6a042-ba50-43e4-a0dc-5d74e6d030cf
+langcode: en
+status: true
+dependencies: {  }
+id: requirements
+label: Requirements
+description: 'Display a list of requirements on the site.'
+use_admin_theme: false
+path: /list/requirement
+access_logic: and
+access_conditions: {  }
+parameters: {  }

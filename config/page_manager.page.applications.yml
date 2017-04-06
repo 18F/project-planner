@@ -1,0 +1,12 @@
+uuid: 9e59de1c-42b4-45ca-a063-9b5bc281085d
+langcode: en
+status: true
+dependencies: {  }
+id: applications
+label: Applications
+description: 'Display a list of applications on the site.'
+use_admin_theme: false
+path: /list/application
+access_logic: and
+access_conditions: {  }
+parameters: {  }

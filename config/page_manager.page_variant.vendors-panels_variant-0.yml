@@ -1,0 +1,41 @@
+uuid: 266f410b-e1df-4d9e-8b4b-2adeb06646a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.vendors
+    - views.view.vendor_list
+  module:
+    - panels
+    - views
+id: vendors-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    a2006752-009a-4410-a9a9-4ab931ffd8d6:
+      id: 'views_block:vendor_list-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: middle
+      weight: 0
+      uuid: a2006752-009a-4410-a9a9-4ab931ffd8d6
+      context_mapping: {  }
+  id: panels_variant
+  uuid: f6724a8d-d269-4bd3-9a3c-c4467e74f8eb
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: Vendors
+  storage_type: page_manager
+  storage_id: vendors-panels_variant-0
+  builder: ipe
+page: vendors
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

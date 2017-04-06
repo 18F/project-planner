@@ -1,0 +1,12 @@
+uuid: d5d0fee2-28ef-4e9d-b727-d9ea49f2d9f2
+langcode: en
+status: true
+dependencies: {  }
+id: teams
+label: Teams
+description: 'Display a list of teams on the site.'
+use_admin_theme: false
+path: /list/team
+access_logic: and
+access_conditions: {  }
+parameters: {  }

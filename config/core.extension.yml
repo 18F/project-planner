@@ -7,7 +7,6 @@ module:
   comment: 0
   config: 0
   contact: 0
-  contextual: 0
   core_search_facets: 0
   ctools: 0
   ctools_block: 0
@@ -33,20 +32,23 @@ module:
   help: 0
   history: 0
   image: 0
+  kint: 0
   layout_plugin: 0
   link: 0
   menu_link_config: 0
   menu_ui: 0
+  navigation: 0
   node: 0
   options: 0
   page_cache: 0
+  page_manager: 0
+  page_manager_ui: 0
   panelizer: 0
-  panelizer_quickedit: 0
   panels: 0
   panels_ipe: 0
   path: 0
-  quickedit: 0
   rdf: 0
+  responsive_image: 0
   rest: 0
   rest_facets: 0
   restui: 0
@@ -56,6 +58,7 @@ module:
   search_api_views_taxonomy: 0
   serialization: 0
   simple_oauth: 0
+  statistics: 0
   syslog: 0
   system: 0
   taxonomy: 0

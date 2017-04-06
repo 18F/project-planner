@@ -1,0 +1,12 @@
+uuid: af03ac48-10dd-4d89-ac62-c4fb32b3d53f
+langcode: en
+status: true
+dependencies: {  }
+id: vendors
+label: Vendors
+description: 'Display a list of vendors on the site.'
+use_admin_theme: false
+path: /list/vendor
+access_logic: and
+access_conditions: {  }
+parameters: {  }

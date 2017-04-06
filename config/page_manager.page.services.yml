@@ -1,0 +1,12 @@
+uuid: 5e37c04f-b3eb-4b40-bb74-7e02db8ad3ba
+langcode: en
+status: true
+dependencies: {  }
+id: services
+label: Services
+description: 'Display a list of services on the site.'
+use_admin_theme: false
+path: /list/service
+access_logic: and
+access_conditions: {  }
+parameters: {  }

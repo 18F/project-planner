@@ -1,0 +1,12 @@
+uuid: 07c126f8-1f89-4046-b006-7bd127d802c8
+langcode: en
+status: true
+dependencies: {  }
+id: pages
+label: Pages
+description: 'Display a list of pages on the site.'
+use_admin_theme: false
+path: /list/page
+access_logic: and
+access_conditions: {  }
+parameters: {  }

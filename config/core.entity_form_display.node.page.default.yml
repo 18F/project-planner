@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_tags
     - field.field.node.page.panelizer
     - node.type.page
   module:
@@ -22,9 +23,17 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+  field_tags:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
   path:
     type: path
-    weight: 30
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   title:

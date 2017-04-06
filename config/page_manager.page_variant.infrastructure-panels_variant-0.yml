@@ -1,0 +1,41 @@
+uuid: cb7fff5a-a128-4912-8d32-b4a0ad5664fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.infrastructure
+    - views.view.infrastructure_list
+  module:
+    - panels
+    - views
+id: infrastructure-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    4249a30f-d3cd-4488-b05d-bd83295a71d7:
+      id: 'views_block:infrastructure_list-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: middle
+      weight: 0
+      uuid: 4249a30f-d3cd-4488-b05d-bd83295a71d7
+      context_mapping: {  }
+  id: panels_variant
+  uuid: d3e70295-d0c2-4cbf-bdf3-5c5f3896dedb
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: Infrastructure
+  storage_type: page_manager
+  storage_id: infrastructure-panels_variant-0
+  builder: ipe
+page: infrastructure
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

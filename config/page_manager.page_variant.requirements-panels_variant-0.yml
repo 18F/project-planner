@@ -1,0 +1,41 @@
+uuid: 1fbbd719-5661-4cd7-bc40-6642ff014165
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.requirements
+    - views.view.requirement_list
+  module:
+    - panels
+    - views
+id: requirements-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    dfa3c0c0-e495-4c59-9d4b-23a41116c12e:
+      id: 'views_block:requirement_list-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: middle
+      weight: 0
+      uuid: dfa3c0c0-e495-4c59-9d4b-23a41116c12e
+      context_mapping: {  }
+  id: panels_variant
+  uuid: b02aa848-a291-46d3-8e28-7e8e67d291e6
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: Requirements
+  storage_type: page_manager
+  storage_id: requirements-panels_variant-0
+  builder: ipe
+page: requirements
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

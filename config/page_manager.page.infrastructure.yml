@@ -1,0 +1,12 @@
+uuid: d068a55b-acca-48ea-a327-4dfe47891b44
+langcode: en
+status: true
+dependencies: {  }
+id: infrastructure
+label: Infrastructure
+description: 'Display a list of infrastructure on the site.'
+use_admin_theme: false
+path: /list/infrastructure
+access_logic: and
+access_conditions: {  }
+parameters: {  }

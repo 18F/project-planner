@@ -107,3 +107,4 @@ permissions:
   140: 'view the administration theme'
   141: 'change own username'
   142: 'access user profiles'
+  143: 'access private fields'

@@ -1,0 +1,41 @@
+uuid: 9e83aff4-8a56-4086-af59-0077b2b0ee58
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.teams
+    - views.view.team_list
+  module:
+    - panels
+    - views
+id: teams-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    f2526f58-dcc7-4f25-96d0-ed60e1204a8c:
+      id: 'views_block:team_list-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: middle
+      weight: 0
+      uuid: f2526f58-dcc7-4f25-96d0-ed60e1204a8c
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 55310ef4-46f2-483a-8449-785f4daa8610
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: Teams
+  storage_type: page_manager
+  storage_id: teams-panels_variant-0
+  builder: ipe
+page: teams
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
