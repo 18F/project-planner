@@ -1,0 +1,6 @@
+name: Navigation
+description: Navigation alterations
+package: Custom
+
+type: module
+core: 8.x

@@ -1,0 +1,31 @@
+<?php
+
+use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implementation of hook_system_breadcrumb_alter()
+ */
+function navigation_system_breadcrumb_alter(&$breadcrumb, $route_match, $context) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $params = \Drupal\Core\Url::fromUserInput($current_path)->getRouteParameters();
+
+  # Check if we are viewing a node and make some breadcrumb tweaks to help with usability
+  if (isset($params['node'])) {
+    $node = \Drupal\node\Entity\Node::load($params['node']);
+
+    foreach ($breadcrumb->getLinks() as $link) {
+      if ($link->getText() == 'Node') {
+        $type = $node->bundle();
+        $label = \Drupal::entityTypeManager()
+        ->getStorage('node_type')
+        ->load($type)
+        ->label();
+
+        $link->setText($label);
+        $link->setUrl(\Drupal\Core\Url::fromUri("internal:/list/" . $type));
+      }
+    }
+  }
+}
+?>
