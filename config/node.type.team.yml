@@ -12,6 +12,6 @@ name: Team
 type: team
 description: 'An internal group that manages projects and vendors'
 help: ''
-new_revision: false
+new_revision: true
 preview_mode: 0
 display_submitted: false
