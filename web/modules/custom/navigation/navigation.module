@@ -15,7 +15,7 @@ function navigation_system_breadcrumb_alter(&$breadcrumb, $route_match, $context
     $node = \Drupal\node\Entity\Node::load($params['node']);
 
     foreach ($breadcrumb->getLinks() as $link) {
-      if ($link->getText() == 'Node') {
+      if ($link->getText() == 'Overview') {
         $type = $node->bundle();
         $label = \Drupal::entityTypeManager()
         ->getStorage('node_type')

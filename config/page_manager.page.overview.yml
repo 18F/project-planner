@@ -1,0 +1,12 @@
+uuid: 9d4bf84e-4d62-40a8-a8d8-440147d05a3a
+langcode: en
+status: true
+dependencies: {  }
+id: overview
+label: Overview
+description: 'Display a overview of various users and content on the site.'
+use_admin_theme: false
+path: /node
+access_logic: and
+access_conditions: {  }
+parameters: {  }

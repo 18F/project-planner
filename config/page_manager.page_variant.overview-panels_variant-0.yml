@@ -1,11 +1,12 @@
-uuid: 60822832-e72e-4f79-891d-3dbd46a26b00
+uuid: 781bd8cd-fff5-4696-bfde-26a114119763
 langcode: en
 status: true
 dependencies:
   config:
-    - page_manager.page.content_overview
+    - page_manager.page.overview
     - views.view.application_list
     - views.view.infrastructure_list
+    - views.view.page_list
     - views.view.policy_list
     - views.view.requirement_list
     - views.view.service_list
@@ -15,21 +16,21 @@ dependencies:
   module:
     - panels
     - views
-id: content_overview-panels_variant-0
+id: overview-panels_variant-0
 label: Panels
 variant: panels_variant
 variant_settings:
   blocks:
-    220a0b1b-35a2-4d8b-8668-a54bcc6f4f52:
+    60eba89a-0f3e-4cdc-8928-d12d47bf04ac:
       id: 'views_block:user_list-block_1'
       label: ''
       provider: views
       label_display: visible
       views_label: ''
       items_per_page: '20'
-      region: left
-      weight: -3
-      uuid: 220a0b1b-35a2-4d8b-8668-a54bcc6f4f52
+      region: top
+      weight: -4
+      uuid: 60eba89a-0f3e-4cdc-8928-d12d47bf04ac
       pager: view
       fields:
         roles_target_id:
@@ -45,7 +46,7 @@ variant_settings:
           weight: '0'
           hide: 0
       context_mapping: {  }
-    7bb7d416-ddc1-4057-bc0c-cbede34d14eb:
+    5a322417-c698-443f-a84f-7d1efe56e3b4:
       id: 'views_block:team_list-block_1'
       label: ''
       provider: views
@@ -53,21 +54,21 @@ variant_settings:
       views_label: ''
       items_per_page: '20'
       region: left
-      weight: -2
-      uuid: 7bb7d416-ddc1-4057-bc0c-cbede34d14eb
+      weight: -9
+      uuid: 5a322417-c698-443f-a84f-7d1efe56e3b4
       context_mapping: {  }
-    ff6efc12-113d-4550-82ab-905d7460fa1c:
+    040ae1a5-8ece-47ba-8dc1-bf1db59d9af4:
       id: 'views_block:vendor_list-block_1'
       label: ''
       provider: views
       label_display: visible
       views_label: ''
-      items_per_page: '20'
+      items_per_page: none
       region: left
-      weight: -1
-      uuid: ff6efc12-113d-4550-82ab-905d7460fa1c
+      weight: -8
+      uuid: 040ae1a5-8ece-47ba-8dc1-bf1db59d9af4
       context_mapping: {  }
-    5360cc3b-40cc-4dba-943b-57714052f5d1:
+    5baabff9-550f-4f87-a7c1-5647b2fe1260:
       id: 'views_block:application_list-block_1'
       label: ''
       provider: views
@@ -75,10 +76,10 @@ variant_settings:
       views_label: ''
       items_per_page: '20'
       region: right
-      weight: -3
-      uuid: 5360cc3b-40cc-4dba-943b-57714052f5d1
+      weight: -4
+      uuid: 5baabff9-550f-4f87-a7c1-5647b2fe1260
       context_mapping: {  }
-    02607ec2-c3e4-4713-8a70-ebad78d5a1ff:
+    107f3712-49e7-41ed-b01b-7d3b6e37f4db:
       id: 'views_block:service_list-block_1'
       label: ''
       provider: views
@@ -86,10 +87,10 @@ variant_settings:
       views_label: ''
       items_per_page: '20'
       region: right
-      weight: -2
-      uuid: 02607ec2-c3e4-4713-8a70-ebad78d5a1ff
+      weight: -3
+      uuid: 107f3712-49e7-41ed-b01b-7d3b6e37f4db
       context_mapping: {  }
-    8fd309d6-0b49-4ee0-aac9-6b14cd9fb7a1:
+    a83f3164-41c4-4f29-87dd-ad439c25b8c3:
       id: 'views_block:infrastructure_list-block_1'
       label: ''
       provider: views
@@ -97,10 +98,10 @@ variant_settings:
       views_label: ''
       items_per_page: '20'
       region: right
-      weight: -1
-      uuid: 8fd309d6-0b49-4ee0-aac9-6b14cd9fb7a1
+      weight: -2
+      uuid: a83f3164-41c4-4f29-87dd-ad439c25b8c3
       context_mapping: {  }
-    e532d639-7e82-4699-95a2-11e245d0b1ac:
+    b2b9aebd-1515-4e67-a84d-7bec8043169f:
       id: 'views_block:policy_list-block_1'
       label: ''
       provider: views
@@ -108,10 +109,10 @@ variant_settings:
       views_label: ''
       items_per_page: '20'
       region: right
-      weight: 0
-      uuid: e532d639-7e82-4699-95a2-11e245d0b1ac
+      weight: -1
+      uuid: b2b9aebd-1515-4e67-a84d-7bec8043169f
       context_mapping: {  }
-    93d755fd-e356-4945-b550-3c48970ab4c2:
+    5297f3cb-b134-4d16-bba1-c0fe7b476e13:
       id: 'views_block:requirement_list-block_1'
       label: ''
       provider: views
@@ -119,20 +120,31 @@ variant_settings:
       views_label: ''
       items_per_page: '20'
       region: right
-      weight: 1
-      uuid: 93d755fd-e356-4945-b550-3c48970ab4c2
+      weight: 0
+      uuid: 5297f3cb-b134-4d16-bba1-c0fe7b476e13
+      context_mapping: {  }
+    8c74fd73-7f3d-4141-9cb9-218b79e3ce13:
+      id: 'views_block:page_list-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: '20'
+      region: bottom
+      weight: 0
+      uuid: 8c74fd73-7f3d-4141-9cb9-218b79e3ce13
       context_mapping: {  }
   id: panels_variant
-  uuid: 24b2b850-ab95-4e89-90b8-9d8f543a8606
+  uuid: e898a261-515d-4ace-b457-535da3df8bca
   label: null
   weight: 0
-  layout: twocol
+  layout: twocol_stacked
   layout_settings: {  }
   page_title: ''
   storage_type: page_manager
-  storage_id: content_overview-panels_variant-0
+  storage_id: overview-panels_variant-0
   builder: ipe
-page: content_overview
+page: overview
 weight: 0
 selection_criteria: {  }
 selection_logic: and
