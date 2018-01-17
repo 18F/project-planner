@@ -23,7 +23,7 @@ cf-ssh.yml
 
 # Vagrant files
 .vagrant
-config.yml
+vagrant-config.yml
 
 # Eclipse project files
 .project
